@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class ShadowWraithRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<ShadowWraithEntity, R> {
+public class ShadowWraithRenderer extends GeoEntityRenderer<ShadowWraithEntity> {
 public ShadowWraithRenderer(EntityRendererFactory.Context context) {
 super(context, new ShadowWraithModel());
 }

@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class NebulaWraithRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<NebulaWraithEntity, R> {
+public class NebulaWraithRenderer extends GeoEntityRenderer<NebulaWraithEntity> {
 public NebulaWraithRenderer(EntityRendererFactory.Context context) {
 super(context, new NebulaWraithModel());
 }

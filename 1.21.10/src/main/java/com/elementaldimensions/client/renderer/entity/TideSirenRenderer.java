@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class TideSirenRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<TideSirenEntity, R> {
+public class TideSirenRenderer extends GeoEntityRenderer<TideSirenEntity> {
 public TideSirenRenderer(EntityRendererFactory.Context context) {
 super(context, new TideSirenModel());
 }

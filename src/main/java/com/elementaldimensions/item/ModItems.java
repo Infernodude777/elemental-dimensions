@@ -28,6 +28,9 @@ public class ModItems {
 	public static final Item GUIDE_BOOK = registerItem("guide_book",
 			new Item(new Item.Settings().maxCount(1).rarity(Rarity.UNCOMMON)));
 	
+	public static final Item GRAPPLING_HOOK = registerItem("grappling_hook",
+			new GrapplingHookItem(new Item.Settings().maxCount(1).maxDamage(250).rarity(Rarity.UNCOMMON)));
+	
 	// ===== FIRELANDS MATERIALS =====
 	public static final Item LAVA_CRYSTAL = registerItem("lava_crystal",
 			new Item(new Item.Settings()));

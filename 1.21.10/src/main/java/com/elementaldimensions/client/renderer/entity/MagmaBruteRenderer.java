@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class MagmaBruteRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<MagmaBruteEntity, R> {
+public class MagmaBruteRenderer extends GeoEntityRenderer<MagmaBruteEntity> {
 public MagmaBruteRenderer(EntityRendererFactory.Context context) {
 super(context, new MagmaBruteModel());
 }

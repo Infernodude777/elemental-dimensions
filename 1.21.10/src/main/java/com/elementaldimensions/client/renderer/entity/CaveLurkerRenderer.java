@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class CaveLurkerRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<CaveLurkerEntity, R> {
+public class CaveLurkerRenderer extends GeoEntityRenderer<CaveLurkerEntity> {
 public CaveLurkerRenderer(EntityRendererFactory.Context context) {
 super(context, new CaveLurkerModel());
 }

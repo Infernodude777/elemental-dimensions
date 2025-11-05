@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class BubbleWispRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<BubbleWispEntity, R> {
+public class BubbleWispRenderer extends GeoEntityRenderer<BubbleWispEntity> {
 public BubbleWispRenderer(EntityRendererFactory.Context context) {
 super(context, new BubbleWispModel());
 }

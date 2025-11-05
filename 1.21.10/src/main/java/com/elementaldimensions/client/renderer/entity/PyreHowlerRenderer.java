@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class PyreHowlerRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<PyreHowlerEntity, R> {
+public class PyreHowlerRenderer extends GeoEntityRenderer<PyreHowlerEntity> {
 public PyreHowlerRenderer(EntityRendererFactory.Context context) {
 super(context, new PyreHowlerModel());
 }

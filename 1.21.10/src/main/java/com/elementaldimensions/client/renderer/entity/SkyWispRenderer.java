@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class SkyWispRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<SkyWispEntity, R> {
+public class SkyWispRenderer extends GeoEntityRenderer<SkyWispEntity> {
 public SkyWispRenderer(EntityRendererFactory.Context context) {
 super(context, new SkyWispModel());
 }

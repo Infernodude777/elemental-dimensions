@@ -5,14 +5,14 @@ import net.minecraft.entity.attribute.*;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
-import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;`nimport software.bernie.geckolib.animatable.processing.AnimationController;`nimport software.bernie.geckolib.animation.PlayState;
+import software.bernie.geckolib.animation.AnimatableManager;
 import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class EmberSerpentEntity extends HostileEntity implements GeoEntity {
+public class EmberSerpentEntity extends HostileEntity implements GeoAnimatable {
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	public EmberSerpentEntity(EntityType<? extends HostileEntity> entityType, World world) { super(entityType, world); }
 	public boolean isFireImmune() { return true; }
@@ -20,7 +20,9 @@ public class EmberSerpentEntity extends HostileEntity implements GeoEntity {
 	public static DefaultAttributeContainer.Builder createAttributes() { return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 18.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0); }
 	
 	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
-controllers.add(new AnimationController<>(this, "controller", state -> state.isMoving() ? state.setAndContinue(RawAnimation.begin().thenLoop("walk")) : state.setAndContinue(RawAnimation.begin().thenLoop("idle"))));
+controllers.add(new AnimationController<>(this, "controller", 0, state -> {
+return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
+}));
 }
 	
 		@Override

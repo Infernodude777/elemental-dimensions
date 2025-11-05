@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class MossBeastRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<MossBeastEntity, R> {
+public class MossBeastRenderer extends GeoEntityRenderer<MossBeastEntity> {
 public MossBeastRenderer(EntityRendererFactory.Context context) {
 super(context, new MossBeastModel());
 }

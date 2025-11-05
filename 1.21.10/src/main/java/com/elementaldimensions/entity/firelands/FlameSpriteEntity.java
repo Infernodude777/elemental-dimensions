@@ -7,12 +7,12 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
-import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;`nimport software.bernie.geckolib.animatable.processing.AnimationController;`nimport software.bernie.geckolib.animation.PlayState;
+import software.bernie.geckolib.animation.AnimatableManager;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class FlameSpriteEntity extends HostileEntity implements GeoEntity {
+public class FlameSpriteEntity extends HostileEntity implements GeoAnimatable {
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	public FlameSpriteEntity(EntityType<? extends HostileEntity> entityType, World world) {
 		super(entityType, world);

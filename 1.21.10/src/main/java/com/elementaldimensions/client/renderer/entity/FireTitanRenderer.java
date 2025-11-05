@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class FireTitanRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<FireTitanEntity, R> {
+public class FireTitanRenderer extends GeoEntityRenderer<FireTitanEntity> {
 public FireTitanRenderer(EntityRendererFactory.Context context) {
 super(context, new FireTitanModel());
 }

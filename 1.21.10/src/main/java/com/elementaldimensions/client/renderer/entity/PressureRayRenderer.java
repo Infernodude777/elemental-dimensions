@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class PressureRayRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<PressureRayEntity, R> {
+public class PressureRayRenderer extends GeoEntityRenderer<PressureRayEntity> {
 public PressureRayRenderer(EntityRendererFactory.Context context) {
 super(context, new PressureRayModel());
 }

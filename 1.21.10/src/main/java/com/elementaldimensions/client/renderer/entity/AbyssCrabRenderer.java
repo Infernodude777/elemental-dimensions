@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class AbyssCrabRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<AbyssCrabEntity, R> {
+public class AbyssCrabRenderer extends GeoEntityRenderer<AbyssCrabEntity> {
 public AbyssCrabRenderer(EntityRendererFactory.Context context) {
 super(context, new AbyssCrabModel());
 }

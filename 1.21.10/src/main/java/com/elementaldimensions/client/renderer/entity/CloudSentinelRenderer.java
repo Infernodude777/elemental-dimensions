@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class CloudSentinelRenderer<R extends net.minecraft.client.render.entity.state.EntityRenderState & software.bernie.geckolib.renderer.GeoRenderState> extends GeoEntityRenderer<CloudSentinelEntity, R> {
+public class CloudSentinelRenderer extends GeoEntityRenderer<CloudSentinelEntity> {
 public CloudSentinelRenderer(EntityRendererFactory.Context context) {
 super(context, new CloudSentinelModel());
 }

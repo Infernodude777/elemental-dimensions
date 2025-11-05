@@ -7,14 +7,14 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
-import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;`nimport software.bernie.geckolib.animatable.processing.AnimationController;`nimport software.bernie.geckolib.animation.PlayState;
+import software.bernie.geckolib.animation.AnimatableManager;
 import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class CinderElementalEntity extends HostileEntity implements GeoEntity {
+public class CinderElementalEntity extends HostileEntity implements GeoAnimatable {
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	public CinderElementalEntity(EntityType<? extends HostileEntity> entityType, World world) {
 		super(entityType, world);
@@ -46,7 +46,9 @@ public class CinderElementalEntity extends HostileEntity implements GeoEntity {
 	}
 	
 	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
-controllers.add(new AnimationController<>(this, "controller", state -> state.isMoving() ? state.setAndContinue(RawAnimation.begin().thenLoop("walk")) : state.setAndContinue(RawAnimation.begin().thenLoop("idle"))));
+controllers.add(new AnimationController<>(this, "controller", 0, state -> {
+return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
+}));
 }
 	
 		@Override
