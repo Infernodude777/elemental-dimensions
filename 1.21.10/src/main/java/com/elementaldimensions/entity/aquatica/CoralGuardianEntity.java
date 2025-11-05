@@ -34,11 +34,11 @@ public class CoralGuardianEntity extends HostileEntity implements GeoAnimatable 
 	
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-				.add(EntityAttributes.GENERIC_MAX_HEALTH, 22.0)
-				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
-				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 6.0)
-				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 28.0)
-				.add(EntityAttributes.GENERIC_ARMOR, 4.0);
+				.add(EntityAttributes.MAX_HEALTH, 22.0)
+				.add(EntityAttributes.MOVEMENT_SPEED, 0.25)
+				.add(EntityAttributes.ATTACK_DAMAGE, 6.0)
+				.add(EntityAttributes.FOLLOW_RANGE, 28.0)
+				.add(EntityAttributes.ARMOR, 4.0);
 	}
 
 	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 

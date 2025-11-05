@@ -8,6 +8,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.minecraft.server.world.ServerWorld;
 
 /**
  * Glowing Ember Bricks - Decorative firelands block
@@ -26,16 +27,14 @@ public class EmberBricksBlock extends Block {
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
 		super.randomDisplayTick(state, world, pos, random);
 		
-		if (random.nextInt(3) == 0) {
+		if (random.nextInt(3) == 0 && world instanceof ServerWorld serverWorld) {
 			double x = pos.getX() + random.nextDouble();
 			double y = pos.getY() + random.nextDouble();
 			double z = pos.getZ() + random.nextDouble();
 			
-			world.addParticle(
-				ParticleTypes.FLAME,
-				x, y, z,
-				0.0, 0.05, 0.0
-			);
+			serverWorld.spawnParticles(
+				ParticleTypes.FLAME, x, y, z, 1, 0.0, 0.05, 0.0
+			, 0.0);
 		}
 	}
 }

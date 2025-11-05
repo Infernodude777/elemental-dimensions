@@ -38,11 +38,11 @@ public class CinderElementalEntity extends HostileEntity implements GeoAnimatabl
 	
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-				.add(EntityAttributes.GENERIC_MAX_HEALTH, 18.0)
-				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.28)
-				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 5.0)
-				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0)
-				.add(EntityAttributes.GENERIC_ARMOR, 2.0);
+				.add(EntityAttributes.MAX_HEALTH, 18.0)
+				.add(EntityAttributes.MOVEMENT_SPEED, 0.28)
+				.add(EntityAttributes.ATTACK_DAMAGE, 5.0)
+				.add(EntityAttributes.FOLLOW_RANGE, 32.0)
+				.add(EntityAttributes.ARMOR, 2.0);
 	}
 	
 	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 

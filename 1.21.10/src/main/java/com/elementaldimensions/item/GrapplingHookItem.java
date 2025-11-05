@@ -10,7 +10,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
@@ -38,11 +38,10 @@ public class GrapplingHookItem extends Item {
 	}
 	
 	@Override
-	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-		ItemStack stack = user.getStackInHand(hand);
+	public ActionResult use(ItemStack stack, World world, PlayerEntity user, Hand hand) {
 		
 		if (user.getItemCooldownManager().isCoolingDown(this)) {
-			return TypedActionResult.fail(stack);
+			return ActionResult.FAIL;
 		}
 		
 		// Raycast to find hook point
@@ -94,7 +93,7 @@ public class GrapplingHookItem extends Item {
 			// Statistics
 			user.incrementStat(Stats.USED.getOrCreateStat(this));
 			
-			return TypedActionResult.success(stack, world.isClient());
+			return ActionResult.SUCCESS;
 		}
 		
 		// No valid hook point
@@ -109,6 +108,6 @@ public class GrapplingHookItem extends Item {
 			1.0f
 		);
 		
-		return TypedActionResult.fail(stack);
+		return ActionResult.FAIL;
 	}
 }

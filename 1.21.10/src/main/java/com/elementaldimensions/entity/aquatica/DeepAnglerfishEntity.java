@@ -36,10 +36,10 @@ public class DeepAnglerfishEntity extends HostileEntity implements GeoAnimatable
 	
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-			.add(EntityAttributes.GENERIC_MAX_HEALTH, 28.0)
-			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 9.0)
-			.add(EntityAttributes.GENERIC_ARMOR, 2.0)
-			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.4);
+			.add(EntityAttributes.MAX_HEALTH, 28.0)
+			.add(EntityAttributes.ATTACK_DAMAGE, 9.0)
+			.add(EntityAttributes.ARMOR, 2.0)
+			.add(EntityAttributes.MOVEMENT_SPEED, 0.4);
 	}
 	
 	@Override

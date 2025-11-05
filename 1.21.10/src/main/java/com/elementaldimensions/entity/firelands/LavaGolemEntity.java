@@ -39,11 +39,11 @@ public class LavaGolemEntity extends HostileEntity implements GeoAnimatable {
 	
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-			.add(EntityAttributes.GENERIC_MAX_HEALTH, 40.0)
-			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10.0)
-			.add(EntityAttributes.GENERIC_ARMOR, 8.0)
-			.add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.6)
-			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.18);
+			.add(EntityAttributes.MAX_HEALTH, 40.0)
+			.add(EntityAttributes.ATTACK_DAMAGE, 10.0)
+			.add(EntityAttributes.ARMOR, 8.0)
+			.add(EntityAttributes.KNOCKBACK_RESISTANCE, 0.6)
+			.add(EntityAttributes.MOVEMENT_SPEED, 0.18);
 	}
 	
 	@Override

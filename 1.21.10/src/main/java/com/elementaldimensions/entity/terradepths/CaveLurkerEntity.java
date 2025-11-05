@@ -33,11 +33,11 @@ public class CaveLurkerEntity extends HostileEntity implements GeoAnimatable {
 	
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-				.add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
-				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.27)
-				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 7.0)
-				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 24.0)
-				.add(EntityAttributes.GENERIC_ARMOR, 3.0);
+				.add(EntityAttributes.MAX_HEALTH, 20.0)
+				.add(EntityAttributes.MOVEMENT_SPEED, 0.27)
+				.add(EntityAttributes.ATTACK_DAMAGE, 7.0)
+				.add(EntityAttributes.FOLLOW_RANGE, 24.0)
+				.add(EntityAttributes.ARMOR, 3.0);
 	}
 
 	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 

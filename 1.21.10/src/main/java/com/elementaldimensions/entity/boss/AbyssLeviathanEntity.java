@@ -33,10 +33,10 @@ public class AbyssLeviathanEntity extends HostileEntity implements GeoAnimatable
 	
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-				.add(EntityAttributes.GENERIC_MAX_HEALTH, 800.0)
-				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 18.0)
-				.add(EntityAttributes.GENERIC_ARMOR, 12.0)
-				.add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0);
+				.add(EntityAttributes.MAX_HEALTH, 800.0)
+				.add(EntityAttributes.ATTACK_DAMAGE, 18.0)
+				.add(EntityAttributes.ARMOR, 12.0)
+				.add(EntityAttributes.KNOCKBACK_RESISTANCE, 1.0);
 	}
 	
 	@Override

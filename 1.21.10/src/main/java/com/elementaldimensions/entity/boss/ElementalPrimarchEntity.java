@@ -39,11 +39,11 @@ public class ElementalPrimarchEntity extends HostileEntity implements GeoAnimata
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 1200.0)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 25.0)
-                .add(EntityAttributes.GENERIC_ARMOR, 25.0)
-                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0)
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 80.0);
+                .add(EntityAttributes.MAX_HEALTH, 1200.0)
+                .add(EntityAttributes.ATTACK_DAMAGE, 25.0)
+                .add(EntityAttributes.ARMOR, 25.0)
+                .add(EntityAttributes.KNOCKBACK_RESISTANCE, 1.0)
+                .add(EntityAttributes.FOLLOW_RANGE, 80.0);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class ElementalPrimarchEntity extends HostileEntity implements GeoAnimata
                         .filter(player -> player.squaredDistanceTo(this) < 4096)
                         .count();
                 if (nearbyPlayers > 1) {
-                    this.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH)
+                    this.getAttributeInstance(EntityAttributes.MAX_HEALTH)
                             .setBaseValue(1200.0 + nearbyPlayers * 200);
                 }
             }

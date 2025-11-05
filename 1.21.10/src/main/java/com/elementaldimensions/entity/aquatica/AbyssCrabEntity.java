@@ -29,8 +29,8 @@ public class AbyssCrabEntity extends HostileEntity implements GeoAnimatable {
 	
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-			.add(EntityAttributes.GENERIC_MAX_HEALTH, 14.0)
-			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0);
+			.add(EntityAttributes.MAX_HEALTH, 14.0)
+			.add(EntityAttributes.ATTACK_DAMAGE, 3.0);
 	}
 	
 	@Override

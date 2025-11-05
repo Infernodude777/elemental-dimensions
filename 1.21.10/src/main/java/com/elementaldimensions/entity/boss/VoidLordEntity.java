@@ -33,11 +33,11 @@ public class VoidLordEntity extends HostileEntity implements GeoAnimatable {
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 800.0)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 22.0)
-                .add(EntityAttributes.GENERIC_ARMOR, 18.0)
-                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.9)
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 64.0);
+                .add(EntityAttributes.MAX_HEALTH, 800.0)
+                .add(EntityAttributes.ATTACK_DAMAGE, 22.0)
+                .add(EntityAttributes.ARMOR, 18.0)
+                .add(EntityAttributes.KNOCKBACK_RESISTANCE, 0.9)
+                .add(EntityAttributes.FOLLOW_RANGE, 64.0);
     }
 
     @Override

@@ -32,10 +32,10 @@ public class ShadowWraithEntity extends HostileEntity implements GeoAnimatable {
 	
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-				.add(EntityAttributes.GENERIC_MAX_HEALTH, 25.0)
-				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 6.0)
-				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.28)
-				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0);
+				.add(EntityAttributes.MAX_HEALTH, 25.0)
+				.add(EntityAttributes.ATTACK_DAMAGE, 6.0)
+				.add(EntityAttributes.MOVEMENT_SPEED, 0.28)
+				.add(EntityAttributes.FOLLOW_RANGE, 35.0);
 	}
 	
 	@Override

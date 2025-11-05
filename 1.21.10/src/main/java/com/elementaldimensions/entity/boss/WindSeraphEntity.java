@@ -33,10 +33,10 @@ public class WindSeraphEntity extends HostileEntity implements GeoAnimatable {
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 650.0)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 16.0)
-                .add(EntityAttributes.GENERIC_ARMOR, 10.0)
-                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.8)
+                .add(EntityAttributes.MAX_HEALTH, 650.0)
+                .add(EntityAttributes.ATTACK_DAMAGE, 16.0)
+                .add(EntityAttributes.ARMOR, 10.0)
+                .add(EntityAttributes.KNOCKBACK_RESISTANCE, 0.8)
                 ;
     }
 

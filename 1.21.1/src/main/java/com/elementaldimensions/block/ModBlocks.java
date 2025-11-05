@@ -424,6 +424,150 @@ public class ModBlocks {
 					.strength(0.6f)
 					.sounds(BlockSoundGroup.GRASS)));
 	
+	// ===== ENHANCED DECORATIVE BLOCKS =====
+	public static final Block EMBER_BRICKS = registerBlock("ember_bricks",
+			new EmberBricksBlock(AbstractBlock.Settings.create()
+					.mapColor(MapColor.TERRACOTTA_RED)
+					.requiresTool()
+					.strength(2.5f, 7.0f)));
+	
+	public static final Block REINFORCED_AQUA_GLASS = registerBlock("reinforced_aqua_glass",
+			new ReinforcedAquaGlassBlock(AbstractBlock.Settings.create()
+					.mapColor(MapColor.CYAN)
+					.strength(1.5f, 3.0f)));
+	
+	public static final Block CRYSTAL_PILLAR = registerBlock("crystal_pillar",
+			new CrystalPillarBlock(AbstractBlock.Settings.create()
+					.mapColor(MapColor.LIGHT_BLUE)
+					.requiresTool()
+					.strength(3.0f, 8.0f)));
+	
+	public static final Block CONDENSED_CLOUD = registerBlock("condensed_cloud",
+			new CondensedCloudBlock(AbstractBlock.Settings.create()
+					.mapColor(MapColor.WHITE)
+					.strength(0.5f, 0.5f)));
+	
+	public static final Block VOID_CRYSTAL_CLUSTER = registerBlock("void_crystal_cluster",
+			new VoidCrystalClusterBlock(AbstractBlock.Settings.create()
+					.mapColor(MapColor.PURPLE)
+					.requiresTool()
+					.strength(4.0f, 10.0f)));
+	
+	public static final Block ELEMENTAL_FORGE = registerBlock("elemental_forge",
+			new ElementalForgeBlock(AbstractBlock.Settings.create()
+					.mapColor(MapColor.IRON_GRAY)
+					.requiresTool()
+					.strength(5.0f, 1200.0f)));
+	
+	// ===== ADDITIONAL DECORATIVE BLOCKS =====
+	public static final Block POLISHED_SCORCHED_STONE = registerBlock("polished_scorched_stone",
+			new Block(AbstractBlock.Settings.create()
+					.mapColor(MapColor.TERRACOTTA_RED)
+					.requiresTool()
+					.strength(2.0f, 6.0f)
+					.sounds(BlockSoundGroup.STONE)));
+	
+	public static final Block SCORCHED_STONE_BRICKS = registerBlock("scorched_stone_bricks",
+			new Block(AbstractBlock.Settings.create()
+					.mapColor(MapColor.TERRACOTTA_RED)
+					.requiresTool()
+					.strength(2.5f, 7.0f)
+					.sounds(BlockSoundGroup.STONE)));
+	
+	public static final Block OCEANIC_TILES = registerBlock("oceanic_tiles",
+			new Block(AbstractBlock.Settings.create()
+					.mapColor(MapColor.CYAN)
+					.requiresTool()
+					.strength(2.0f, 6.0f)
+					.sounds(BlockSoundGroup.STONE)));
+	
+	public static final Block CORAL_BRICK = registerBlock("coral_brick",
+			new Block(AbstractBlock.Settings.create()
+					.mapColor(MapColor.PINK)
+					.requiresTool()
+					.strength(2.5f, 7.0f)
+					.sounds(BlockSoundGroup.CORAL)));
+	
+	public static final Block MOSSY_GAIA_STONE = registerBlock("mossy_gaia_stone",
+			new Block(AbstractBlock.Settings.create()
+					.mapColor(MapColor.GREEN)
+					.requiresTool()
+					.strength(2.0f, 6.0f)
+					.sounds(BlockSoundGroup.MOSS_BLOCK)));
+	
+	public static final Block TERRA_BRICKS = registerBlock("terra_bricks",
+			new Block(AbstractBlock.Settings.create()
+					.mapColor(MapColor.BROWN)
+					.requiresTool()
+					.strength(2.5f, 7.0f)
+					.sounds(BlockSoundGroup.STONE)));
+	
+	public static final Block SKYROCK_TILES = registerBlock("skyrock_tiles",
+			new Block(AbstractBlock.Settings.create()
+					.mapColor(MapColor.WHITE)
+					.requiresTool()
+					.strength(2.0f, 6.0f)
+					.sounds(BlockSoundGroup.STONE)));
+	
+	public static final Block WIND_CARVED_STONE = registerBlock("wind_carved_stone",
+			new Block(AbstractBlock.Settings.create()
+					.mapColor(MapColor.PALE_YELLOW)
+					.requiresTool()
+					.strength(1.8f, 6.0f)
+					.sounds(BlockSoundGroup.CALCITE)));
+	
+	public static final Block STAR_BRICKS = registerBlock("star_bricks",
+			new Block(AbstractBlock.Settings.create()
+					.mapColor(MapColor.DIAMOND_BLUE)
+					.requiresTool()
+					.strength(3.0f, 8.0f)
+					.sounds(BlockSoundGroup.STONE)
+					.luminance(state -> 5)));
+	
+	public static final Block VOID_BRICKS = registerBlock("void_bricks",
+			new Block(AbstractBlock.Settings.create()
+					.mapColor(MapColor.BLACK)
+					.requiresTool()
+					.strength(3.0f, 10.0f)
+					.sounds(BlockSoundGroup.DEEPSLATE)));
+	
+	public static final Block MAGMA_PILLAR = registerBlock("magma_pillar",
+			new PillarBlock(AbstractBlock.Settings.create()
+					.mapColor(MapColor.ORANGE)
+					.requiresTool()
+					.strength(3.0f, 7.0f)
+					.sounds(BlockSoundGroup.BASALT)
+					.luminance(state -> 8)));
+	
+	public static final Block OCEANIC_PILLAR = registerBlock("oceanic_pillar",
+			new PillarBlock(AbstractBlock.Settings.create()
+					.mapColor(MapColor.CYAN)
+					.requiresTool()
+					.strength(3.0f, 7.0f)
+					.sounds(BlockSoundGroup.STONE)));
+	
+	public static final Block TERRA_PILLAR = registerBlock("terra_pillar",
+			new PillarBlock(AbstractBlock.Settings.create()
+					.mapColor(MapColor.BROWN)
+					.requiresTool()
+					.strength(3.0f, 7.0f)
+					.sounds(BlockSoundGroup.STONE)));
+	
+	public static final Block SKY_PILLAR = registerBlock("sky_pillar",
+			new PillarBlock(AbstractBlock.Settings.create()
+					.mapColor(MapColor.WHITE)
+					.requiresTool()
+					.strength(2.5f, 6.0f)
+					.sounds(BlockSoundGroup.CALCITE)));
+	
+	public static final Block CELESTIAL_PILLAR = registerBlock("celestial_pillar",
+			new PillarBlock(AbstractBlock.Settings.create()
+					.mapColor(MapColor.DIAMOND_BLUE)
+					.requiresTool()
+					.strength(3.5f, 9.0f)
+					.sounds(BlockSoundGroup.STONE)
+					.luminance(state -> 6)));
+	
 	// Helper methods
 	private static Block registerBlock(String name, Block block) {
 		registerBlockItem(name, block);

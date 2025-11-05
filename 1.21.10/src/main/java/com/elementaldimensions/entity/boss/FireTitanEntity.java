@@ -40,12 +40,12 @@ public class FireTitanEntity extends HostileEntity implements GeoAnimatable {
 	
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-				.add(EntityAttributes.GENERIC_MAX_HEALTH, 600.0)
-				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
-				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 15.0)
-				.add(EntityAttributes.GENERIC_ARMOR, 15.0)
-				.add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0)
-				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 64.0);
+				.add(EntityAttributes.MAX_HEALTH, 600.0)
+				.add(EntityAttributes.MOVEMENT_SPEED, 0.25)
+				.add(EntityAttributes.ATTACK_DAMAGE, 15.0)
+				.add(EntityAttributes.ARMOR, 15.0)
+				.add(EntityAttributes.KNOCKBACK_RESISTANCE, 1.0)
+				.add(EntityAttributes.FOLLOW_RANGE, 64.0);
 	}
 	
 	@Override

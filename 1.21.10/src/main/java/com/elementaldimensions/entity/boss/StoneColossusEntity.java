@@ -33,10 +33,10 @@ public class StoneColossusEntity extends HostileEntity implements GeoAnimatable 
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 700.0)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 20.0)
-                .add(EntityAttributes.GENERIC_ARMOR, 20.0)
-                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0);
+                .add(EntityAttributes.MAX_HEALTH, 700.0)
+                .add(EntityAttributes.ATTACK_DAMAGE, 20.0)
+                .add(EntityAttributes.ARMOR, 20.0)
+                .add(EntityAttributes.KNOCKBACK_RESISTANCE, 1.0);
     }
 
     @Override

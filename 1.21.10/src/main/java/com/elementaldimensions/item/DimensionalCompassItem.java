@@ -5,7 +5,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
+import net.minecraft.item.ItemUsageContext;
+import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
 
 public class DimensionalCompassItem extends Item {
@@ -15,7 +16,7 @@ public class DimensionalCompassItem extends Item {
 	}
 	
 	@Override
-	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+	public ActionResult use(ItemStack stack, World world, PlayerEntity user, Hand hand) {
 		ItemStack itemStack = user.getStackInHand(hand);
 		
 		if (!world.isClient()) {
@@ -33,7 +34,7 @@ public class DimensionalCompassItem extends Item {
 			}
 		}
 		
-		return TypedActionResult.success(itemStack);
+		return ActionResult.SUCCESS;
 	}
 	
 	private String getDimensionName(String dimensionId) {

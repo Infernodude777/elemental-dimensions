@@ -5,7 +5,7 @@ import software.bernie.geckolib.animation.AnimatableManager;
 import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;public class WindHawkEntity extends HostileEntity implements GeoAnimatable {public WindHawkEntity(EntityType<?extends HostileEntity>t,World w){super(t,w);}
-	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);@Override protected void initGoals(){this.goalSelector.add(1,new MeleeAttackGoal(this,1.3,false));this.targetSelector.add(1,new ActiveTargetGoal<>(this,PlayerEntity.class,true));}public static DefaultAttributeContainer.Builder createAttributes(){return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH,16.0).add(EntityAttributes.GENERIC_ATTACK_DAMAGE,4.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED,0.38);}
+	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);@Override protected void initGoals(){this.goalSelector.add(1,new MeleeAttackGoal(this,1.3,false));this.targetSelector.add(1,new ActiveTargetGoal<>(this,PlayerEntity.class,true));}public static DefaultAttributeContainer.Builder createAttributes(){return HostileEntity.createHostileAttributes().add(EntityAttributes.MAX_HEALTH,16.0).add(EntityAttributes.ATTACK_DAMAGE,4.0).add(EntityAttributes.MOVEMENT_SPEED,0.38);}
 	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
 controllers.add(new AnimationController<>(this, "controller", 0, state -> {
 return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));

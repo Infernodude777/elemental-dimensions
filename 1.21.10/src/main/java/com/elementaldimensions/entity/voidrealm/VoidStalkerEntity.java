@@ -32,11 +32,11 @@ public class VoidStalkerEntity extends HostileEntity implements GeoAnimatable {
 	
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-				.add(EntityAttributes.GENERIC_MAX_HEALTH, 35.0)
-				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.0)
-				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.32)
-				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 40.0)
-				.add(EntityAttributes.GENERIC_ARMOR, 4.0);
+				.add(EntityAttributes.MAX_HEALTH, 35.0)
+				.add(EntityAttributes.ATTACK_DAMAGE, 8.0)
+				.add(EntityAttributes.MOVEMENT_SPEED, 0.32)
+				.add(EntityAttributes.FOLLOW_RANGE, 40.0)
+				.add(EntityAttributes.ARMOR, 4.0);
 	}
 	
 	@Override

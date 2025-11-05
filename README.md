@@ -1,13 +1,51 @@
-# Elemental Dimensions
+# Elemental Dimensions - Multi-Version Mod
 
 **Version:** 1.0.0  
-**Minecraft Version:** 1.21.1  
-**Mod Loader:** Fabric  
-**Compatible with:** Lunar Client 1.21.10
+**Repository:** https://github.com/Infernodude777/elemental-dimensions  
+**Last Updated:** November 5, 2025
+
+---
+
+## 📁 PROJECT STRUCTURE
+
+This repository contains **two independent versions**:
+
+```
+elemental_dimensions/
+├── 1.21.1/          ← Minecraft 1.21.1 (FULLY WORKING) ✅
+├── 1.21.10/         ← Minecraft 1.21.10 (PARTIAL - 60% migrated) ⚠️
+├── MC_1.21.10_STATUS.md
+├── QUICK_START.md
+└── README.md
+```
+
+**Each version folder is a complete standalone Gradle project** with its own `src/`, `build/`, `gradle/`, etc.
+
+---
+
+## 🚀 QUICK START
+
+### MC 1.21.1 (Recommended) ✅
+
+```powershell
+cd 1.21.1
+.\gradlew build
+# JAR: 1.21.1/build/libs/elemental-dimensions-1.0.0.jar
+```
+
+### MC 1.21.10 (Experimental) ⚠️
+
+```powershell
+cd 1.21.10
+.\gradlew build
+# See MC_1.21.10_STATUS.md for migration details
+```
+
+---
 
 ## Overview
 
-Elemental Dimensions is a comprehensive Fabric mod that adds five fully unique elemental dimensions to Minecraft, each with custom blocks, mobs, bosses, structures, music, particles, and progression systems.
+Elemental Dimensions is a comprehensive Fabric mod that adds five fully unique elemental dimensions to Minecraft, each with custom blocks, mobs, bosses, structures, and progression systems.
 
 ## Features
 

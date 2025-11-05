@@ -7,6 +7,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.minecraft.server.world.ServerWorld;
 
 /**
  * Elemental Forge - Functional crafting station
@@ -28,29 +29,25 @@ public class ElementalForgeBlock extends Block {
 		super.randomDisplayTick(state, world, pos, random);
 		
 		// Flame particles
-		if (random.nextInt(4) == 0) {
+		if (random.nextInt(4) == 0 && world instanceof ServerWorld serverWorld) {
 			double x = pos.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.6;
 			double y = pos.getY() + 0.8;
 			double z = pos.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.6;
 			
-			world.addParticle(
-				ParticleTypes.FLAME,
-				x, y, z,
-				0.0, 0.1, 0.0
-			);
+			serverWorld.spawnParticles(
+				ParticleTypes.FLAME, x, y, z, 1, 0.0, 0.1, 0.0
+			, 0.0);
 		}
 		
 		// Occasional lava drip effect
-		if (random.nextInt(10) == 0) {
+		if (random.nextInt(10) == 0 && world instanceof ServerWorld serverWorld) {
 			double x = pos.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.4;
 			double y = pos.getY() + 0.1;
 			double z = pos.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.4;
 			
-			world.addParticle(
-				ParticleTypes.LAVA,
-				x, y, z,
-				0.0, 0.0, 0.0
-			);
+			serverWorld.spawnParticles(
+				ParticleTypes.LAVA, x, y, z, 1, 0.0, 0.0, 0.0
+			, 0.0);
 		}
 	}
 }

@@ -8,6 +8,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.minecraft.server.world.ServerWorld;
 
 /**
  * Reinforced Aqua Glass - Decorative aquatica block
@@ -27,16 +28,14 @@ public class ReinforcedAquaGlassBlock extends TransparentBlock {
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
 		super.randomDisplayTick(state, world, pos, random);
 		
-		if (random.nextInt(5) == 0) {
+		if (random.nextInt(5) == 0 && world instanceof ServerWorld serverWorld) {
 			double x = pos.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.5;
 			double y = pos.getY() + random.nextDouble();
 			double z = pos.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.5;
 			
-			world.addParticle(
-				ParticleTypes.BUBBLE,
-				x, y, z,
-				0.0, 0.1, 0.0
-			);
+			serverWorld.spawnParticles(
+				ParticleTypes.BUBBLE, x, y, z, 1, 0.0, 0.1, 0.0
+			, 0.0);
 		}
 	}
 }
