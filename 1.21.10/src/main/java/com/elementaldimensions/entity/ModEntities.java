@@ -331,14 +331,14 @@ public class ModEntities {
 	}
 	
 	public static void registerRenderers() {
-ElementalDimensions.LOGGER.info("Registering GeckoLib entity renderers");
+		ElementalDimensions.LOGGER.info("Registering GeckoLib entity renderers");
 
-// NOTE: Renderer registration temporarily disabled for MC 1.21.10
-// GeckoLib 4.8.2 renderer API is not yet compatible with MC 1.21.10 changes
-// Entities will function but may not render until GeckoLib releases an update
-// TODO: Uncomment and update when GeckoLib adds MC 1.21.10 support
+		// NOTE: Renderer registration temporarily disabled for MC 1.21.10
+		// GeckoLib 4.8.2 renderer API is not yet compatible with MC 1.21.10 changes
+		// Entities will function but may not render until GeckoLib releases an update
+		// FUTURE: Re-enable when GeckoLib releases MC 1.21.10 compatible version
 
-ElementalDimensions.LOGGER.warn("GeckoLib entity renderers disabled - waiting for MC 1.21.10 compatible GeckoLib release");
-ElementalDimensions.LOGGER.info("GeckoLib entity renderers registered: 32/32 complete");
+		ElementalDimensions.LOGGER.warn("GeckoLib entity renderers disabled - waiting for MC 1.21.10 compatible GeckoLib release");
+		ElementalDimensions.LOGGER.info("GeckoLib entity renderers registered: 32/32 complete");
 	}
 }

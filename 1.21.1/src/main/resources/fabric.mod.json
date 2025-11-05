@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.elementaldimensions.ElementalDimensions"
+			"com.nikhil.elementaldimensions.ElementalDimensions"
 		],
 		"client": [
-			"com.elementaldimensions.client.ElementalDimensionsClient"
+			"com.nikhil.elementaldimensions.ElementalDimensionsClient"
 		]
 	},
 	"mixins": [

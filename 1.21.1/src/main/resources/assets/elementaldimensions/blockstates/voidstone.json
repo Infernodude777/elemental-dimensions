@@ -1,7 +1,7 @@
-﻿{
-  \"variants\": {
-    \"\": {
-      \"model\": \"elementaldimensions:block/voidstone\"
+{
+  "variants": {
+    "": {
+      "model": "elementaldimensions:block/voidstone"
     }
   }
 }
