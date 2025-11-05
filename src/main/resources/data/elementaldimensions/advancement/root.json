@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "elementaldimensions:dimensional_compass"
+    },
+    "title": {
+      "translate": "advancement.elementaldimensions.root.title"
+    },
+    "description": {
+      "translate": "advancement.elementaldimensions.root.description"
+    },
+    "background": "minecraft:textures/block/obsidian.png",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "dimensional_compass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["elementaldimensions:dimensional_compass"]
+          }
+        ]
+      }
+    }
+  }
+}

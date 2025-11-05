@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:primarch_crown"
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 5,
+        "max": 10
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:fire_essence",
+          "weight": 25
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:water_essence",
+          "weight": 25
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:earth_essence",
+          "weight": 25
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:air_essence",
+          "weight": 25
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:celestial_crystal",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:elemental_heart",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

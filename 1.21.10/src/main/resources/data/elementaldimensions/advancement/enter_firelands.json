@@ -1,0 +1,26 @@
+{
+  "parent": "elementaldimensions:root",
+  "display": {
+    "icon": {
+      "id": "elementaldimensions:fire_essence"
+    },
+    "title": {
+      "translate": "advancement.elementaldimensions.enter_firelands.title"
+    },
+    "description": {
+      "translate": "advancement.elementaldimensions.enter_firelands.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "enter_firelands": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "elementaldimensions:firelands"
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.8,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 12701935,
+    "fog_color": 14811135,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "music": {
+      "sound": "elementaldimensions:music.skyreach.skyborn_winds",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
+    }
+  },
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [
+      {
+        "type": "elementaldimensions:wind_hawk",
+        "weight": 100,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "elementaldimensions:sky_wisp",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "elementaldimensions:petal_sprite",
+        "weight": 80,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": [
+      {
+        "type": "elementaldimensions:cloud_sentinel",
+        "weight": 60,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "elementaldimensions:thunder_hawk",
+        "weight": 50,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": []
+  },
+  "features": []
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "tools",
+  "pattern": [
+    "NNN",
+    " E ",
+    " S "
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "E": {
+      "item": "elementaldimensions:earth_essence"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "elementaldimensions:terran_drill",
+    "count": 1
+  }
+}

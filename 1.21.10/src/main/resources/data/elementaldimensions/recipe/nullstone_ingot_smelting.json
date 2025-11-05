@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "elementaldimensions:voidstone"
+  },
+  "result": {
+    "id": "elementaldimensions:nullstone_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 200
+}

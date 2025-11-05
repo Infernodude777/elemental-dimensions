@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "combat",
+  "pattern": [
+    " D ",
+    " ED",
+    "T  "
+  ],
+  "key": {
+    "E": {
+      "item": "elementaldimensions:water_essence"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "T": {
+      "item": "minecraft:trident"
+    }
+  },
+  "result": {
+    "id": "elementaldimensions:tidal_piercer",
+    "count": 1
+  }
+}
