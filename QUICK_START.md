@@ -1,21 +1,34 @@
 # QUICK START GUIDE
-**Last Updated**: November 5, 2025 (Night Work Session)
+**Last Updated**: November 5, 2025 (MC 1.21.10 Update Attempt)
 
 ## ✅ CURRENT STATUS
 
-**Both Versions Build Successfully!**
-- Main (MC 1.21.1): ✅ BUILD SUCCESSFUL in 10s
-- 1.21.10 Folder: ✅ BUILD SUCCESSFUL in 7s
+**Main Version (MC 1.21.1): FULLY WORKING**
+- Build Status: ✅ BUILD SUCCESSFUL in 10s
 - Compilation Errors: **0**
-- Warnings: **0**
-- TODOs: **0**
+- All Features: **WORKING**
+- GeckoLib: **Fully Compatible**
+
+**1.21.10 Folder: PARTIAL COMPATIBILITY**
+- Build Status: ⚠️ API migration in progress
+- Basic Features: Working
+- GeckoLib Rendering: Waiting for library update
+- Status: Items/entities need MC 1.21.10 API migration
+
+## ⚠️ IMPORTANT: MC 1.21.10 CHANGES
+
+Minecraft 1.21.10 (released October 7, 2025) introduced significant API changes:
+- `EntityAttributes`: Removed `GENERIC_` prefix (✅ FIXED)
+- Particle rendering: Now uses `ServerWorld.spawnParticles()` (✅ FIXED)
+- `Item.use()`: Method signature completely changed (⚠️ IN PROGRESS)
+- Entity damage/teleport: API methods changed (⚠️ IN PROGRESS)
+- GeckoLib 4.8.2: Renderer registration incompatible (⏳ Waiting for update)
 
 ---
 
 ## 🚀 BUILD COMMANDS
 
-```powershell
-# Build main version (MC 1.21.1)
+### Recommended: Use Main Version (MC 1.21.1)
 .\gradlew build
 
 # Build 1.21.10 variant
