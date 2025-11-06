@@ -45,7 +45,7 @@ public class CosmicHorrorEntity extends HostileEntity {
     @Override
     public void tick() {
         super.tick();
-        
+
         if (!this.getWorld().isClient && this.getTarget() instanceof PlayerEntity player) {
             if (this.random.nextInt(150) == 0) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 100, 0));

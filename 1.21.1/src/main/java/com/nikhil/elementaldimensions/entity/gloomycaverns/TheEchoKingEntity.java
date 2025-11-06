@@ -59,10 +59,10 @@ public class TheEchoKingEntity extends HostileEntity {
     @Override
     public void tick() {
         super.tick();
-        
+
         if (!this.getWorld().isClient) {
             this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
-            
+
             float healthPercent = this.getHealth() / this.getMaxHealth();
             if (healthPercent <= 0.66f && phase == 1) {
                 phase = 2;
@@ -73,20 +73,20 @@ public class TheEchoKingEntity extends HostileEntity {
                 this.bossBar.setColor(BossBar.Color.RED);
                 this.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(20.0);
             }
-            
+
             if (summonCooldown > 0) {
                 summonCooldown--;
             }
-            
+
             if (echoAttackCooldown > 0) {
                 echoAttackCooldown--;
             }
-            
+
             if (phase >= 2 && summonCooldown == 0 && this.random.nextInt(260) == 0) {
                 summonMinions();
                 summonCooldown = 480;
             }
-            
+
             if (phase >= 3 && echoAttackCooldown == 0 && this.getTarget() instanceof PlayerEntity player) {
                 echoAttack(player);
                 echoAttackCooldown = 220;
@@ -96,12 +96,12 @@ public class TheEchoKingEntity extends HostileEntity {
 
     private void summonMinions() {
         if (this.getWorld().isClient) return;
-        
+
         for (int i = 0; i < phase + 1; i++) {
             double angle = (Math.PI * 2 * i) / (phase + 1);
             double x = this.getX() + Math.cos(angle) * 3.5;
             double z = this.getZ() + Math.sin(angle) * 3.5;
-            
+
             if (this.random.nextBoolean()) {
                 GloomStalkerEntity stalker = new GloomStalkerEntity(null, this.getWorld());
                 stalker.setPosition(x, this.getY(), z);
@@ -112,7 +112,7 @@ public class TheEchoKingEntity extends HostileEntity {
                 this.getWorld().spawnEntity(skeleton);
             }
         }
-        
+
         this.playSound(SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON, 2.0F, 0.9F);
     }
 

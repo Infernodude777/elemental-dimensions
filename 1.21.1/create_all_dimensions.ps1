@@ -9,14 +9,14 @@ $dreamingDepthsBlocks = @(
     "dreamwood_log", "lucid_flower", "glowsand", "glowglass", "memory_stone",
     "levistone", "dreamroot", "reverie_crystal", "whisper_wool", "dreamlight_lantern"
 )
-# DREAMING DEPTHS - Items (15+ items)
-$dreamingDepthsItems = @(
-    "somnacite_crystal", "umbral_shard", "lumen_bloom", "abyssal_pearl",
-    "dream_glass_pane", "umbral_ingot", "memory_fiber", "rift_core",
-    "umbral_sword", "umbral_pickaxe", "umbral_axe", "umbral_shovel", "umbral_hoe",
-    "dreambound_helmet", "dreambound_chestplate", "dreambound_leggings", "dreambound_boots",
-    "potion_lucid_sight", "somnacite_stew", "elixir_echoes", "mirror_of_rest"
-)
+# NOTE: The following item arrays are defined for future use but not currently utilized in this script
+# $dreamingDepthsItems = @(
+#     "somnacite_crystal", "umbral_shard", "lumen_bloom", "abyssal_pearl",
+#     "dream_glass_pane", "umbral_ingot", "memory_fiber", "rift_core",
+#     "umbral_sword", "umbral_pickaxe", "umbral_axe", "umbral_shovel", "umbral_hoe",
+#     "dreambound_helmet", "dreambound_chestplate", "dreambound_leggings", "dreambound_boots",
+#     "potion_lucid_sight", "somnacite_stew", "elixir_echoes", "mirror_of_rest"
+# )
 # ============================================
 # CELESTINE EXPANSE - Blocks (20 blocks)
 # ============================================
@@ -97,8 +97,8 @@ Write-Output "Starting generation of all 6 dimensions..."
 Write-Output "This will create blocks, items, blockstates, models, textures, and lang entries"
 Write-Output ""
 # Function to create block registration
-function Add-BlockToModBlocks {
-    param($blockName, $dimensionName)
+function Add-BlockToModBlock {
+    param($blockName)
     return @"
     public static final Block ${blockName.ToUpper()} = register("$blockName",
         new Block(AbstractBlock.Settings.create()
@@ -112,32 +112,32 @@ $allBlocksJava = ""
 $allBlocksLang = ""
 Write-Output "Processing Dreaming Depths blocks..."
 foreach ($block in $dreamingDepthsBlocks) {
-    $allBlocksJava += Add-BlockToModBlocks -blockName $block -dimensionName "dreaming_depths"
+    $allBlocksJava += Add-BlockToModBlock -blockName $block
     $allBlocksLang += "`n  `"block.elementaldimensions.$block`": `"" + (Get-Culture).TextInfo.ToTitleCase($block.Replace("_", " ")) + "`","
 }
 Write-Output "Processing Celestine Expanse blocks..."
 foreach ($block in $celestineExpanseBlocks) {
-    $allBlocksJava += Add-BlockToModBlocks -blockName $block -dimensionName "celestine_expanse"
+    $allBlocksJava += Add-BlockToModBlock -blockName $block
     $allBlocksLang += "`n  `"block.elementaldimensions.$block`": `"" + (Get-Culture).TextInfo.ToTitleCase($block.Replace("_", " ")) + "`","
 }
 Write-Output "Processing Fungal Dominion blocks..."
 foreach ($block in $fungalDominionBlocks) {
-    $allBlocksJava += Add-BlockToModBlocks -blockName $block -dimensionName "fungal_dominion"
+    $allBlocksJava += Add-BlockToModBlock -blockName $block
     $allBlocksLang += "`n  `"block.elementaldimensions.$block`": `"" + (Get-Culture).TextInfo.ToTitleCase($block.Replace("_", " ")) + "`","
 }
 Write-Output "Processing Forgotten Archive blocks..."
 foreach ($block in $forgottenArchiveBlocks) {
-    $allBlocksJava += Add-BlockToModBlocks -blockName $block -dimensionName "forgotten_archive"
+    $allBlocksJava += Add-BlockToModBlock -blockName $block
     $allBlocksLang += "`n  `"block.elementaldimensions.$block`": `"" + (Get-Culture).TextInfo.ToTitleCase($block.Replace("_", " ")) + "`","
 }
 Write-Output "Processing Astral Frontier blocks..."
 foreach ($block in $astralFrontierBlocks) {
-    $allBlocksJava += Add-BlockToModBlocks -blockName $block -dimensionName "astral_frontier"
+    $allBlocksJava += Add-BlockToModBlock -blockName $block
     $allBlocksLang += "`n  `"block.elementaldimensions.$block`": `"" + (Get-Culture).TextInfo.ToTitleCase($block.Replace("_", " ")) + "`","
 }
 Write-Output "Processing Gloomy Caverns blocks..."
 foreach ($block in $gloomyCavernsBlocks) {
-    $allBlocksJava += Add-BlockToModBlocks -blockName $block -dimensionName "gloomy_caverns"
+    $allBlocksJava += Add-BlockToModBlock -blockName $block
     $allBlocksLang += "`n  `"block.elementaldimensions.$block`": `"" + (Get-Culture).TextInfo.ToTitleCase($block.Replace("_", " ")) + "`","
 }
 # Save block additions to a file for manual integration

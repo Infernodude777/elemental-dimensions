@@ -56,10 +56,10 @@ public class TheDreamerEntity extends HostileEntity {
     @Override
     public void tick() {
         super.tick();
-        
+
         if (!this.getWorld().isClient) {
             this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
-            
+
             float healthPercent = this.getHealth() / this.getMaxHealth();
             if (healthPercent <= 0.66f && phase == 1) {
                 phase = 2;
@@ -70,11 +70,11 @@ public class TheDreamerEntity extends HostileEntity {
                 this.bossBar.setColor(BossBar.Color.PINK);
                 this.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(16.0);
             }
-            
+
             if (summonCooldown > 0) {
                 summonCooldown--;
             }
-            
+
             if (phase >= 2 && summonCooldown == 0 && this.random.nextInt(200) == 0) {
                 summonMinions();
                 summonCooldown = 400;
@@ -84,12 +84,12 @@ public class TheDreamerEntity extends HostileEntity {
 
     private void summonMinions() {
         if (this.getWorld().isClient) return;
-        
+
         for (int i = 0; i < phase; i++) {
             double angle = (Math.PI * 2 * i) / phase;
             double x = this.getX() + Math.cos(angle) * 3.0;
             double z = this.getZ() + Math.sin(angle) * 3.0;
-            
+
             if (this.random.nextBoolean()) {
                 PhantasmEntity phantasm = new PhantasmEntity(null, this.getWorld());
                 phantasm.setPosition(x, this.getY(), z);
@@ -100,7 +100,7 @@ public class TheDreamerEntity extends HostileEntity {
                 this.getWorld().spawnEntity(shade);
             }
         }
-        
+
         this.playSound(SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON, 2.0F, 1.0F);
     }
 

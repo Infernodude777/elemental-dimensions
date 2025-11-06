@@ -11,7 +11,7 @@ if (-not (Test-Path $itemTexturePath)) {
     New-Item -ItemType Directory -Force -Path $itemTexturePath | Out-Null
 }
 # Function to create a colored 16x16 PNG
-function Create-PlaceholderTexture {
+function New-PlaceholderTexture {
     param (
         [string]$path,
         [System.Drawing.Color]$color
@@ -79,13 +79,13 @@ $itemTextures = @{
 # Create block textures
 foreach ($texture in $blockTextures.GetEnumerator()) {
     $path = Join-Path $blockTexturePath "$($texture.Key).png"
-    Create-PlaceholderTexture -path $path -color $texture.Value
+    New-PlaceholderTexture -path $path -color $texture.Value
     Write-Output "Created block texture: $($texture.Key)"
 }
 # Create item textures
 foreach ($texture in $itemTextures.GetEnumerator()) {
     $path = Join-Path $itemTexturePath "$($texture.Key).png"
-    Create-PlaceholderTexture -path $path -color $texture.Value
+    New-PlaceholderTexture -path $path -color $texture.Value
     Write-Output "Created item texture: $($texture.Key)"
 }
 Write-Output "`nAll placeholder textures created successfully!"

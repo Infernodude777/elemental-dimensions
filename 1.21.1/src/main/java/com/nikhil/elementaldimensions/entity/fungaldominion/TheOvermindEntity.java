@@ -59,10 +59,10 @@ public class TheOvermindEntity extends HostileEntity {
     @Override
     public void tick() {
         super.tick();
-        
+
         if (!this.getWorld().isClient) {
             this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
-            
+
             float healthPercent = this.getHealth() / this.getMaxHealth();
             if (healthPercent <= 0.66f && phase == 1) {
                 phase = 2;
@@ -73,20 +73,20 @@ public class TheOvermindEntity extends HostileEntity {
                 this.bossBar.setColor(BossBar.Color.RED);
                 this.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(17.0);
             }
-            
+
             if (summonCooldown > 0) {
                 summonCooldown--;
             }
-            
+
             if (poisonCooldown > 0) {
                 poisonCooldown--;
             }
-            
+
             if (phase >= 2 && summonCooldown == 0 && this.random.nextInt(250) == 0) {
                 summonMinions();
                 summonCooldown = 500;
             }
-            
+
             if (phase >= 3 && poisonCooldown == 0 && this.getTarget() instanceof PlayerEntity player) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1));
                 poisonCooldown = 200;
@@ -96,12 +96,12 @@ public class TheOvermindEntity extends HostileEntity {
 
     private void summonMinions() {
         if (this.getWorld().isClient) return;
-        
+
         for (int i = 0; i < phase + 1; i++) {
             double angle = (Math.PI * 2 * i) / (phase + 1);
             double x = this.getX() + Math.cos(angle) * 4.0;
             double z = this.getZ() + Math.sin(angle) * 4.0;
-            
+
             if (this.random.nextBoolean()) {
                 MyceliteCreeperEntity creeper = new MyceliteCreeperEntity(null, this.getWorld());
                 creeper.setPosition(x, this.getY(), z);
@@ -112,7 +112,7 @@ public class TheOvermindEntity extends HostileEntity {
                 this.getWorld().spawnEntity(zombie);
             }
         }
-        
+
         this.playSound(SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON, 2.0F, 0.8F);
     }
 

@@ -4,7 +4,7 @@ $texturePath = "c:\Users\Nikhil\Desktop\elemental_dimensions\1.21.1\src\main\res
 if (-not (Test-Path $texturePath)) {
     New-Item -ItemType Directory -Force -Path $texturePath | Out-Null
 }
-function Create-EntityTexture {
+function New-EntityTexture {
     param (
         [string]$path,
         [System.Drawing.Color]$color
@@ -34,7 +34,7 @@ $entityTextures = @{
 }
 foreach ($texture in $entityTextures.GetEnumerator()) {
     $path = Join-Path $texturePath "$($texture.Key).png"
-    Create-EntityTexture -path $path -color $texture.Value
+    New-EntityTexture -path $path -color $texture.Value
     Write-Output "Created entity texture: $($texture.Key)"
 }
 Write-Output "`nAll entity textures created successfully!"

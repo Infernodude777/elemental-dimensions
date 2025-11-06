@@ -44,7 +44,7 @@ public class GloomStalkerEntity extends HostileEntity {
     @Override
     public void tick() {
         super.tick();
-        
+
         if (!this.getWorld().isClient && this.getTarget() instanceof PlayerEntity player) {
             if (this.random.nextInt(180) == 0) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 100, 0));

@@ -61,10 +61,10 @@ public class TheVoidArchonEntity extends HostileEntity {
     @Override
     public void tick() {
         super.tick();
-        
+
         if (!this.getWorld().isClient) {
             this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
-            
+
             float healthPercent = this.getHealth() / this.getMaxHealth();
             if (healthPercent <= 0.66f && phase == 1) {
                 phase = 2;
@@ -76,20 +76,20 @@ public class TheVoidArchonEntity extends HostileEntity {
                 this.bossBar.setColor(BossBar.Color.RED);
                 this.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(26.0);
             }
-            
+
             if (teleportCooldown > 0) {
                 teleportCooldown--;
             }
-            
+
             if (voidCooldown > 0) {
                 voidCooldown--;
             }
-            
+
             if (phase >= 2 && teleportCooldown == 0 && this.random.nextInt(120) == 0) {
                 teleportRandomly();
                 teleportCooldown = 200;
             }
-            
+
             if (phase >= 3 && voidCooldown == 0 && this.getTarget() instanceof PlayerEntity player) {
                 applyVoidEffects(player);
                 voidCooldown = 180;
@@ -99,12 +99,12 @@ public class TheVoidArchonEntity extends HostileEntity {
 
     private void teleportRandomly() {
         if (this.getWorld().isClient) return;
-        
+
         for (int i = 0; i < 16; i++) {
             double d = this.getX() + (this.random.nextDouble() - 0.5) * 16.0;
             double e = this.getY() + (double) (this.random.nextInt(16) - 8);
             double f = this.getZ() + (this.random.nextDouble() - 0.5) * 16.0;
-            
+
             if (this.teleport(d, e, f, true)) {
                 this.getWorld().sendEntityStatus(this, (byte) 46);
                 this.playSound(SoundEvents.ENTITY_ENDERMAN_TELEPORT, 1.0F, 1.0F);

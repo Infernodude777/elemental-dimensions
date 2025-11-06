@@ -60,10 +60,10 @@ public class TheLibrarianEntity extends HostileEntity {
     @Override
     public void tick() {
         super.tick();
-        
+
         if (!this.getWorld().isClient) {
             this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
-            
+
             float healthPercent = this.getHealth() / this.getMaxHealth();
             if (healthPercent <= 0.66f && phase == 1) {
                 phase = 2;
@@ -74,20 +74,20 @@ public class TheLibrarianEntity extends HostileEntity {
                 this.bossBar.setColor(BossBar.Color.RED);
                 this.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(19.0);
             }
-            
+
             if (summonCooldown > 0) {
                 summonCooldown--;
             }
-            
+
             if (weaknessCooldown > 0) {
                 weaknessCooldown--;
             }
-            
+
             if (phase >= 2 && summonCooldown == 0 && this.random.nextInt(220) == 0) {
                 summonMinions();
                 summonCooldown = 450;
             }
-            
+
             if (phase >= 3 && weaknessCooldown == 0 && this.getTarget() instanceof PlayerEntity player) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 120, 2));
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 100, 1));
@@ -98,12 +98,12 @@ public class TheLibrarianEntity extends HostileEntity {
 
     private void summonMinions() {
         if (this.getWorld().isClient) return;
-        
+
         for (int i = 0; i < phase + 1; i++) {
             double angle = (Math.PI * 2 * i) / (phase + 1);
             double x = this.getX() + Math.cos(angle) * 3.5;
             double z = this.getZ() + Math.sin(angle) * 3.5;
-            
+
             if (this.random.nextBoolean()) {
                 SentinelEntity sentinel = new SentinelEntity(null, this.getWorld());
                 sentinel.setPosition(x, this.getY(), z);
@@ -114,7 +114,7 @@ public class TheLibrarianEntity extends HostileEntity {
                 this.getWorld().spawnEntity(pageHorror);
             }
         }
-        
+
         this.playSound(SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON, 2.0F, 1.2F);
     }
 

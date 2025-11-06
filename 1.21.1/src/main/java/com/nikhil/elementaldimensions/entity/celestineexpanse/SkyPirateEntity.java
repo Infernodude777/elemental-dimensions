@@ -50,14 +50,14 @@ public class SkyPirateEntity extends HostileEntity implements RangedAttackMob {
     public void shootAt(LivingEntity target, float pullProgress) {
         ItemStack itemStack = new ItemStack(Items.ARROW);
         PersistentProjectileEntity projectile = ProjectileUtil.createArrowProjectile(this, itemStack, pullProgress, null);
-        
+
         double d = target.getX() - this.getX();
         double e = target.getBodyY(0.3333333333333333) - projectile.getY();
         double f = target.getZ() - this.getZ();
         double g = Math.sqrt(d * d + f * f);
-        
+
         projectile.setVelocity(d, e + g * 0.2, f, 1.6F, 14.0F - this.getWorld().getDifficulty().getId() * 4.0F);
-        
+
         this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.getWorld().spawnEntity(projectile);
     }

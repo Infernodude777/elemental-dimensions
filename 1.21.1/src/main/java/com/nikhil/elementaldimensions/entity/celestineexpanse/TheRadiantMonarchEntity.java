@@ -60,10 +60,10 @@ public class TheRadiantMonarchEntity extends HostileEntity {
     @Override
     public void tick() {
         super.tick();
-        
+
         if (!this.getWorld().isClient) {
             this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
-            
+
             float healthPercent = this.getHealth() / this.getMaxHealth();
             if (healthPercent <= 0.66f && phase == 1) {
                 phase = 2;
@@ -74,11 +74,11 @@ public class TheRadiantMonarchEntity extends HostileEntity {
                 this.bossBar.setColor(BossBar.Color.BLUE);
                 this.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(18.0);
             }
-            
+
             if (attackCooldown > 0) {
                 attackCooldown--;
             }
-            
+
             if (phase >= 2 && attackCooldown == 0 && this.getTarget() != null && this.random.nextInt(60) == 0) {
                 shootFireball(this.getTarget());
                 attackCooldown = 100;
@@ -88,30 +88,30 @@ public class TheRadiantMonarchEntity extends HostileEntity {
 
     private void shootFireball(LivingEntity target) {
         if (this.getWorld().isClient) return;
-        
+
         Vec3d vec3d = this.getRotationVec(1.0F);
         double d = target.getX() - (this.getX() + vec3d.x * 4.0);
         double e = target.getBodyY(0.5) - (0.5 + this.getBodyY(0.5));
         double f = target.getZ() - (this.getZ() + vec3d.z * 4.0);
-        
+
         Vec3d velocity = new Vec3d(
                 d + this.getRandom().nextGaussian() * 0.3,
                 e,
                 f + this.getRandom().nextGaussian() * 0.3
         );
-        
+
         SmallFireballEntity fireball = new SmallFireballEntity(
                 this.getWorld(),
                 this,
                 velocity
         );
-        
+
         fireball.setPosition(
                 this.getX() + vec3d.x * 4.0,
                 this.getBodyY(0.5) + 0.5,
                 this.getZ() + vec3d.z * 4.0
         );
-        
+
         this.getWorld().spawnEntity(fireball);
         this.playSound(SoundEvents.ENTITY_BLAZE_SHOOT, 2.0F, 1.0F);
     }

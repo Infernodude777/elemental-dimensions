@@ -2,7 +2,6 @@
 $entityPath = "c:\Users\Nikhil\Desktop\elemental_dimensions\1.21.1\src\main\java\com\elementaldimensions\entity\undead"
 $rendererPath = "c:\Users\Nikhil\Desktop\elemental_dimensions\1.21.1\src\main\java\com\elementaldimensions\client\renderer\entity"
 $entityFiles = Get-ChildItem -Path $entityPath -Filter "*.java"
-$rendererFiles = Get-ChildItem -Path $rendererPath -Filter "*undead*.java" -ErrorAction SilentlyContinue
 $filesToFix = @()
 $filesToFix += $entityFiles | Where-Object { $_.Name -notlike "ZombieMinerEntity.java" -and $_.Name -notlike "LichKingBossEntity.java" }
 $filesToFix += Get-ChildItem -Path $rendererPath -Filter "*Renderer.java" | Where-Object {
