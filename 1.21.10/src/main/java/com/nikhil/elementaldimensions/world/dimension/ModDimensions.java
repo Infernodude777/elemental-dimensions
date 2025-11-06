@@ -37,6 +37,30 @@ public class ModDimensions {
             RegistryKeys.WORLD,
             Identifier.of(ElementalDimensions.MOD_ID, "void_realm"));
 
+    public static final RegistryKey<World> DREAMING_DEPTHS_WORLD = RegistryKey.of(
+            RegistryKeys.WORLD,
+            Identifier.of(ElementalDimensions.MOD_ID, "dreaming_depths"));
+
+    public static final RegistryKey<World> CELESTINE_EXPANSE_WORLD = RegistryKey.of(
+            RegistryKeys.WORLD,
+            Identifier.of(ElementalDimensions.MOD_ID, "celestine_expanse"));
+
+    public static final RegistryKey<World> FUNGAL_DOMINION_WORLD = RegistryKey.of(
+            RegistryKeys.WORLD,
+            Identifier.of(ElementalDimensions.MOD_ID, "fungal_dominion"));
+
+    public static final RegistryKey<World> FORGOTTEN_ARCHIVE_WORLD = RegistryKey.of(
+            RegistryKeys.WORLD,
+            Identifier.of(ElementalDimensions.MOD_ID, "forgotten_archive"));
+
+    public static final RegistryKey<World> ASTRAL_FRONTIER_WORLD = RegistryKey.of(
+            RegistryKeys.WORLD,
+            Identifier.of(ElementalDimensions.MOD_ID, "astral_frontier"));
+
+    public static final RegistryKey<World> GLOOMY_CAVERNS_WORLD = RegistryKey.of(
+            RegistryKeys.WORLD,
+            Identifier.of(ElementalDimensions.MOD_ID, "gloomy_caverns"));
+
     // Dimension Type Keys
     public static final RegistryKey<DimensionType> CELESTIAL_TYPE = RegistryKey.of(
             RegistryKeys.DIMENSION_TYPE,
@@ -61,6 +85,30 @@ public class ModDimensions {
     public static final RegistryKey<DimensionType> VOID_TYPE = RegistryKey.of(
             RegistryKeys.DIMENSION_TYPE,
             Identifier.of(ElementalDimensions.MOD_ID, "void_realm"));
+
+    public static final RegistryKey<DimensionType> DREAMING_DEPTHS_TYPE = RegistryKey.of(
+            RegistryKeys.DIMENSION_TYPE,
+            Identifier.of(ElementalDimensions.MOD_ID, "dreaming_depths"));
+
+    public static final RegistryKey<DimensionType> CELESTINE_EXPANSE_TYPE = RegistryKey.of(
+            RegistryKeys.DIMENSION_TYPE,
+            Identifier.of(ElementalDimensions.MOD_ID, "celestine_expanse"));
+
+    public static final RegistryKey<DimensionType> FUNGAL_DOMINION_TYPE = RegistryKey.of(
+            RegistryKeys.DIMENSION_TYPE,
+            Identifier.of(ElementalDimensions.MOD_ID, "fungal_dominion"));
+
+    public static final RegistryKey<DimensionType> FORGOTTEN_ARCHIVE_TYPE = RegistryKey.of(
+            RegistryKeys.DIMENSION_TYPE,
+            Identifier.of(ElementalDimensions.MOD_ID, "forgotten_archive"));
+
+    public static final RegistryKey<DimensionType> ASTRAL_FRONTIER_TYPE = RegistryKey.of(
+            RegistryKeys.DIMENSION_TYPE,
+            Identifier.of(ElementalDimensions.MOD_ID, "astral_frontier"));
+
+    public static final RegistryKey<DimensionType> GLOOMY_CAVERNS_TYPE = RegistryKey.of(
+            RegistryKeys.DIMENSION_TYPE,
+            Identifier.of(ElementalDimensions.MOD_ID, "gloomy_caverns"));
 
     public static void initialize() {
         ElementalDimensions.LOGGER.info("Registering dimensions for " + ElementalDimensions.MOD_ID);

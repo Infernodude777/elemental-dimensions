@@ -1,6 +1,6 @@
 {{
 
-  "type": "elementaldimensions:celestine_expanse_type",    "generator":  {
+  "type": "elementaldimensions:gloomy_caverns_type",    "generator":  {
 
   "generator": {                      "biome_source":  {
 
@@ -10,11 +10,11 @@
 
       "type": "minecraft:fixed",                                                              "parameters":  {
 
-      "biome": "elementaldimensions:astral_plateau"                                                                                 "weirdness":  0,
+      "biome": "elementaldimensions:mournstone_depths"                                                                                 "weirdness":  0,
 
     },                                                                                 "depth":  0,
 
-    "settings": "elementaldimensions:celestine_expanse_settings"                                                                                 "temperature":  0,
+    "settings": "elementaldimensions:gloomy_caverns_settings"                                                                                 "temperature":  0,
 
   }                                                                                 "humidity":  0,
 
@@ -23,13 +23,13 @@
                                                                                  "erosion":  0,
                                                                                  "offset":  0
                                                                              },
-                                                              "biome":  "elementaldimensions:celestine_expanse_plains"
+                                                              "biome":  "elementaldimensions:gloomy_caverns_plains"
                                                           }
                                                       ],
                                            "type":  "minecraft:multi_noise"
                                        },
                       "type":  "minecraft:noise",
-                      "settings":  "elementaldimensions:celestine_expanse_settings"
+                      "settings":  "elementaldimensions:gloomy_caverns_settings"
                   },
-    "type":  "elementaldimensions:celestine_expanse"
+    "type":  "elementaldimensions:gloomy_caverns"
 }

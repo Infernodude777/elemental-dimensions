@@ -124,6 +124,12 @@ public class DimensionTeleportCommands {
             case "terran_realm" -> "Terran Realm";
             case "skybound_realm" -> "Skybound Realm";
             case "void_realm" -> "Void Realm";
+            case "dreaming_depths" -> "Dreaming Depths";
+            case "celestine_expanse" -> "Celestine Expanse";
+            case "fungal_dominion" -> "Fungal Dominion";
+            case "forgotten_archive" -> "Forgotten Archive";
+            case "astral_frontier" -> "Astral Frontier";
+            case "gloomy_caverns" -> "Gloomy Caverns";
             default -> dimensionName;
         };
 
@@ -134,6 +140,12 @@ public class DimensionTeleportCommands {
             case "terran_realm" -> Formatting.GREEN;
             case "skybound_realm" -> Formatting.WHITE;
             case "void_realm" -> Formatting.DARK_GRAY;
+            case "dreaming_depths" -> Formatting.AQUA;
+            case "celestine_expanse" -> Formatting.YELLOW;
+            case "fungal_dominion" -> Formatting.DARK_GREEN;
+            case "forgotten_archive" -> Formatting.GOLD;
+            case "astral_frontier" -> Formatting.DARK_PURPLE;
+            case "gloomy_caverns" -> Formatting.DARK_GRAY;
             default -> Formatting.GRAY;
         };
 
