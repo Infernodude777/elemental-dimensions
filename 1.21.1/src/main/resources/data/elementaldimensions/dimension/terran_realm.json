@@ -4,8 +4,8 @@
     "type": "minecraft:noise",
     "biome_source": {
       "type": "minecraft:fixed",
-      "biome": "minecraft:mountains"
+      "biome": "elementaldimensions:terra_depths_biome"
     },
-    "settings": "minecraft:overworld"
+    "settings": "elementaldimensions:terran_realm_settings"
   }
 }

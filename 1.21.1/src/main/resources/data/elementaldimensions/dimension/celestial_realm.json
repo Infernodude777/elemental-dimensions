@@ -4,8 +4,8 @@
     "type": "minecraft:noise",
     "biome_source": {
       "type": "minecraft:fixed",
-      "biome": "minecraft:the_end"
+      "biome": "elementaldimensions:celestial_biome"
     },
-    "settings": "minecraft:end"
+    "settings": "elementaldimensions:celestial_realm_settings"
   }
 }
