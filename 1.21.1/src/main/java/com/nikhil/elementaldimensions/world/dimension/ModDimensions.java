@@ -33,6 +33,10 @@ public class ModDimensions {
             RegistryKeys.WORLD,
             Identifier.of(ElementalDimensions.MOD_ID, "skybound_realm"));
 
+    public static final RegistryKey<World> VOID_WORLD = RegistryKey.of(
+            RegistryKeys.WORLD,
+            Identifier.of(ElementalDimensions.MOD_ID, "void_realm"));
+
     // Dimension Type Keys
     public static final RegistryKey<DimensionType> CELESTIAL_TYPE = RegistryKey.of(
             RegistryKeys.DIMENSION_TYPE,
@@ -53,6 +57,10 @@ public class ModDimensions {
     public static final RegistryKey<DimensionType> AIR_TYPE = RegistryKey.of(
             RegistryKeys.DIMENSION_TYPE,
             Identifier.of(ElementalDimensions.MOD_ID, "skybound_realm"));
+
+    public static final RegistryKey<DimensionType> VOID_TYPE = RegistryKey.of(
+            RegistryKeys.DIMENSION_TYPE,
+            Identifier.of(ElementalDimensions.MOD_ID, "void_realm"));
 
     public static void initialize() {
         ElementalDimensions.LOGGER.info("Registering dimensions for " + ElementalDimensions.MOD_ID);

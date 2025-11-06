@@ -123,6 +123,7 @@ public class DimensionTeleportCommands {
             case "aquatic_realm" -> "Aquatic Realm";
             case "terran_realm" -> "Terran Realm";
             case "skybound_realm" -> "Skybound Realm";
+            case "void_realm" -> "Void Realm";
             default -> dimensionName;
         };
 
@@ -132,6 +133,7 @@ public class DimensionTeleportCommands {
             case "aquatic_realm" -> Formatting.BLUE;
             case "terran_realm" -> Formatting.GREEN;
             case "skybound_realm" -> Formatting.WHITE;
+            case "void_realm" -> Formatting.DARK_GRAY;
             default -> Formatting.GRAY;
         };
 
