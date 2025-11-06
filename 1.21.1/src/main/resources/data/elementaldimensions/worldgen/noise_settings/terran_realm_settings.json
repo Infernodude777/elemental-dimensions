@@ -124,10 +124,7 @@
       "max_exclusive": 1.5625,
       "when_in_range": {
         "type": "minecraft:min",
-        "argument1": {
-          "type": "minecraft:slide",
-          "argument": "minecraft:overworld/sloped_cheese"
-        },
+        "argument1": "minecraft:overworld/sloped_cheese",
         "argument2": {
           "type": "minecraft:mul",
           "argument1": 5.0,

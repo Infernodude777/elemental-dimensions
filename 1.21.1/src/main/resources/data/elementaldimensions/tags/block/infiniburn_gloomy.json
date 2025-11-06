@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:netherrack",
+    "elementaldimensions:shadestone",
+    "elementaldimensions:mournstone",
+    "elementaldimensions:withered_brick",
+    "elementaldimensions:echo_brick"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:netherrack",
+    "elementaldimensions:celestine_dirt",
+    "elementaldimensions:skybound_stone_brick",
+    "elementaldimensions:sky_reef",
+    "elementaldimensions:celestine_cloud"
+  ]
+}

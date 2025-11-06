@@ -1,10 +1,8 @@
 package com.nikhil.elementaldimensions.entity.astralfrontier;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.FlyGoal;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.WanderAroundGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;

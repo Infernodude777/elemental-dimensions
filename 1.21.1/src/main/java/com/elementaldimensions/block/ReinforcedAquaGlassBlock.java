@@ -1,6 +1,5 @@
 package com.elementaldimensions.block;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.TransparentBlock;
 import net.minecraft.particle.ParticleTypes;

@@ -3,7 +3,6 @@ package com.nikhil.elementaldimensions.item;
 import com.nikhil.elementaldimensions.registry.ModBlocks;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
