@@ -90,6 +90,31 @@ public class ModItems {
     public static Item WITHERED_LEGGINGS;
     public static Item WITHERED_BOOTS;
 
+    public static Item PHANTASM_SPAWN_EGG;
+    public static Item LULLER_SPAWN_EGG;
+    public static Item NIGHTMARE_SHADE_SPAWN_EGG;
+    public static Item SOMNIAN_BUTTERFLY_SPAWN_EGG;
+    public static Item SKYWHALE_SPAWN_EGG;
+    public static Item LUMIFIN_SPAWN_EGG;
+    public static Item STORM_HAWK_SPAWN_EGG;
+    public static Item SKY_PIRATE_SPAWN_EGG;
+    public static Item SPORE_BAT_SPAWN_EGG;
+    public static Item MYCELIUM_WALKER_SPAWN_EGG;
+    public static Item MYCELITE_CREEPER_SPAWN_EGG;
+    public static Item FUNGAL_ZOMBIE_SPAWN_EGG;
+    public static Item SCRIBE_SPIRIT_SPAWN_EGG;
+    public static Item LIVING_TOME_SPAWN_EGG;
+    public static Item SENTINEL_SPAWN_EGG;
+    public static Item PAGE_HORROR_SPAWN_EGG;
+    public static Item STAR_ELEMENTAL_SPAWN_EGG;
+    public static Item NEBULA_WISP_SPAWN_EGG;
+    public static Item VOIDLING_SPAWN_EGG;
+    public static Item COSMIC_HORROR_SPAWN_EGG;
+    public static Item ECHO_WISP_SPAWN_EGG;
+    public static Item CAVE_SNAIL_SPAWN_EGG;
+    public static Item GLOOM_STALKER_SPAWN_EGG;
+    public static Item WITHERED_SKELETON_SPAWN_EGG;
+
     public static final RegistryKey<ItemGroup> ELEMENTAL_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(ElementalDimensions.MOD_ID, "elemental_group"));
 
     private static Item registerItem(String name, Item item) {
@@ -179,6 +204,31 @@ public class ModItems {
         WITHERED_LEGGINGS = registerItem("withered_leggings", new ArmorItem(ModArmorMaterials.WITHERED, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(27))));
         WITHERED_BOOTS = registerItem("withered_boots", new ArmorItem(ModArmorMaterials.WITHERED, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(27))));
 
+        PHANTASM_SPAWN_EGG = registerItem("phantasm_spawn_egg", new SpawnEggItem(ModEntities.PHANTASM, 0x4B0082, 0x8A2BE2, new Item.Settings()));
+        LULLER_SPAWN_EGG = registerItem("luller_spawn_egg", new SpawnEggItem(ModEntities.LULLER, 0xE6E6FA, 0xD8BFD8, new Item.Settings()));
+        NIGHTMARE_SHADE_SPAWN_EGG = registerItem("nightmare_shade_spawn_egg", new SpawnEggItem(ModEntities.NIGHTMARE_SHADE, 0x1C1C1C, 0x8B0000, new Item.Settings()));
+        SOMNIAN_BUTTERFLY_SPAWN_EGG = registerItem("somnian_butterfly_spawn_egg", new SpawnEggItem(ModEntities.SOMNIAN_BUTTERFLY, 0xFFB6C1, 0xFFC0CB, new Item.Settings()));
+        SKYWHALE_SPAWN_EGG = registerItem("skywhale_spawn_egg", new SpawnEggItem(ModEntities.SKYWHALE, 0x87CEEB, 0xB0E0E6, new Item.Settings()));
+        LUMIFIN_SPAWN_EGG = registerItem("lumifin_spawn_egg", new SpawnEggItem(ModEntities.LUMIFIN, 0xFFFF00, 0xFFD700, new Item.Settings()));
+        STORM_HAWK_SPAWN_EGG = registerItem("storm_hawk_spawn_egg", new SpawnEggItem(ModEntities.STORM_HAWK, 0x708090, 0x2F4F4F, new Item.Settings()));
+        SKY_PIRATE_SPAWN_EGG = registerItem("sky_pirate_spawn_egg", new SpawnEggItem(ModEntities.SKY_PIRATE, 0x8B4513, 0x696969, new Item.Settings()));
+        SPORE_BAT_SPAWN_EGG = registerItem("spore_bat_spawn_egg", new SpawnEggItem(ModEntities.SPORE_BAT, 0x9ACD32, 0x6B8E23, new Item.Settings()));
+        MYCELIUM_WALKER_SPAWN_EGG = registerItem("mycelium_walker_spawn_egg", new SpawnEggItem(ModEntities.MYCELIUM_WALKER, 0x8FBC8F, 0x556B2F, new Item.Settings()));
+        MYCELITE_CREEPER_SPAWN_EGG = registerItem("mycelite_creeper_spawn_egg", new SpawnEggItem(ModEntities.MYCELITE_CREEPER, 0x228B22, 0x008000, new Item.Settings()));
+        FUNGAL_ZOMBIE_SPAWN_EGG = registerItem("fungal_zombie_spawn_egg", new SpawnEggItem(ModEntities.FUNGAL_ZOMBIE, 0x556B2F, 0x3CB371, new Item.Settings()));
+        SCRIBE_SPIRIT_SPAWN_EGG = registerItem("scribe_spirit_spawn_egg", new SpawnEggItem(ModEntities.SCRIBE_SPIRIT, 0xF0F8FF, 0xE0FFFF, new Item.Settings()));
+        LIVING_TOME_SPAWN_EGG = registerItem("living_tome_spawn_egg", new SpawnEggItem(ModEntities.LIVING_TOME, 0x8B4513, 0xF5DEB3, new Item.Settings()));
+        SENTINEL_SPAWN_EGG = registerItem("sentinel_spawn_egg", new SpawnEggItem(ModEntities.SENTINEL, 0x708090, 0xC0C0C0, new Item.Settings()));
+        PAGE_HORROR_SPAWN_EGG = registerItem("page_horror_spawn_egg", new SpawnEggItem(ModEntities.PAGE_HORROR, 0x2F4F4F, 0xFFFFE0, new Item.Settings()));
+        STAR_ELEMENTAL_SPAWN_EGG = registerItem("star_elemental_spawn_egg", new SpawnEggItem(ModEntities.STAR_ELEMENTAL, 0xFFFFFF, 0xFFD700, new Item.Settings()));
+        NEBULA_WISP_SPAWN_EGG = registerItem("nebula_wisp_spawn_egg", new SpawnEggItem(ModEntities.NEBULA_WISP, 0x9370DB, 0xBA55D3, new Item.Settings()));
+        VOIDLING_SPAWN_EGG = registerItem("voidling_spawn_egg", new SpawnEggItem(ModEntities.VOIDLING, 0x191970, 0x4B0082, new Item.Settings()));
+        COSMIC_HORROR_SPAWN_EGG = registerItem("cosmic_horror_spawn_egg", new SpawnEggItem(ModEntities.COSMIC_HORROR, 0x000000, 0x8A2BE2, new Item.Settings()));
+        ECHO_WISP_SPAWN_EGG = registerItem("echo_wisp_spawn_egg", new SpawnEggItem(ModEntities.ECHO_WISP, 0x36454F, 0x708090, new Item.Settings()));
+        CAVE_SNAIL_SPAWN_EGG = registerItem("cave_snail_spawn_egg", new SpawnEggItem(ModEntities.CAVE_SNAIL, 0x8B7355, 0xD2B48C, new Item.Settings()));
+        GLOOM_STALKER_SPAWN_EGG = registerItem("gloom_stalker_spawn_egg", new SpawnEggItem(ModEntities.GLOOM_STALKER, 0x2F4F4F, 0x000000, new Item.Settings()));
+        WITHERED_SKELETON_SPAWN_EGG = registerItem("withered_skeleton_spawn_egg", new SpawnEggItem(ModEntities.WITHERED_SKELETON, 0x696969, 0x2F4F4F, new Item.Settings()));
+
         // Register item group
         Registry.register(Registries.ITEM_GROUP, ELEMENTAL_GROUP,
             FabricItemGroup.builder()
@@ -259,6 +309,31 @@ public class ModItems {
                     entries.add(WITHERED_CHESTPLATE);
                     entries.add(WITHERED_LEGGINGS);
                     entries.add(WITHERED_BOOTS);
+
+                    entries.add(PHANTASM_SPAWN_EGG);
+                    entries.add(LULLER_SPAWN_EGG);
+                    entries.add(NIGHTMARE_SHADE_SPAWN_EGG);
+                    entries.add(SOMNIAN_BUTTERFLY_SPAWN_EGG);
+                    entries.add(SKYWHALE_SPAWN_EGG);
+                    entries.add(LUMIFIN_SPAWN_EGG);
+                    entries.add(STORM_HAWK_SPAWN_EGG);
+                    entries.add(SKY_PIRATE_SPAWN_EGG);
+                    entries.add(SPORE_BAT_SPAWN_EGG);
+                    entries.add(MYCELIUM_WALKER_SPAWN_EGG);
+                    entries.add(MYCELITE_CREEPER_SPAWN_EGG);
+                    entries.add(FUNGAL_ZOMBIE_SPAWN_EGG);
+                    entries.add(SCRIBE_SPIRIT_SPAWN_EGG);
+                    entries.add(LIVING_TOME_SPAWN_EGG);
+                    entries.add(SENTINEL_SPAWN_EGG);
+                    entries.add(PAGE_HORROR_SPAWN_EGG);
+                    entries.add(STAR_ELEMENTAL_SPAWN_EGG);
+                    entries.add(NEBULA_WISP_SPAWN_EGG);
+                    entries.add(VOIDLING_SPAWN_EGG);
+                    entries.add(COSMIC_HORROR_SPAWN_EGG);
+                    entries.add(ECHO_WISP_SPAWN_EGG);
+                    entries.add(CAVE_SNAIL_SPAWN_EGG);
+                    entries.add(GLOOM_STALKER_SPAWN_EGG);
+                    entries.add(WITHERED_SKELETON_SPAWN_EGG);
                 })
                 .build()
         );

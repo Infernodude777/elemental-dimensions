@@ -197,8 +197,8 @@ public class ExampleStructure extends Structure {
 }
 
 // 3. Register structure type
-public static final StructureType<ExampleStructure> EXAMPLE_STRUCTURE = 
-    Registry.register(Registries.STRUCTURE_TYPE, 
+public static final StructureType<ExampleStructure> EXAMPLE_STRUCTURE =
+    Registry.register(Registries.STRUCTURE_TYPE,
         Identifier.of(MOD_ID, "example_structure"),
         () -> ExampleStructure.CODEC);
 ```
