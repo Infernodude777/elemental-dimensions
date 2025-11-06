@@ -193,7 +193,7 @@ public class ModItems {
                     entries.add(AQUATIC_HEART);
                     entries.add(TERRAN_HEART);
                     entries.add(SKYBOUND_HEART);
-                    
+
                     // Reverie tools and Dreambound armor
                     entries.add(REVERIE_SWORD);
                     entries.add(REVERIE_PICKAXE);
@@ -204,7 +204,7 @@ public class ModItems {
                     entries.add(DREAMBOUND_CHESTPLATE);
                     entries.add(DREAMBOUND_LEGGINGS);
                     entries.add(DREAMBOUND_BOOTS);
-                    
+
                     // Lumicore tools and Skyborn armor
                     entries.add(LUMICORE_SWORD);
                     entries.add(LUMICORE_PICKAXE);
@@ -215,7 +215,7 @@ public class ModItems {
                     entries.add(SKYBORN_CHESTPLATE);
                     entries.add(SKYBORN_LEGGINGS);
                     entries.add(SKYBORN_BOOTS);
-                    
+
                     // Mycelite tools and Sporebound armor
                     entries.add(MYCELITE_SWORD);
                     entries.add(MYCELITE_PICKAXE);
@@ -226,7 +226,7 @@ public class ModItems {
                     entries.add(SPOREBOUND_CHESTPLATE);
                     entries.add(SPOREBOUND_LEGGINGS);
                     entries.add(SPOREBOUND_BOOTS);
-                    
+
                     // Glyph tools and Runic armor
                     entries.add(GLYPH_SWORD);
                     entries.add(GLYPH_PICKAXE);
@@ -237,7 +237,7 @@ public class ModItems {
                     entries.add(RUNIC_CHESTPLATE);
                     entries.add(RUNIC_LEGGINGS);
                     entries.add(RUNIC_BOOTS);
-                    
+
                     // Celestite tools and Starforged armor
                     entries.add(CELESTITE_SWORD);
                     entries.add(CELESTITE_PICKAXE);
@@ -248,7 +248,7 @@ public class ModItems {
                     entries.add(STARFORGED_CHESTPLATE);
                     entries.add(STARFORGED_LEGGINGS);
                     entries.add(STARFORGED_BOOTS);
-                    
+
                     // Gloom tools and Withered armor
                     entries.add(GLOOM_SWORD);
                     entries.add(GLOOM_PICKAXE);

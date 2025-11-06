@@ -12,19 +12,19 @@ import java.util.function.Supplier;
 public enum ModToolMaterials implements ToolMaterial {
     // Dreaming Depths - Reverie tools
     REVERIE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 9.0F, 4.0F, 15, () -> Ingredient.ofItems(ModBlocks.REVERIE_BLOCK)),
-    
+
     // Celestine Expanse - Lumicore tools
     LUMICORE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1861, 8.5F, 3.5F, 18, () -> Ingredient.ofItems(ModBlocks.LUMICORE_BLOCK)),
-    
+
     // Fungal Dominion - Mycelite tools
     MYCELITE(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1561, 8.0F, 3.0F, 14, () -> Ingredient.ofItems(ModBlocks.MYCELITE_BLOCK)),
-    
+
     // Forgotten Archive - Glyph tools
     GLYPH(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1961, 9.0F, 4.0F, 22, () -> Ingredient.ofItems(ModBlocks.GLYPH_BLOCK)),
-    
+
     // Astral Frontier - Celestite tools
     CELESTITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2131, 9.5F, 4.5F, 20, () -> Ingredient.ofItems(ModBlocks.CELESTITE_BLOCK)),
-    
+
     // Gloomy Caverns - Gloom tools
     GLOOM(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1661, 7.5F, 3.0F, 12, () -> Ingredient.ofItems(ModBlocks.GLOOM_BLOCK));
 
