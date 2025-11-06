@@ -32,27 +32,21 @@ $entities = @(
     @{Name="Elemental Primarch"; Id="elemental_primarch"},
     @{Name="Void Lord"; Id="void_lord"}
 )
-
 # Read template files
 $geoTemplate = Get-Content "src\main\resources\assets\elementaldimensions\geo\entity\flame_sprite.geo.json" -Raw
 $animTemplate = Get-Content "src\main\resources\assets\elementaldimensions\animations\entity\flame_sprite.animation.json" -Raw
-
 # Create files for each entity
 foreach ($entity in $entities) {
     # Replace flame_sprite with entity id in templates
     $geoContent = $geoTemplate -replace 'flame_sprite', $entity.Id
     $animContent = $animTemplate -replace 'flame_sprite', $entity.Id
-    
     # Write geometry file
     $geoPath = "src\main\resources\assets\elementaldimensions\geo\entity\$($entity.Id).geo.json"
     $geoContent | Set-Content -Path $geoPath -NoNewline
-    
     # Write animation file
     $animPath = "src\main\resources\assets\elementaldimensions\animations\entity\$($entity.Id).animation.json"
     $animContent | Set-Content -Path $animPath -NoNewline
-    
-    Write-Host "Created resources for $($entity.Name)"
+    Write-Output "Created resources for $($entity.Name)"
 }
-
-Write-Host "`nAll geometry and animation files created successfully!"
-Write-Host "Total: $($entities.Count) entities"
+Write-Output "`nAll geometry and animation files created successfully!"
+Write-Output "Total: $($entities.Count) entities"

@@ -1,0 +1,6 @@
+{
+    "textures":  {
+                     "layer0":  "elementaldimensions:item/umbral_ingot"
+                 },
+    "parent":  "minecraft:item/generated"
+}

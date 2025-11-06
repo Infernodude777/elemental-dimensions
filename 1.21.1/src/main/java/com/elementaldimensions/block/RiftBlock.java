@@ -11,11 +11,11 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
 public class RiftBlock extends Block {
-	
+
 	public RiftBlock(Settings settings) {
 		super(settings);
 	}
-	
+
 	@Override
 	public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
 		super.onSteppedOn(world, pos, state, entity);
@@ -23,7 +23,7 @@ public class RiftBlock extends Block {
 			livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 40, 0));
 		}
 	}
-	
+
 	@Override
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
 		super.randomDisplayTick(state, world, pos, random);

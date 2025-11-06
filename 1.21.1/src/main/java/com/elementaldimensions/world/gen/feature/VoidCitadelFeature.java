@@ -11,20 +11,20 @@ import net.minecraft.world.gen.feature.DefaultFeatureConfig;
  * Generates void citadel in Void Realm
  */
 public class VoidCitadelFeature extends Feature<DefaultFeatureConfig> {
-	
+
 	public VoidCitadelFeature() {
 		super(DefaultFeatureConfig.CODEC);
 	}
-	
+
 	@Override
 	public boolean generate(FeatureContext<DefaultFeatureConfig> context) {
 		StructureWorldAccess world = context.getWorld();
 		BlockPos pos = context.getOrigin();
-		
+
 		// Build massive citadel base
 		int baseSize = 20;
 		int citadelHeight = 30;
-		
+
 		// Foundation
 		for (int x = -baseSize; x <= baseSize; x++) {
 			for (int z = -baseSize; z <= baseSize; z++) {
@@ -33,17 +33,17 @@ public class VoidCitadelFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Main tower
 		int towerSize = 12;
 		for (int y = 0; y < citadelHeight; y++) {
 			int currentSize = towerSize - (y / 6);
 			if (currentSize < 5) currentSize = 5;
-			
+
 			for (int x = -currentSize; x <= currentSize; x++) {
 				for (int z = -currentSize; z <= currentSize; z++) {
 					BlockPos buildPos = pos.add(x, y, z);
-					
+
 					// Outer walls
 					if (Math.abs(x) == currentSize || Math.abs(z) == currentSize) {
 						if (y % 5 == 0) {
@@ -59,7 +59,7 @@ public class VoidCitadelFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Add spires at corners
 		int[] spireOffsets = {-8, 8};
 		for (int xOff : spireOffsets) {
@@ -72,14 +72,14 @@ public class VoidCitadelFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Top portal platform
 		for (int x = -3; x <= 3; x++) {
 			for (int z = -3; z <= 3; z++) {
 				world.setBlockState(pos.add(x, citadelHeight, z), ModBlocks.DARK_MATTER_BLOCK.getDefaultState(), 3);
 			}
 		}
-		
+
 		return true;
 	}
 }

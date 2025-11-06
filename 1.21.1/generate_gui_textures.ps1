@@ -1,8 +1,6 @@
 # PowerShell script to generate GUI textures for Elemental Dimensions mod
 # Creates custom interface elements for each dimension
-
 Add-Type -AssemblyName System.Drawing
-
 function Add-Noise {
     param($color, $amount)
     $r = [Math]::Max(0, [Math]::Min(255, $color.R + (Get-Random -Minimum (-$amount) -Maximum $amount)))
@@ -10,17 +8,13 @@ function Add-Noise {
     $b = [Math]::Max(0, [Math]::Min(255, $color.B + (Get-Random -Minimum (-$amount) -Maximum $amount)))
     return [System.Drawing.Color]::FromArgb($color.A, $r, $g, $b)
 }
-
 $guiPath = "src\main\resources\assets\elementaldimensions\textures\gui"
 New-Item -ItemType Directory -Force -Path $guiPath | Out-Null
-
-Write-Host "=== Creating GUI Textures ==="
-
+Write-Output "=== Creating GUI Textures ==="
 # Dimensional Compass GUI Background (256x256)
-Write-Host "Creating Dimensional Compass GUI..."
+Write-Output "Creating Dimensional Compass GUI..."
 $compassGui = New-Object System.Drawing.Bitmap(256, 256)
 $graphics = [System.Drawing.Graphics]::FromImage($compassGui)
-
 # Dark background with gradient
 for ($y = 0; $y -lt 256; $y++) {
     $darkness = [Math]::Max(0, 40 - ($y / 8))
@@ -29,12 +23,10 @@ for ($y = 0; $y -lt 256; $y++) {
         $compassGui.SetPixel($x, $y, $color)
     }
 }
-
 # Border frame
 $borderPen = New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(255, 100, 80, 120), 2)
 $graphics.DrawRectangle($borderPen, 5, 5, 245, 245)
 $graphics.DrawRectangle($borderPen, 8, 8, 239, 239)
-
 # Title bar
 for ($y = 10; $y -lt 30; $y++) {
     for ($x = 10; $x -lt 246; $x++) {
@@ -42,17 +34,14 @@ for ($y = 10; $y -lt 30; $y++) {
         $compassGui.SetPixel($x, $y, $color)
     }
 }
-
 $graphics.Dispose()
 $compassGui.Save("$guiPath\compass_gui.png")
 $compassGui.Dispose()
-Write-Host "  ✓ compass_gui.png"
-
+Write-Output "  ✓ compass_gui.png"
 # Void Altar GUI Background (176x166 - standard inventory size)
-Write-Host "Creating Void Altar GUI..."
+Write-Output "Creating Void Altar GUI..."
 $altarGui = New-Object System.Drawing.Bitmap(176, 166)
 $graphics = [System.Drawing.Graphics]::FromImage($altarGui)
-
 # Dark purple background
 for ($y = 0; $y -lt 166; $y++) {
     for ($x = 0; $x -lt 176; $x++) {
@@ -61,7 +50,6 @@ for ($y = 0; $y -lt 166; $y++) {
         $altarGui.SetPixel($x, $y, $color)
     }
 }
-
 # Void energy effect (purple glow in center)
 $centerX = 88
 $centerY = 40
@@ -71,7 +59,7 @@ for ($y = 20; $y -lt 60; $y++) {
         if ($dist -lt 20) {
             $intensity = [Math]::Max(0, 255 - ($dist * 10))
             $current = $altarGui.GetPixel($x, $y)
-            $newColor = [System.Drawing.Color]::FromArgb(255, 
+            $newColor = [System.Drawing.Color]::FromArgb(255,
                 [Math]::Min(255, $current.R + $intensity/3),
                 [Math]::Min(255, $current.G + $intensity/5),
                 [Math]::Min(255, $current.B + $intensity/2))
@@ -79,23 +67,18 @@ for ($y = 20; $y -lt 60; $y++) {
         }
     }
 }
-
 # Border
 $borderPen = New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(255, 80, 60, 100), 1)
 $graphics.DrawRectangle($borderPen, 0, 0, 175, 165)
-
 $graphics.Dispose()
 $altarGui.Save("$guiPath\void_altar_gui.png")
 $altarGui.Dispose()
-Write-Host "  ✓ void_altar_gui.png"
-
-Write-Host "`n=== Creating Effect Icons ==="
-
+Write-Output "  ✓ void_altar_gui.png"
+Write-Output "`n=== Creating Effect Icons ==="
 $effectsPath = "src\main\resources\assets\elementaldimensions\textures\mob_effect"
 New-Item -ItemType Directory -Force -Path $effectsPath | Out-Null
-
 # Void Corruption Effect Icon (18x18)
-Write-Host "Creating Void Corruption effect icon..."
+Write-Output "Creating Void Corruption effect icon..."
 $voidEffect = New-Object System.Drawing.Bitmap(18, 18)
 for ($y = 0; $y -lt 18; $y++) {
     for ($x = 0; $x -lt 18; $x++) {
@@ -113,10 +96,9 @@ for ($y = 0; $y -lt 18; $y++) {
 }
 $voidEffect.Save("$effectsPath\void_corruption.png")
 $voidEffect.Dispose()
-Write-Host "  ✓ void_corruption.png"
-
+Write-Output "  ✓ void_corruption.png"
 # Flame Aura Effect Icon (18x18)
-Write-Host "Creating Flame Aura effect icon..."
+Write-Output "Creating Flame Aura effect icon..."
 $flameEffect = New-Object System.Drawing.Bitmap(18, 18)
 for ($y = 0; $y -lt 18; $y++) {
     for ($x = 0; $x -lt 18; $x++) {
@@ -137,10 +119,9 @@ for ($y = 0; $y -lt 18; $y++) {
 }
 $flameEffect.Save("$effectsPath\flame_aura.png")
 $flameEffect.Dispose()
-Write-Host "  ✓ flame_aura.png"
-
+Write-Output "  ✓ flame_aura.png"
 # Water Breathing Enhanced Effect Icon (18x18)
-Write-Host "Creating Aquatic Blessing effect icon..."
+Write-Output "Creating Aquatic Blessing effect icon..."
 $waterEffect = New-Object System.Drawing.Bitmap(18, 18)
 for ($y = 0; $y -lt 18; $y++) {
     for ($x = 0; $x -lt 18; $x++) {
@@ -157,10 +138,9 @@ for ($y = 0; $y -lt 18; $y++) {
 }
 $waterEffect.Save("$effectsPath\aquatic_blessing.png")
 $waterEffect.Dispose()
-Write-Host "  ✓ aquatic_blessing.png"
-
+Write-Output "  ✓ aquatic_blessing.png"
 # Earth Resilience Effect Icon (18x18)
-Write-Host "Creating Earth Resilience effect icon..."
+Write-Output "Creating Earth Resilience effect icon..."
 $earthEffect = New-Object System.Drawing.Bitmap(18, 18)
 for ($y = 0; $y -lt 18; $y++) {
     for ($x = 0; $x -lt 18; $x++) {
@@ -177,10 +157,9 @@ for ($y = 0; $y -lt 18; $y++) {
 }
 $earthEffect.Save("$effectsPath\earth_resilience.png")
 $earthEffect.Dispose()
-Write-Host "  ✓ earth_resilience.png"
-
+Write-Output "  ✓ earth_resilience.png"
 # Sky Grace Effect Icon (18x18)
-Write-Host "Creating Sky Grace effect icon..."
+Write-Output "Creating Sky Grace effect icon..."
 $skyEffect = New-Object System.Drawing.Bitmap(18, 18)
 for ($y = 0; $y -lt 18; $y++) {
     for ($x = 0; $x -lt 18; $x++) {
@@ -197,13 +176,11 @@ for ($y = 0; $y -lt 18; $y++) {
 }
 $skyEffect.Save("$effectsPath\sky_grace.png")
 $skyEffect.Dispose()
-Write-Host "  ✓ sky_grace.png"
-
+Write-Output "  ✓ sky_grace.png"
 # Celestial Power Effect Icon (18x18)
-Write-Host "Creating Celestial Power effect icon..."
+Write-Output "Creating Celestial Power effect icon..."
 $celestialEffect = New-Object System.Drawing.Bitmap(18, 18)
 $graphics = [System.Drawing.Graphics]::FromImage($celestialEffect)
-
 # Dark space background
 for ($y = 0; $y -lt 18; $y++) {
     for ($x = 0; $x -lt 18; $x++) {
@@ -215,7 +192,6 @@ for ($y = 0; $y -lt 18; $y++) {
         }
     }
 }
-
 # Add stars
 for ($i = 0; $i -lt 15; $i++) {
     $sx = Get-Random -Minimum 3 -Maximum 15
@@ -225,30 +201,23 @@ for ($i = 0; $i -lt 15; $i++) {
         $celestialEffect.SetPixel($sx, $sy, [System.Drawing.Color]::FromArgb(255, 255, 255, 200))
     }
 }
-
 $graphics.Dispose()
 $celestialEffect.Save("$effectsPath\celestial_power.png")
 $celestialEffect.Dispose()
-Write-Host "  ✓ celestial_power.png"
-
-Write-Host "`n=== Creating Additional Item Textures ==="
-
+Write-Output "  ✓ celestial_power.png"
+Write-Output "`n=== Creating Additional Item Textures ==="
 $itemsPath = "src\main\resources\assets\elementaldimensions\textures\item"
-
 # Dimension Keys (fancy versions)
-Write-Host "Creating dimension key textures..."
-
+Write-Output "Creating dimension key textures..."
 # Void Dimension Key (16x16)
 $voidKey = New-Object System.Drawing.Bitmap(16, 16)
 $graphics = [System.Drawing.Graphics]::FromImage($voidKey)
-
 # Key shaft (vertical)
 for ($y = 2; $y -lt 12; $y++) {
     for ($x = 7; $x -lt 9; $x++) {
         $voidKey.SetPixel($x, $y, [System.Drawing.Color]::FromArgb(255, 80, 60, 120))
     }
 }
-
 # Key head (circle at top)
 $headColor = [System.Drawing.Color]::FromArgb(255, 100, 70, 140)
 $voidKey.SetPixel(7, 2, $headColor)
@@ -257,21 +226,17 @@ $voidKey.SetPixel(6, 3, $headColor)
 $voidKey.SetPixel(9, 3, $headColor)
 $voidKey.SetPixel(6, 4, $headColor)
 $voidKey.SetPixel(9, 4, $headColor)
-
 # Key teeth (at bottom)
 $voidKey.SetPixel(9, 10, [System.Drawing.Color]::FromArgb(255, 80, 60, 120))
 $voidKey.SetPixel(9, 11, [System.Drawing.Color]::FromArgb(255, 80, 60, 120))
 $voidKey.SetPixel(9, 12, [System.Drawing.Color]::FromArgb(255, 80, 60, 120))
-
 $graphics.Dispose()
 $voidKey.Save("$itemsPath\void_dimension_key.png")
 $voidKey.Dispose()
-Write-Host "  ✓ void_dimension_key.png"
-
+Write-Output "  ✓ void_dimension_key.png"
 # Elemental Catalyst (crafting ingredient - 16x16)
-Write-Host "Creating Elemental Catalyst..."
+Write-Output "Creating Elemental Catalyst..."
 $catalyst = New-Object System.Drawing.Bitmap(16, 16)
-
 # Diamond shape with multicolor gradient
 $colors = @(
     [System.Drawing.Color]::FromArgb(255, 255, 100, 100),  # Red
@@ -279,7 +244,6 @@ $colors = @(
     [System.Drawing.Color]::FromArgb(255, 100, 255, 100),  # Green
     [System.Drawing.Color]::FromArgb(255, 255, 255, 100)   # Yellow
 )
-
 for ($y = 0; $y -lt 16; $y++) {
     for ($x = 0; $x -lt 16; $x++) {
         $dist = [Math]::Abs($x - 8) + [Math]::Abs($y - 8)
@@ -295,14 +259,12 @@ for ($y = 0; $y -lt 16; $y++) {
         }
     }
 }
-
 $catalyst.Save("$itemsPath\elemental_catalyst.png")
 $catalyst.Dispose()
-Write-Host "  ✓ elemental_catalyst.png"
-
-Write-Host "`n=== All GUI and effect textures created! ==="
-Write-Host "Created:"
-Write-Host "  - 2 GUI backgrounds (compass, void altar)"
-Write-Host "  - 6 status effect icons"
-Write-Host "  - 2 additional item textures"
-Write-Host "Total: 10 new textures"
+Write-Output "  ✓ elemental_catalyst.png"
+Write-Output "`n=== All GUI and effect textures created! ==="
+Write-Output "Created:"
+Write-Output "  - 2 GUI backgrounds (compass, void altar)"
+Write-Output "  - 6 status effect icons"
+Write-Output "  - 2 additional item textures"
+Write-Output "Total: 10 new textures"

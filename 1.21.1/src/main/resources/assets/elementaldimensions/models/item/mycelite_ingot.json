@@ -1,0 +1,6 @@
+{
+    "textures":  {
+                     "layer0":  "elementaldimensions:item/mycelite_ingot"
+                 },
+    "parent":  "minecraft:item/generated"
+}

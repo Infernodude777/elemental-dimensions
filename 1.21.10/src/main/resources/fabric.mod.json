@@ -3,7 +3,7 @@
 	"id": "elementaldimensions",
 	"version": "${version}",
 	"name": "Elemental Dimensions",
-	"description": "Five unique elemental dimensions with custom blocks, mobs, bosses, structures, and progression. Lunar Client compatible.",
+	"description": "Thirteen unique elemental dimensions with custom blocks, mobs, bosses, structures, and progression. Lunar Client compatible. [Pre-release for MC 1.21.10 - Currently running on 1.21.1]",
 	"authors": [
 		"ElementalDev"
 	],
@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.elementaldimensions.ElementalDimensions"
+			"com.nikhil.elementaldimensions.ElementalDimensions"
 		],
 		"client": [
-			"com.elementaldimensions.client.ElementalDimensionsClient"
+			"com.nikhil.elementaldimensions.ElementalDimensionsClient"
 		]
 	},
 	"mixins": [
@@ -27,7 +27,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.0",
-		"minecraft": "~1.21.1",
+		"minecraft": ">=1.21.1",
 		"java": ">=21",
 		"fabric-api": "*",
 		"cloth-config": ">=15.0.0",

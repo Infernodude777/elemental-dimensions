@@ -1,7 +1,7 @@
-﻿{
-  \"variants\": {
-    \"\": {
-      \"model\": \"elementaldimensions:block/void_glass\"
+{
+  "variants": {
+    "": {
+      "model": "elementaldimensions:block/void_glass"
     }
   }
 }

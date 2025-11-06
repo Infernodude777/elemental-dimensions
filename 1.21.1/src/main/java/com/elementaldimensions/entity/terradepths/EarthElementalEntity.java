@@ -18,23 +18,23 @@ import software.bernie.geckolib.util.GeckoLibUtil;
  * Tanky, slow entity with regeneration
  */
 public class EarthElementalEntity extends HostileEntity implements GeoAnimatable {
-	
+
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-	
+
 	public EarthElementalEntity(EntityType<? extends HostileEntity> t, World w) {
 		super(t, w);
 	}
-	
+
 	@Override
 	protected void initGoals() {
 		this.goalSelector.add(1, new MeleeAttackGoal(this, 0.9, false));
 		this.goalSelector.add(2, new WanderAroundFarGoal(this, 0.5));
 		this.goalSelector.add(3, new LookAtEntityGoal(this, PlayerEntity.class, 20.0f));
 		this.goalSelector.add(4, new LookAroundGoal(this));
-		
+
 		this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
 	}
-	
+
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
 			.add(EntityAttributes.GENERIC_MAX_HEALTH, 45.0)
@@ -43,7 +43,7 @@ public class EarthElementalEntity extends HostileEntity implements GeoAnimatable
 			.add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.8)
 			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.15);
 	}
-	
+
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 		controllers.add(new AnimationController<>(this, "controller", 0, state -> {

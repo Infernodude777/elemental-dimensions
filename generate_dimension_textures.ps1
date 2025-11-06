@@ -1,13 +1,10 @@
 # Script to generate missing item and armor textures for Elemental Dimensions mod
 Add-Type -AssemblyName System.Drawing
-
 $outputPath = "src\main\resources\assets\elementaldimensions\textures\item"
-
 # Create output directory if it doesn't exist
 if (-not (Test-Path $outputPath)) {
     New-Item -ItemType Directory -Path $outputPath -Force
 }
-
 # Helper function to create item texture with gradient and details
 function New-ItemTexture {
     param(
@@ -16,11 +13,9 @@ function New-ItemTexture {
         [System.Drawing.Color]$secondaryColor,
         [string]$pattern = "gradient"
     )
-    
     $bitmap = New-Object System.Drawing.Bitmap(16, 16)
     $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
     $graphics.Clear([System.Drawing.Color]::Transparent)
-    
     if ($pattern -eq "gradient") {
         # Create vertical gradient
         $brush = New-Object System.Drawing.Drawing2D.LinearGradientBrush(
@@ -41,7 +36,6 @@ function New-ItemTexture {
             (New-Object System.Drawing.Point(4, 6))
         )
         $graphics.FillPolygon((New-Object System.Drawing.SolidBrush($primaryColor)), $points)
-        
         # Add highlights
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 7, 4, 2, 3)
     }
@@ -103,81 +97,63 @@ function New-ItemTexture {
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 7, 6, 2, 3)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 6, 10, 4, 1)
     }
-    
     # Add border/outline
     $pen = New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(50, 0, 0, 0), 1)
     $graphics.DrawRectangle($pen, 0, 0, 15, 15)
-    
     $graphics.Dispose()
     $pen.Dispose()
-    
     $fullPath = Join-Path $outputPath $fileName
     $bitmap.Save($fullPath, [System.Drawing.Imaging.ImageFormat]::Png)
     $bitmap.Dispose()
-    
-    Write-Host "Created: $fileName"
+    Write-Output "Created: $fileName"
 }
-
-Write-Host "Generating Firelands item textures..."
+Write-Output "Generating Firelands item textures..."
 # Firelands already has most textures, check for missing ones
-
-Write-Host "`nGenerating Aquatica item textures..."
+Write-Output "`nGenerating Aquatica item textures..."
 New-ItemTexture "water_ingot.png" ([System.Drawing.Color]::FromArgb(60, 150, 220)) ([System.Drawing.Color]::FromArgb(140, 200, 255)) "ingot"
-
-Write-Host "`nGenerating Terra Depths item textures..."
+Write-Output "`nGenerating Terra Depths item textures..."
 New-ItemTexture "earth_ingot.png" ([System.Drawing.Color]::FromArgb(100, 80, 50)) ([System.Drawing.Color]::FromArgb(150, 120, 80)) "ingot"
-
-Write-Host "`nGenerating Skyreach Peaks item textures..."
+Write-Output "`nGenerating Skyreach Peaks item textures..."
 New-ItemTexture "air_ingot.png" ([System.Drawing.Color]::FromArgb(200, 230, 255)) ([System.Drawing.Color]::FromArgb(240, 250, 255)) "ingot"
-
-Write-Host "`nGenerating essence textures..."
+Write-Output "`nGenerating essence textures..."
 New-ItemTexture "fire_essence.png" ([System.Drawing.Color]::FromArgb(255, 100, 0)) ([System.Drawing.Color]::FromArgb(255, 200, 0)) "crystal"
 New-ItemTexture "water_essence.png" ([System.Drawing.Color]::FromArgb(0, 100, 255)) ([System.Drawing.Color]::FromArgb(100, 200, 255)) "crystal"
 New-ItemTexture "earth_essence.png" ([System.Drawing.Color]::FromArgb(100, 150, 50)) ([System.Drawing.Color]::FromArgb(150, 200, 100)) "crystal"
 New-ItemTexture "air_essence.png" ([System.Drawing.Color]::FromArgb(200, 230, 255)) ([System.Drawing.Color]::FromArgb(255, 255, 255)) "crystal"
-
-Write-Host "`nGenerating remaining Firelands items..."
+Write-Output "`nGenerating remaining Firelands items..."
 New-ItemTexture "lava_crystal.png" ([System.Drawing.Color]::FromArgb(255, 80, 0)) ([System.Drawing.Color]::FromArgb(255, 200, 100)) "crystal"
 New-ItemTexture "ember_dust.png" ([System.Drawing.Color]::FromArgb(255, 120, 0)) ([System.Drawing.Color]::FromArgb(200, 80, 0)) "dust"
 New-ItemTexture "magma_core.png" ([System.Drawing.Color]::FromArgb(200, 50, 0)) ([System.Drawing.Color]::FromArgb(255, 150, 0)) "crystal"
 New-ItemTexture "fire_ingot.png" ([System.Drawing.Color]::FromArgb(255, 100, 0)) ([System.Drawing.Color]::FromArgb(255, 200, 100)) "ingot"
 New-ItemTexture "ember_crystal.png" ([System.Drawing.Color]::FromArgb(255, 150, 50)) ([System.Drawing.Color]::FromArgb(255, 220, 150)) "crystal"
-
-Write-Host "`nGenerating remaining Aquatica items..."
+Write-Output "`nGenerating remaining Aquatica items..."
 New-ItemTexture "aqua_crystal.png" ([System.Drawing.Color]::FromArgb(0, 150, 255)) ([System.Drawing.Color]::FromArgb(100, 200, 255)) "crystal"
 New-ItemTexture "crab_meat.png" ([System.Drawing.Color]::FromArgb(255, 180, 150)) ([System.Drawing.Color]::FromArgb(255, 200, 180)) "gradient"
 New-ItemTexture "siren_scale.png" ([System.Drawing.Color]::FromArgb(80, 200, 220)) ([System.Drawing.Color]::FromArgb(150, 230, 255)) "shard"
 New-ItemTexture "aqua_pearl.png" ([System.Drawing.Color]::FromArgb(200, 240, 255)) ([System.Drawing.Color]::FromArgb(255, 255, 255)) "pearl"
-
-Write-Host "`nGenerating remaining Terra Depths items..."
+Write-Output "`nGenerating remaining Terra Depths items..."
 New-ItemTexture "gaia_shard.png" ([System.Drawing.Color]::FromArgb(80, 150, 60)) ([System.Drawing.Color]::FromArgb(120, 200, 100)) "shard"
 New-ItemTexture "crystal_frag.png" ([System.Drawing.Color]::FromArgb(150, 100, 200)) ([System.Drawing.Color]::FromArgb(200, 150, 255)) "shard"
-
-Write-Host "`nGenerating remaining Skyreach items..."
+Write-Output "`nGenerating remaining Skyreach items..."
 New-ItemTexture "zephyr_shard.png" ([System.Drawing.Color]::FromArgb(180, 220, 255)) ([System.Drawing.Color]::FromArgb(220, 240, 255)) "shard"
 New-ItemTexture "zephyr_feather.png" ([System.Drawing.Color]::FromArgb(220, 240, 255)) ([System.Drawing.Color]::FromArgb(255, 255, 255)) "feather"
-
-Write-Host "`nGenerating Celestial items..."
+Write-Output "`nGenerating Celestial items..."
 New-ItemTexture "void_shard.png" ([System.Drawing.Color]::FromArgb(80, 60, 120)) ([System.Drawing.Color]::FromArgb(150, 120, 200)) "shard"
 New-ItemTexture "celestial_crystal.png" ([System.Drawing.Color]::FromArgb(200, 180, 255)) ([System.Drawing.Color]::FromArgb(255, 240, 255)) "crystal"
 New-ItemTexture "elemental_heart.png" ([System.Drawing.Color]::FromArgb(255, 100, 150)) ([System.Drawing.Color]::FromArgb(255, 200, 220)) "crystal"
 New-ItemTexture "primarch_crown.png" ([System.Drawing.Color]::FromArgb(255, 215, 0)) ([System.Drawing.Color]::FromArgb(255, 255, 150)) "gradient"
-
-Write-Host "`nGenerating Celestial Armor textures..."
+Write-Output "`nGenerating Celestial Armor textures..."
 New-ItemTexture "celestial_helmet.png" ([System.Drawing.Color]::FromArgb(180, 150, 255)) ([System.Drawing.Color]::FromArgb(220, 200, 255)) "armor"
 New-ItemTexture "celestial_chestplate.png" ([System.Drawing.Color]::FromArgb(180, 150, 255)) ([System.Drawing.Color]::FromArgb(220, 200, 255)) "armor"
 New-ItemTexture "celestial_leggings.png" ([System.Drawing.Color]::FromArgb(180, 150, 255)) ([System.Drawing.Color]::FromArgb(220, 200, 255)) "armor"
 New-ItemTexture "celestial_boots.png" ([System.Drawing.Color]::FromArgb(180, 150, 255)) ([System.Drawing.Color]::FromArgb(220, 200, 255)) "armor"
-
-Write-Host "`nGenerating Altar Rune textures..."
+Write-Output "`nGenerating Altar Rune textures..."
 New-ItemTexture "fire_altar_rune.png" ([System.Drawing.Color]::FromArgb(150, 50, 50)) ([System.Drawing.Color]::FromArgb(255, 150, 0)) "rune"
 New-ItemTexture "water_altar_rune.png" ([System.Drawing.Color]::FromArgb(50, 100, 150)) ([System.Drawing.Color]::FromArgb(100, 200, 255)) "rune"
 New-ItemTexture "earth_altar_rune.png" ([System.Drawing.Color]::FromArgb(80, 100, 50)) ([System.Drawing.Color]::FromArgb(150, 200, 100)) "rune"
 New-ItemTexture "air_altar_rune.png" ([System.Drawing.Color]::FromArgb(150, 200, 230)) ([System.Drawing.Color]::FromArgb(220, 240, 255)) "rune"
 New-ItemTexture "celestial_altar_rune.png" ([System.Drawing.Color]::FromArgb(100, 80, 150)) ([System.Drawing.Color]::FromArgb(200, 180, 255)) "rune"
-
-Write-Host "`nGenerating Dimensional Compass texture..."
+Write-Output "`nGenerating Dimensional Compass texture..."
 New-ItemTexture "dimensional_compass.png" ([System.Drawing.Color]::FromArgb(180, 140, 80)) ([System.Drawing.Color]::FromArgb(255, 215, 0)) "gradient"
-
-Write-Host "`nAll dimension item textures generated!"
-Write-Host "Total textures created in: $outputPath"
+Write-Output "`nAll dimension item textures generated!"
+Write-Output "Total textures created in: $outputPath"

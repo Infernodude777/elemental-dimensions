@@ -1,7 +1,7 @@
-﻿{
-  \"variants\": {
-    \"\": {
-      \"model\": \"elementaldimensions:block/ethereal_grass\"
+{
+  "variants": {
+    "": {
+      "model": "elementaldimensions:block/ethereal_grass"
     }
   }
 }

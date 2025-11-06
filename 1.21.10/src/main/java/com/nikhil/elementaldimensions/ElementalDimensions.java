@@ -21,22 +21,22 @@ public class ElementalDimensions implements ModInitializer {
         @Override
     public void onInitialize() {
         LOGGER.info("Initializing Elemental Dimensions");
-        
+
         // Register items, blocks, and entities
         ModItems.initialize();
         ModBlocks.initialize();
         ModEntities.initialize();
-        
+
         // Register commands
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             GuideCommand.register(dispatcher);
             DimensionTeleportCommands.register(dispatcher);
             ItemSpawnCommands.register(dispatcher);
         });
-        
+
         // Initialize configuration
         ModConfig.load();
-        
+
         LOGGER.info("Elemental Dimensions initialized successfully");
     }
 }

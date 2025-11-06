@@ -1,5 +1,4 @@
 # Script to create all GeckoLib geometry and animation JSON files
-
 $entities = @(
     @{Name="ember_serpent"; DisplayName="Ember Serpent"; Type="serpent"},
     @{Name="pyre_howler"; DisplayName="Pyre Howler"; Type="quadruped"},
@@ -33,16 +32,13 @@ $entities = @(
     @{Name="elemental_primarch"; DisplayName="Elemental Primarch"; Type="boss_biped"},
     @{Name="void_lord"; DisplayName="Void Lord"; Type="boss_biped"}
 )
-
 # Create directories
 New-Item -ItemType Directory -Force -Path "src\main\resources\assets\elementaldimensions\geo\entity" | Out-Null
 New-Item -ItemType Directory -Force -Path "src\main\resources\assets\elementaldimensions\animations\entity" | Out-Null
-
 foreach ($entity in $entities) {
     $name = $entity.Name
     $displayName = $entity.DisplayName
     $type = $entity.Type
-    
     # Determine bone structure and dimensions based on type
     $bones = switch ($type) {
         "biped" { @("body", "head", "arm_right", "arm_left", "leg_right", "leg_left") }
@@ -64,7 +60,6 @@ foreach ($entity in $entities) {
         "boss_flying" { @("body", "head", "wing_right", "wing_left") }
         default { @("body", "head") }
     }
-    
     # Create geometry JSON
     $geoJson = @{
         format_version = "1.12.0"
@@ -79,7 +74,6 @@ foreach ($entity in $entities) {
             }
         )
     } | ConvertTo-Json -Depth 10
-    
     # Create simple bone structure
     $bonesArray = @()
     foreach ($bone in $bones) {
@@ -95,7 +89,6 @@ foreach ($entity in $entities) {
             )
         }
     }
-    
     $geoContent = @"
 {
   "format_version": "1.12.0",
@@ -127,10 +120,8 @@ $($bonesArray | ForEach-Object {
   ]
 }
 "@
-    
     $geoPath = "src\main\resources\assets\elementaldimensions\geo\entity\$name.geo.json"
     $geoContent | Out-File -FilePath $geoPath -Encoding UTF8
-    
     # Create animation JSON
     $animContent = @"
 {
@@ -165,11 +156,8 @@ $($bonesArray | ForEach-Object {
   }
 }
 "@
-    
     $animPath = "src\main\resources\assets\elementaldimensions\animations\entity\$name.animation.json"
     $animContent | Out-File -FilePath $animPath -Encoding UTF8
-    
-    Write-Host "Created geometry and animation for $displayName"
+    Write-Output "Created geometry and animation for $displayName"
 }
-
-Write-Host "`nAll geometry and animation files created successfully!"
+Write-Output "`nAll geometry and animation files created successfully!"

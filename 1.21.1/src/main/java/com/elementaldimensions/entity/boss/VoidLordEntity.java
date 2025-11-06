@@ -65,7 +65,7 @@ public class VoidLordEntity extends HostileEntity implements GeoAnimatable {
         return true;
     }
 
-	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
+	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 controllers.add(new AnimationController<>(this, "controller", 0, state -> {
 return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 }));
@@ -81,4 +81,3 @@ return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		return cache;
 	}
 }
-

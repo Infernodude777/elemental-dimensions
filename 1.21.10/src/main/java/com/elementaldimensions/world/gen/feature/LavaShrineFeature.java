@@ -12,28 +12,28 @@ import net.minecraft.world.gen.feature.DefaultFeatureConfig;
  * Generates a lava shrine structure procedurally in the Firelands dimension
  */
 public class LavaShrineFeature extends Feature<DefaultFeatureConfig> {
-	
+
 	public LavaShrineFeature() {
 		super(DefaultFeatureConfig.CODEC);
 	}
-	
+
 	@Override
 	public boolean generate(FeatureContext<DefaultFeatureConfig> context) {
 		StructureWorldAccess world = context.getWorld();
 		BlockPos pos = context.getOrigin();
-		
+
 		// Build a simple pyramid shrine
 		int height = 12;
 		int baseSize = 9;
-		
+
 		for (int y = 0; y < height; y++) {
 			int size = baseSize - (y / 2);
 			if (size < 3) size = 3;
-			
+
 			for (int x = -size; x <= size; x++) {
 				for (int z = -size; z <= size; z++) {
 					BlockPos buildPos = pos.add(x, y, z);
-					
+
 					// Outer walls
 					if (Math.abs(x) == size || Math.abs(z) == size) {
 						if (y < height - 3) {
@@ -53,18 +53,18 @@ public class LavaShrineFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Add lava crystal ore pillars
 		for (int i = 0; i < 4; i++) {
 			int xOffset = (i % 2 == 0) ? 4 : -4;
 			int zOffset = (i / 2 == 0) ? 4 : -4;
-			
+
 			for (int y = 0; y < 6; y++) {
 				BlockPos pillarPos = pos.add(xOffset, y, zOffset);
 				world.setBlockState(pillarPos, ModBlocks.LAVA_CRYSTAL_ORE.getDefaultState(), 3);
 			}
 		}
-		
+
 		return true;
 	}
 }

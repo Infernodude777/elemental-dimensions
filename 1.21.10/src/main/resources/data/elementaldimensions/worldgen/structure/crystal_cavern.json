@@ -7,7 +7,8 @@
   "step": "underground_structures",
   "terrain_adaptation": "encapsulate",
   "start_height": {
-    "absolute": 32
+    "absolute": 180
   },
-  "use_expansion_hack": false
+  "use_expansion_hack": false,
+  "spawn_overrides": []
 }

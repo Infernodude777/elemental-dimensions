@@ -11,16 +11,16 @@ import net.minecraft.world.gen.feature.DefaultFeatureConfig;
  * Generates a floating sky castle in Skyreach Peaks
  */
 public class SkyCastleFeature extends Feature<DefaultFeatureConfig> {
-	
+
 	public SkyCastleFeature() {
 		super(DefaultFeatureConfig.CODEC);
 	}
-	
+
 	@Override
 	public boolean generate(FeatureContext<DefaultFeatureConfig> context) {
 		StructureWorldAccess world = context.getWorld();
 		BlockPos pos = context.getOrigin();
-		
+
 		// Build floating island base
 		int radius = 12;
 		for (int y = -3; y <= 0; y++) {
@@ -38,16 +38,16 @@ public class SkyCastleFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Build castle structure
 		int castleSize = 8;
 		int castleHeight = 12;
-		
+
 		for (int y = 1; y < castleHeight; y++) {
 			for (int x = -castleSize; x <= castleSize; x++) {
 				for (int z = -castleSize; z <= castleSize; z++) {
 					BlockPos buildPos = pos.add(x, y, z);
-					
+
 					// Walls
 					if (Math.abs(x) == castleSize || Math.abs(z) == castleSize) {
 						if (y % 3 == 0) {
@@ -63,7 +63,7 @@ public class SkyCastleFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Add towers
 		int[] towerOffsets = {-castleSize, castleSize};
 		for (int xOff : towerOffsets) {
@@ -76,7 +76,7 @@ public class SkyCastleFeature extends Feature<DefaultFeatureConfig> {
 				world.setBlockState(pos.add(xOff, castleHeight + 6, zOff), ModBlocks.WIND_CRYSTAL.getDefaultState(), 3);
 			}
 		}
-		
+
 		return true;
 	}
 }

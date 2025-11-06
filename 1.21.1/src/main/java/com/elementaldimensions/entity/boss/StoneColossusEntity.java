@@ -59,7 +59,7 @@ public class StoneColossusEntity extends HostileEntity implements GeoAnimatable 
         this.bossBar.removePlayer(player);
     }
 
-	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
+	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 controllers.add(new AnimationController<>(this, "controller", 0, state -> {
 return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 }));
@@ -75,4 +75,3 @@ return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		return cache;
 	}
 }
-

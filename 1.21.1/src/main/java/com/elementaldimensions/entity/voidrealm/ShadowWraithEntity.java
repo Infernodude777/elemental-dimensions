@@ -19,7 +19,7 @@ public class ShadowWraithEntity extends HostileEntity implements GeoAnimatable {
 		this.experiencePoints = 15;
 	}
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-	
+
 	@Override
 	protected void initGoals() {
 		this.goalSelector.add(0, new SwimGoal(this));
@@ -29,7 +29,7 @@ public class ShadowWraithEntity extends HostileEntity implements GeoAnimatable {
 		this.goalSelector.add(3, new LookAroundGoal(this));
 		this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
 	}
-	
+
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
 				.add(EntityAttributes.GENERIC_MAX_HEALTH, 25.0)
@@ -37,13 +37,13 @@ public class ShadowWraithEntity extends HostileEntity implements GeoAnimatable {
 				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.28)
 				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0);
 	}
-	
+
 	@Override
 	public boolean isFireImmune() {
 		return false;
 	}
 
-	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
+	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 controllers.add(new AnimationController<>(this, "controller", 0, state -> {
 return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 }));
@@ -59,4 +59,3 @@ return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		return cache;
 	}
 }
-

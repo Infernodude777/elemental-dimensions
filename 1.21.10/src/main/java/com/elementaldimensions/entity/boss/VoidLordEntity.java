@@ -33,11 +33,11 @@ public class VoidLordEntity extends HostileEntity implements GeoAnimatable {
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.MAX_HEALTH, 800.0)
-                .add(EntityAttributes.ATTACK_DAMAGE, 22.0)
-                .add(EntityAttributes.ARMOR, 18.0)
-                .add(EntityAttributes.KNOCKBACK_RESISTANCE, 0.9)
-                .add(EntityAttributes.FOLLOW_RANGE, 64.0);
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 800.0)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 22.0)
+                .add(EntityAttributes.GENERIC_ARMOR, 18.0)
+                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.9)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 64.0);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class VoidLordEntity extends HostileEntity implements GeoAnimatable {
         return true;
     }
 
-	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
+	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 controllers.add(new AnimationController<>(this, "controller", 0, state -> {
 return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 }));
@@ -81,4 +81,3 @@ return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		return cache;
 	}
 }
-

@@ -13,7 +13,7 @@ import net.minecraft.world.World;
  * Glowing crystal structure
  */
 public class CrystalPillarBlock extends Block {
-	
+
 	public CrystalPillarBlock(Settings settings) {
 		super(settings
 			.luminance(state -> 12)
@@ -21,16 +21,16 @@ public class CrystalPillarBlock extends Block {
 			.requiresTool()
 		);
 	}
-	
+
 	@Override
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
 		super.randomDisplayTick(state, world, pos, random);
-		
+
 		if (random.nextInt(10) == 0) {
 			double x = pos.getX() + random.nextDouble();
 			double y = pos.getY() + random.nextDouble();
 			double z = pos.getZ() + random.nextDouble();
-			
+
 			world.addParticle(
 				ParticleTypes.END_ROD,
 				x, y, z,

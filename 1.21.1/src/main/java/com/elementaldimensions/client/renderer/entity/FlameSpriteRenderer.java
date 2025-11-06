@@ -10,18 +10,18 @@ public class FlameSpriteRenderer extends GeoEntityRenderer<FlameSpriteEntity> {
 	public FlameSpriteRenderer(EntityRendererFactory.Context context) {
 		super(context, new FlameSpriteModel());
 	}
-	
+
 	public static class FlameSpriteModel extends GeoModel<FlameSpriteEntity> {
 		@Override
 		public Identifier getModelResource(FlameSpriteEntity entity) {
 			return Identifier.of("elementaldimensions", "geo/entity/flame_sprite.geo.json");
 		}
-		
+
 		@Override
 		public Identifier getTextureResource(FlameSpriteEntity entity) {
 			return Identifier.of("elementaldimensions", "textures/entity/flame_sprite.png");
 		}
-		
+
 		@Override
 		public Identifier getAnimationResource(FlameSpriteEntity entity) {
 			return Identifier.of("elementaldimensions", "animations/entity/flame_sprite.animation.json");

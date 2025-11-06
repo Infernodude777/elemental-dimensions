@@ -14,7 +14,7 @@ import net.minecraft.world.World;
  * Transparent with bubble particles
  */
 public class ReinforcedAquaGlassBlock extends TransparentBlock {
-	
+
 	public ReinforcedAquaGlassBlock(Settings settings) {
 		super(settings
 			.luminance(state -> 8)
@@ -22,16 +22,16 @@ public class ReinforcedAquaGlassBlock extends TransparentBlock {
 			.nonOpaque()
 		);
 	}
-	
+
 	@Override
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
 		super.randomDisplayTick(state, world, pos, random);
-		
+
 		if (random.nextInt(5) == 0) {
 			double x = pos.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.5;
 			double y = pos.getY() + random.nextDouble();
 			double z = pos.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.5;
-			
+
 			world.addParticle(
 				ParticleTypes.BUBBLE,
 				x, y, z,

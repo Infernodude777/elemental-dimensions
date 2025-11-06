@@ -1,13 +1,10 @@
 # Script to generate all missing entity textures for Elemental Dimensions mod
 Add-Type -AssemblyName System.Drawing
-
 $outputPath = "src\main\resources\assets\elementaldimensions\textures\entity"
-
 # Create output directory if it doesn't exist
 if (-not (Test-Path $outputPath)) {
     New-Item -ItemType Directory -Path $outputPath -Force
 }
-
 # Helper function to create entity texture (64x64 for mobs, 128x128 for bosses)
 function New-EntityTexture {
     param(
@@ -19,27 +16,21 @@ function New-EntityTexture {
         [System.Drawing.Color]$accentColor,
         [string]$pattern = "humanoid"
     )
-    
     $bitmap = New-Object System.Drawing.Bitmap($width, $height)
     $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
     $graphics.Clear([System.Drawing.Color]::Transparent)
-    
     $random = New-Object System.Random($fileName.GetHashCode())
-    
     if ($pattern -eq "humanoid") {
         # Head
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 8, 0, 16, 16)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 10, 4, 4, 4)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 18, 4, 4, 4)
-        
         # Body
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 10, 16, 12, 16)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($accentColor)), 12, 18, 8, 12)
-        
         # Arms
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 4, 16, 6, 16)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 22, 16, 6, 16)
-        
         # Legs
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 10, 32, 6, 16)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 16, 32, 6, 16)
@@ -49,10 +40,8 @@ function New-EntityTexture {
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 8, 4, 16, 12)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($accentColor)), 10, 6, 4, 4)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($accentColor)), 18, 6, 4, 4)
-        
         # Body
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 6, 16, 20, 16)
-        
         # Legs (4 legs)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 8, 32, 4, 16)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 14, 32, 4, 16)
@@ -65,7 +54,6 @@ function New-EntityTexture {
         $graphics.FillEllipse((New-Object System.Drawing.SolidBrush($primaryColor)), 12, 12, 24, 24)
         $graphics.FillEllipse((New-Object System.Drawing.SolidBrush($secondaryColor)), 16, 16, 16, 16)
         $graphics.FillEllipse((New-Object System.Drawing.SolidBrush($accentColor)), 20, 20, 8, 8)
-        
         # Add glow effect particles around it
         for ($i = 0; $i -lt 12; $i++) {
             $angle = ($i * 30) * [Math]::PI / 180
@@ -123,19 +111,15 @@ function New-EntityTexture {
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 12, 4, 24, 24)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($accentColor)), 16, 12, 6, 6)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($accentColor)), 26, 12, 6, 6)
-        
         # Body - larger
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 10, 28, 28, 36)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 14, 32, 20, 28)
-        
         # Arms - thicker
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 2, 28, 8, 32)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 38, 28, 8, 32)
-        
         # Legs - thicker
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 12, 64, 10, 24)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 26, 64, 10, 24)
-        
         # Crown/horns
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($accentColor)), 10, 0, 4, 8)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($accentColor)), 34, 0, 4, 8)
@@ -145,18 +129,15 @@ function New-EntityTexture {
         # Central body
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 8, 20, 48, 48)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 12, 24, 40, 40)
-        
         # Head
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($accentColor)), 20, 8, 24, 16)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush([System.Drawing.Color]::Red)), 24, 12, 6, 6)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush([System.Drawing.Color]::Red)), 34, 12, 6, 6)
-        
         # Limbs
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 0, 32, 8, 32)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 56, 32, 8, 32)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 16, 68, 12, 16)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 36, 68, 12, 16)
-        
         # Spikes/details
         for ($i = 0; $i -lt 6; $i++) {
             $x = 12 + ($i * 8)
@@ -213,19 +194,15 @@ function New-EntityTexture {
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 10, 2, 20, 16)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($accentColor)), 14, 8, 4, 6)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($accentColor)), 22, 8, 4, 6)
-        
         # Broad shoulders and body
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 6, 18, 28, 24)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 10, 22, 20, 18)
-        
         # Thick arms
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 0, 18, 6, 24)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($primaryColor)), 34, 18, 6, 24)
-        
         # Legs
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 10, 42, 8, 22)
         $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($secondaryColor)), 22, 42, 8, 22)
-        
         # Add stone texture
         for ($i = 0; $i -lt 30; $i++) {
             $x = $random.Next(6, 34)
@@ -237,198 +214,160 @@ function New-EntityTexture {
             $bitmap.SetPixel($x, $y, [System.Drawing.Color]::FromArgb($r, $g, $b))
         }
     }
-    
     $graphics.Dispose()
-    
     $fullPath = Join-Path $outputPath $fileName
     $bitmap.Save($fullPath, [System.Drawing.Imaging.ImageFormat]::Png)
     $bitmap.Dispose()
-    
-    Write-Host "Created: $fileName"
+    Write-Output "Created: $fileName"
 }
-
-Write-Host "`n=== Generating Firelands Mob Textures ===" -ForegroundColor Yellow
-
+Write-Output "`n=== Generating Firelands Mob Textures ===" -ForegroundColor Yellow
 New-EntityTexture "flame_sprite.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(255, 150, 0)) `
     ([System.Drawing.Color]::FromArgb(255, 200, 50)) `
     ([System.Drawing.Color]::FromArgb(255, 100, 0)) `
     "floating"
-
 New-EntityTexture "magma_brute.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(150, 50, 30)) `
     ([System.Drawing.Color]::FromArgb(200, 80, 40)) `
     ([System.Drawing.Color]::FromArgb(255, 120, 0)) `
     "humanoid"
-
 New-EntityTexture "ember_serpent.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(200, 80, 0)) `
     ([System.Drawing.Color]::FromArgb(255, 150, 50)) `
     ([System.Drawing.Color]::FromArgb(255, 200, 100)) `
     "serpent"
-
 New-EntityTexture "pyre_howler.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(180, 60, 40)) `
     ([System.Drawing.Color]::FromArgb(220, 100, 60)) `
     ([System.Drawing.Color]::FromArgb(255, 180, 100)) `
     "quadruped"
-
-Write-Host "`n=== Generating Aquatica Mob Textures ===" -ForegroundColor Cyan
-
+Write-Output "`n=== Generating Aquatica Mob Textures ===" -ForegroundColor Cyan
 New-EntityTexture "abyss_crab.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(80, 60, 100)) `
     ([System.Drawing.Color]::FromArgb(120, 100, 140)) `
     ([System.Drawing.Color]::FromArgb(160, 140, 180)) `
     "crab"
-
 New-EntityTexture "tide_siren.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(60, 150, 200)) `
     ([System.Drawing.Color]::FromArgb(100, 180, 220)) `
     ([System.Drawing.Color]::FromArgb(140, 210, 240)) `
     "humanoid"
-
 New-EntityTexture "bubble_wisp.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(150, 200, 255)) `
     ([System.Drawing.Color]::FromArgb(180, 220, 255)) `
     ([System.Drawing.Color]::FromArgb(200, 240, 255)) `
     "floating"
-
 New-EntityTexture "pressure_ray.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(80, 120, 160)) `
     ([System.Drawing.Color]::FromArgb(100, 150, 190)) `
     ([System.Drawing.Color]::FromArgb(120, 170, 210)) `
     "aquatic"
-
 New-EntityTexture "coral_guardian.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(200, 100, 140)) `
     ([System.Drawing.Color]::FromArgb(220, 140, 180)) `
     ([System.Drawing.Color]::FromArgb(240, 180, 200)) `
     "humanoid"
-
-Write-Host "`n=== Generating Terra Depths Mob Textures ===" -ForegroundColor Green
-
+Write-Output "`n=== Generating Terra Depths Mob Textures ===" -ForegroundColor Green
 New-EntityTexture "stone_golem.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(120, 110, 100)) `
     ([System.Drawing.Color]::FromArgb(140, 130, 120)) `
     ([System.Drawing.Color]::FromArgb(100, 200, 120)) `
     "golem"
-
 New-EntityTexture "moss_beast.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(80, 120, 60)) `
     ([System.Drawing.Color]::FromArgb(100, 150, 80)) `
     ([System.Drawing.Color]::FromArgb(120, 180, 100)) `
     "quadruped"
-
 New-EntityTexture "crystal_mite.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(180, 140, 200)) `
     ([System.Drawing.Color]::FromArgb(200, 160, 220)) `
     ([System.Drawing.Color]::FromArgb(220, 180, 240)) `
     "spider"
-
 New-EntityTexture "root_spider.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(100, 80, 60)) `
     ([System.Drawing.Color]::FromArgb(130, 110, 90)) `
     ([System.Drawing.Color]::FromArgb(160, 140, 120)) `
     "spider"
-
 New-EntityTexture "cave_lurker.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(60, 60, 70)) `
     ([System.Drawing.Color]::FromArgb(80, 80, 90)) `
     ([System.Drawing.Color]::FromArgb(120, 120, 140)) `
     "humanoid"
-
-Write-Host "`n=== Generating Skyreach Peaks Mob Textures ===" -ForegroundColor White
-
+Write-Output "`n=== Generating Skyreach Peaks Mob Textures ===" -ForegroundColor White
 New-EntityTexture "wind_hawk.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(200, 220, 240)) `
     ([System.Drawing.Color]::FromArgb(220, 235, 250)) `
     ([System.Drawing.Color]::FromArgb(180, 200, 230)) `
     "flying"
-
 New-EntityTexture "sky_wisp.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(220, 240, 255)) `
     ([System.Drawing.Color]::FromArgb(240, 250, 255)) `
     ([System.Drawing.Color]::FromArgb(200, 230, 255)) `
     "floating"
-
 New-EntityTexture "cloud_sentinel.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(240, 240, 250)) `
     ([System.Drawing.Color]::FromArgb(220, 230, 245)) `
     ([System.Drawing.Color]::FromArgb(200, 220, 240)) `
     "humanoid"
-
 New-EntityTexture "petal_sprite.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(255, 200, 220)) `
     ([System.Drawing.Color]::FromArgb(255, 220, 235)) `
     ([System.Drawing.Color]::FromArgb(255, 180, 200)) `
     "floating"
-
 New-EntityTexture "thunder_hawk.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(180, 200, 230)) `
     ([System.Drawing.Color]::FromArgb(200, 220, 245)) `
     ([System.Drawing.Color]::FromArgb(255, 255, 100)) `
     "flying"
-
-Write-Host "`n=== Generating Celestial Mob Textures ===" -ForegroundColor Magenta
-
+Write-Output "`n=== Generating Celestial Mob Textures ===" -ForegroundColor Magenta
 New-EntityTexture "celestial_enderman.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(100, 80, 140)) `
     ([System.Drawing.Color]::FromArgb(140, 120, 180)) `
     ([System.Drawing.Color]::FromArgb(180, 160, 220)) `
     "humanoid"
-
 New-EntityTexture "void_shulker.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(80, 60, 100)) `
     ([System.Drawing.Color]::FromArgb(120, 100, 140)) `
     ([System.Drawing.Color]::FromArgb(160, 140, 180)) `
     "quadruped"
-
 New-EntityTexture "starlight_phantom.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(150, 180, 255)) `
     ([System.Drawing.Color]::FromArgb(180, 200, 255)) `
     ([System.Drawing.Color]::FromArgb(255, 255, 255)) `
     "flying"
-
 New-EntityTexture "nebula_wraith.png" 64 64 `
     ([System.Drawing.Color]::FromArgb(120, 100, 160)) `
     ([System.Drawing.Color]::FromArgb(160, 140, 200)) `
     ([System.Drawing.Color]::FromArgb(200, 180, 240)) `
     "humanoid"
-
-Write-Host "`n=== Generating Boss Textures (128x128) ===" -ForegroundColor Red
-
+Write-Output "`n=== Generating Boss Textures (128x128) ===" -ForegroundColor Red
 New-EntityTexture "fire_titan.png" 128 128 `
     ([System.Drawing.Color]::FromArgb(200, 60, 0)) `
     ([System.Drawing.Color]::FromArgb(255, 120, 30)) `
     ([System.Drawing.Color]::FromArgb(255, 200, 100)) `
     "boss"
-
 New-EntityTexture "abyss_leviathan.png" 128 128 `
     ([System.Drawing.Color]::FromArgb(40, 60, 100)) `
     ([System.Drawing.Color]::FromArgb(60, 100, 140)) `
     ([System.Drawing.Color]::FromArgb(100, 150, 200)) `
     "boss_large"
-
 New-EntityTexture "stone_colossus.png" 128 128 `
     ([System.Drawing.Color]::FromArgb(100, 90, 80)) `
     ([System.Drawing.Color]::FromArgb(130, 120, 110)) `
     ([System.Drawing.Color]::FromArgb(120, 200, 100)) `
     "boss_large"
-
 New-EntityTexture "wind_seraph.png" 128 128 `
     ([System.Drawing.Color]::FromArgb(220, 240, 255)) `
     ([System.Drawing.Color]::FromArgb(240, 250, 255)) `
     ([System.Drawing.Color]::FromArgb(255, 255, 150)) `
     "boss"
-
 New-EntityTexture "elemental_primarch.png" 128 128 `
     ([System.Drawing.Color]::FromArgb(200, 150, 100)) `
     ([System.Drawing.Color]::FromArgb(255, 200, 150)) `
     ([System.Drawing.Color]::FromArgb(255, 255, 200)) `
     "boss"
-
-Write-Host "`n=== Entity Texture Generation Complete! ===" -ForegroundColor Green
-Write-Host "Total textures created: 28" -ForegroundColor White
-Write-Host "  - Regular mobs: 23" -ForegroundColor Gray
-Write-Host "  - Bosses: 5" -ForegroundColor Gray
-Write-Host "Output directory: $outputPath" -ForegroundColor White
+Write-Output "`n=== Entity Texture Generation Complete! ===" -ForegroundColor Green
+Write-Output "Total textures created: 28" -ForegroundColor White
+Write-Output "  - Regular mobs: 23" -ForegroundColor Gray
+Write-Output "  - Bosses: 5" -ForegroundColor Gray
+Write-Output "Output directory: $outputPath" -ForegroundColor White

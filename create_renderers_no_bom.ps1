@@ -32,38 +32,31 @@ $entities = @(
     @{Name="ElementalPrimarch"; Package="boss"; Entity="ElementalPrimarchEntity"},
     @{Name="VoidLord"; Package="boss"; Entity="VoidLordEntity"}
 )
-
 foreach ($entity in $entities) {
     $name = $entity.Name
     $package = $entity.Package
     $entityClass = $entity.Entity
     $snake_case = ($name -creplace '([A-Z])', '_$1').ToLower().TrimStart('_')
-    
     $content = @"
 package com.elementaldimensions.client.renderer.entity;
-
 import com.elementaldimensions.entity.${package}.${entityClass};
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
-
 public class ${name}Renderer extends GeoEntityRenderer<${entityClass}> {
     public ${name}Renderer(EntityRendererFactory.Context renderManager) {
         super(renderManager, new ${name}Model());
     }
-
     public static class ${name}Model extends GeoModel<${entityClass}> {
         @Override
         public Identifier getModelResource(${entityClass} animatable) {
             return Identifier.of("elementaldimensions", "geo/entity/${snake_case}.geo.json");
         }
-
         @Override
         public Identifier getTextureResource(${entityClass} animatable) {
             return Identifier.of("elementaldimensions", "textures/entity/${snake_case}.png");
         }
-
         @Override
         public Identifier getAnimationResource(${entityClass} animatable) {
             return Identifier.of("elementaldimensions", "animations/entity/${snake_case}.animation.json");
@@ -71,10 +64,8 @@ public class ${name}Renderer extends GeoEntityRenderer<${entityClass}> {
     }
 }
 "@
-    
     $filePath = "src\main\java\com\elementaldimensions\client\renderer\entity\${name}Renderer.java"
     [System.IO.File]::WriteAllText($filePath, $content, (New-Object System.Text.UTF8Encoding $False))
-    Write-Host "Created ${name}Renderer.java"
+    Write-Output "Created ${name}Renderer.java"
 }
-
-Write-Host "`nAll renderer classes created successfully without BOM!"
+Write-Output "`nAll renderer classes created successfully without BOM!"

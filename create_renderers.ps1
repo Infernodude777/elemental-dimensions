@@ -1,5 +1,4 @@
 # Script to create all GeckoLib entity renderers
-
 $entities = @(
     @{Name="MagmaBrute"; Package="firelands"; SnakeName="magma_brute"},
     @{Name="CinderElemental"; Package="firelands"; SnakeName="cinder_elemental"},
@@ -31,39 +30,31 @@ $entities = @(
     @{Name="ElementalPrimarch"; Package="boss"; SnakeName="elemental_primarch"},
     @{Name="VoidLord"; Package="boss"; SnakeName="void_lord"}
 )
-
 $rendererDir = "src\main\java\com\elementaldimensions\client\renderer\entity"
-
 foreach ($entity in $entities) {
     $name = $entity.Name
     $package = $entity.Package
     $snakeName = $entity.SnakeName
-    
     $content = @"
 package com.elementaldimensions.client.renderer.entity;
-
 import com.elementaldimensions.entity.$package.${name}Entity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
-
 public class ${name}Renderer extends GeoEntityRenderer<${name}Entity> {
 	public ${name}Renderer(EntityRendererFactory.Context context) {
 		super(context, new ${name}Model());
 	}
-
 	public static class ${name}Model extends GeoModel<${name}Entity> {
 		@Override
 		public Identifier getModelResource(${name}Entity entity) {
 			return Identifier.of("elementaldimensions", "geo/entity/$snakeName.geo.json");
 		}
-
 		@Override
 		public Identifier getTextureResource(${name}Entity entity) {
 			return Identifier.of("elementaldimensions", "textures/entity/$snakeName.png");
 		}
-
 		@Override
 		public Identifier getAnimationResource(${name}Entity entity) {
 			return Identifier.of("elementaldimensions", "animations/entity/$snakeName.animation.json");
@@ -71,10 +62,8 @@ public class ${name}Renderer extends GeoEntityRenderer<${name}Entity> {
 	}
 }
 "@
-    
     $filePath = "$rendererDir\${name}Renderer.java"
     $content | Out-File -FilePath $filePath -Encoding UTF8
-    Write-Host "Created $filePath"
+    Write-Output "Created $filePath"
 }
-
-Write-Host "`nAll renderer classes created successfully!"
+Write-Output "`nAll renderer classes created successfully!"

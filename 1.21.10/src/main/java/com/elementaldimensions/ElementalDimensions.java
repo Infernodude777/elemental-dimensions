@@ -21,10 +21,10 @@ public class ElementalDimensions implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Initializing Elemental Dimensions mod...");
-		
+
 		// Load configuration
 		ModConfig.init();
-		
+
 		// Register mod content
 		ModBlocks.register();
 		ModItems.register();
@@ -33,12 +33,12 @@ public class ElementalDimensions implements ModInitializer {
 		ModSounds.register();
 		ModDimensions.register();
 		ModFeatures.register();
-		
+
 		// Register commands
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			ModCommands.register(dispatcher);
 		});
-		
+
 		LOGGER.info("Elemental Dimensions mod initialized successfully!");
 	}
 }

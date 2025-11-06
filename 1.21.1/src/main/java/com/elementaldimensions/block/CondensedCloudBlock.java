@@ -13,7 +13,7 @@ import net.minecraft.world.World;
  * Soft, fluffy appearance with sparkles
  */
 public class CondensedCloudBlock extends Block {
-	
+
 	public CondensedCloudBlock(Settings settings) {
 		super(settings
 			.luminance(state -> 6)
@@ -21,16 +21,16 @@ public class CondensedCloudBlock extends Block {
 			.strength(0.3f)
 		);
 	}
-	
+
 	@Override
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
 		super.randomDisplayTick(state, world, pos, random);
-		
+
 		if (random.nextInt(8) == 0) {
 			double x = pos.getX() + random.nextDouble();
 			double y = pos.getY() + random.nextDouble();
 			double z = pos.getZ() + random.nextDouble();
-			
+
 			world.addParticle(
 				ParticleTypes.SNOWFLAKE,
 				x, y, z,

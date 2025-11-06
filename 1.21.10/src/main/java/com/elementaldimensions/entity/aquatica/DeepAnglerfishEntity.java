@@ -18,30 +18,30 @@ import software.bernie.geckolib.util.GeckoLibUtil;
  * Fast swimmer with high attack damage
  */
 public class DeepAnglerfishEntity extends HostileEntity implements GeoAnimatable {
-	
+
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-	
+
 	public DeepAnglerfishEntity(EntityType<? extends HostileEntity> t, World w) {
 		super(t, w);
 	}
-	
+
 	@Override
 	protected void initGoals() {
 		this.goalSelector.add(1, new SwimGoal(this));
 		this.goalSelector.add(2, new MeleeAttackGoal(this, 1.2, false));
 		this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.8));
-		
+
 		this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
 	}
-	
+
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-			.add(EntityAttributes.MAX_HEALTH, 28.0)
-			.add(EntityAttributes.ATTACK_DAMAGE, 9.0)
-			.add(EntityAttributes.ARMOR, 2.0)
-			.add(EntityAttributes.MOVEMENT_SPEED, 0.4);
+			.add(EntityAttributes.GENERIC_MAX_HEALTH, 28.0)
+			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 9.0)
+			.add(EntityAttributes.GENERIC_ARMOR, 2.0)
+			.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.4);
 	}
-	
+
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 		controllers.add(new AnimationController<>(this, "controller", 0, state -> {

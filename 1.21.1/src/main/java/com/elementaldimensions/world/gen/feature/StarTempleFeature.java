@@ -12,16 +12,16 @@ import net.minecraft.world.gen.feature.DefaultFeatureConfig;
  * Generates star temples in Celestial dimension
  */
 public class StarTempleFeature extends Feature<DefaultFeatureConfig> {
-	
+
 	public StarTempleFeature() {
 		super(DefaultFeatureConfig.CODEC);
 	}
-	
+
 	@Override
 	public boolean generate(FeatureContext<DefaultFeatureConfig> context) {
 		StructureWorldAccess world = context.getWorld();
 		BlockPos pos = context.getOrigin();
-		
+
 		// Build floating temple platform
 		int platformRadius = 10;
 		for (int x = -platformRadius; x <= platformRadius; x++) {
@@ -34,16 +34,16 @@ public class StarTempleFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Build temple walls
 		int templeSize = 7;
 		int templeHeight = 10;
-		
+
 		for (int y = 1; y < templeHeight; y++) {
 			for (int x = -templeSize; x <= templeSize; x++) {
 				for (int z = -templeSize; z <= templeSize; z++) {
 					BlockPos buildPos = pos.add(x, y, z);
-					
+
 					// Outer walls with windows
 					if (Math.abs(x) == templeSize || Math.abs(z) == templeSize) {
 						if (y > 2 && y < 8 && (x + z) % 3 == 0) {
@@ -59,7 +59,7 @@ public class StarTempleFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Add cosmic shard pillars
 		for (int i = -4; i <= 4; i += 4) {
 			for (int j = -4; j <= 4; j += 4) {
@@ -68,12 +68,12 @@ public class StarTempleFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Central altar
 		for (int y = 1; y <= 3; y++) {
 			world.setBlockState(pos.add(0, y, 0), ModBlocks.STARLIGHT_MOSS.getDefaultState(), 3);
 		}
-		
+
 		return true;
 	}
 }

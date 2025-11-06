@@ -11,27 +11,27 @@ import net.minecraft.world.gen.feature.DefaultFeatureConfig;
  * Generates a coral palace structure in Aquatica dimension
  */
 public class CoralPalaceFeature extends Feature<DefaultFeatureConfig> {
-	
+
 	public CoralPalaceFeature() {
 		super(DefaultFeatureConfig.CODEC);
 	}
-	
+
 	@Override
 	public boolean generate(FeatureContext<DefaultFeatureConfig> context) {
 		StructureWorldAccess world = context.getWorld();
 		BlockPos pos = context.getOrigin();
-		
+
 		// Build underwater palace with coral blocks
 		int width = 15;
 		int height = 10;
 		int depth = 15;
-		
+
 		// Main structure
 		for (int y = 0; y < height; y++) {
 			for (int x = -width/2; x <= width/2; x++) {
 				for (int z = -depth/2; z <= depth/2; z++) {
 					BlockPos buildPos = pos.add(x, y, z);
-					
+
 					// Outer walls
 					if (Math.abs(x) == width/2 || Math.abs(z) == depth/2) {
 						if (y == 0 || y == height - 1) {
@@ -49,7 +49,7 @@ public class CoralPalaceFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Add towers at corners
 		int[] cornerOffsets = {-width/2, width/2};
 		for (int xOff : cornerOffsets) {
@@ -64,7 +64,7 @@ public class CoralPalaceFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		return true;
 	}
 }

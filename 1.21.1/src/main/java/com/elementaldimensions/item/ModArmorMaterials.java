@@ -1,7 +1,7 @@
 package com.elementaldimensions.item;
 
 public class ModArmorMaterials {
-	
+
 	/*
 	public static final RegistryEntry<ArmorMaterial> CELESTIAL = register("celestial",
 			Util.make(new EnumMap<>(EquipmentType.class), map -> {
@@ -16,7 +16,7 @@ public class ModArmorMaterials {
 			3.0f,
 			0.1f,
 			() -> Ingredient.ofItems(ModItems.CELESTIAL_CRYSTAL));
-	
+
 	private static RegistryEntry<ArmorMaterial> register(String id, EnumMap<EquipmentType, Integer> defense,
 	                                                       int enchantability, RegistryEntry<SoundEvent> equipSound,
 	                                                       float toughness, float knockbackResistance,
@@ -24,17 +24,17 @@ public class ModArmorMaterials {
 		List<ArmorMaterial.Layer> layers = List.of(
 				new ArmorMaterial.Layer(Identifier.of("elementaldimensions", id))
 		);
-		
+
 		EnumMap<EquipmentType, Integer> defenseMap = new EnumMap<>(EquipmentType.class);
 		for (EquipmentType type : EquipmentType.values()) {
 			if (defense.containsKey(type)) {
 				defenseMap.put(type, defense.get(type));
 			}
 		}
-		
-		return Registry.registerReference(Registries.ARMOR_MATERIAL, 
+
+		return Registry.registerReference(Registries.ARMOR_MATERIAL,
 				Identifier.of("elementaldimensions", id),
-				new ArmorMaterial(defenseMap, enchantability, equipSound, repairIngredient, 
+				new ArmorMaterial(defenseMap, enchantability, equipSound, repairIngredient,
 						layers, toughness, knockbackResistance));
 	}
 	*/

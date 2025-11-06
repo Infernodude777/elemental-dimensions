@@ -22,7 +22,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 import static net.minecraft.server.command.CommandManager.argument;
 
 public class ModCommands {
-	
+
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
 		// /edtp <dimension>
 		dispatcher.register(literal("edtp")
@@ -38,7 +38,7 @@ public class ModCommands {
 							return builder.buildFuture();
 						})
 						.executes(ModCommands::teleportToDimension)));
-		
+
 		// /edspawn <mob>
 		dispatcher.register(literal("edspawn")
 				.requires(source -> source.hasPermissionLevel(2))
@@ -58,18 +58,18 @@ public class ModCommands {
 							return builder.buildFuture();
 						})
 						.executes(ModCommands::spawnMob)));
-		
+
 		// /edgive <item>
 		dispatcher.register(literal("edgive")
 				.requires(source -> source.hasPermissionLevel(2))
 				.then(argument("item", StringArgumentType.word())
 						.executes(ModCommands::giveItem)));
-		
+
 		// /edreload
 		dispatcher.register(literal("edreload")
 				.requires(source -> source.hasPermissionLevel(3))
 				.executes(ModCommands::reloadConfig));
-		
+
 		// /eddebug <on/off>
 		dispatcher.register(literal("eddebug")
 				.requires(source -> source.hasPermissionLevel(2))
@@ -80,33 +80,33 @@ public class ModCommands {
 							return builder.buildFuture();
 						})
 						.executes(ModCommands::toggleDebug)));
-		
+
 		// /edhelp
 		dispatcher.register(literal("edhelp")
 				.executes(ModCommands::showHelp));
-		
+
 		// /edlistblocks <dimension>
 		dispatcher.register(literal("edlistblocks")
 				.requires(source -> source.hasPermissionLevel(2))
 				.then(argument("dimension", StringArgumentType.word())
 						.executes(ModCommands::listBlocks)));
-		
+
 		// /edlistmobs <dimension>
 		dispatcher.register(literal("edlistmobs")
 				.requires(source -> source.hasPermissionLevel(2))
 				.then(argument("dimension", StringArgumentType.word())
 						.executes(ModCommands::listMobs)));
 	}
-	
+
 	private static int teleportToDimension(CommandContext<ServerCommandSource> context) {
 		String dimensionName = StringArgumentType.getString(context, "dimension");
 		ServerPlayerEntity player = context.getSource().getPlayer();
-		
+
 		if (player == null) {
 			context.getSource().sendError(Text.literal("This command can only be used by players"));
 			return 0;
 		}
-		
+
 		RegistryKey<World> targetDimension = switch (dimensionName.toLowerCase()) {
 			case "firelands" -> ModDimensions.FIRELANDS;
 			case "aquatica" -> ModDimensions.AQUATICA;
@@ -116,37 +116,37 @@ public class ModCommands {
 			case "void_realm" -> ModDimensions.VOID_REALM;
 			default -> null;
 		};
-		
+
 		if (targetDimension == null) {
 			context.getSource().sendError(Text.literal("Unknown dimension: " + dimensionName));
 			return 0;
 		}
-		
+
 		ServerWorld targetWorld = context.getSource().getServer().getWorld(targetDimension);
 		if (targetWorld == null) {
 			context.getSource().sendError(Text.literal("Dimension not loaded: " + dimensionName));
 			return 0;
 		}
-		
+
 		// Use default spawn position
 		BlockPos spawnPos = new BlockPos(0, 64, 0);
-		player.teleportTo(new TeleportTarget(targetWorld, 
-				new Vec3d(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5), 
+		player.teleportTo(new TeleportTarget(targetWorld,
+				new Vec3d(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5),
 				Vec3d.ZERO, player.getYaw(), player.getPitch(), TeleportTarget.NO_OP));
-		
+
 		context.getSource().sendFeedback(() -> Text.literal("Teleported to " + dimensionName), true);
 		return 1;
 	}
-	
+
 	private static int spawnMob(CommandContext<ServerCommandSource> context) {
 		String mobName = StringArgumentType.getString(context, "mob");
 		ServerPlayerEntity player = context.getSource().getPlayer();
-		
+
 		if (player == null) {
 			context.getSource().sendError(Text.literal("This command can only be used by players"));
 			return 0;
 		}
-		
+
 		EntityType<?> entityType = switch (mobName.toLowerCase()) {
 			case "flame_sprite" -> ModEntities.FLAME_SPRITE;
 			case "magma_brute" -> ModEntities.MAGMA_BRUTE;
@@ -161,52 +161,52 @@ public class ModCommands {
 			case "elemental_primarch" -> ModEntities.ELEMENTAL_PRIMARCH;
 			default -> null;
 		};
-		
+
 		if (entityType == null) {
 			context.getSource().sendError(Text.literal("Unknown mob: " + mobName));
 			return 0;
 		}
-		
+
 		BlockPos spawnPos = player.getBlockPos().offset(player.getHorizontalFacing(), 3);
 		ServerWorld world = context.getSource().getWorld();
 		entityType.spawn(world, spawnPos, SpawnReason.COMMAND);
-		
+
 		context.getSource().sendFeedback(() -> Text.literal("Spawned " + mobName), true);
 		return 1;
 	}
-	
+
 	private static int giveItem(CommandContext<ServerCommandSource> context) {
 		String itemName = StringArgumentType.getString(context, "item");
 		ServerPlayerEntity player = context.getSource().getPlayer();
-		
+
 		if (player == null) {
 			context.getSource().sendError(Text.literal("This command can only be used by players"));
 			return 0;
 		}
-		
+
 
 		context.getSource().sendFeedback(() -> Text.literal("Item giving not yet implemented for: " + itemName), false);
 		return 1;
 	}
-	
+
 	private static int reloadConfig(CommandContext<ServerCommandSource> context) {
 		ModConfig.init();
 		context.getSource().sendFeedback(() -> Text.literal("Configuration reloaded"), true);
 		return 1;
 	}
-	
+
 	private static int toggleDebug(CommandContext<ServerCommandSource> context) {
 		String mode = StringArgumentType.getString(context, "mode");
 		boolean enable = mode.equalsIgnoreCase("on");
-		
+
 		ModConfig.get().debugMode = enable;
 		ModConfig.save();
-		
-		context.getSource().sendFeedback(() -> 
+
+		context.getSource().sendFeedback(() ->
 				Text.literal("Debug mode " + (enable ? "enabled" : "disabled")), true);
 		return 1;
 	}
-	
+
 	private static int showHelp(CommandContext<ServerCommandSource> context) {
 		context.getSource().sendFeedback(() -> Text.literal("""
 				=== Elemental Dimensions Commands ===
@@ -220,18 +220,18 @@ public class ModCommands {
 				"""), false);
 		return 1;
 	}
-	
+
 	private static int listBlocks(CommandContext<ServerCommandSource> context) {
 		String dimension = StringArgumentType.getString(context, "dimension");
-		context.getSource().sendFeedback(() -> 
+		context.getSource().sendFeedback(() ->
 				Text.literal("Listing blocks for " + dimension + "..."), false);
 
 		return 1;
 	}
-	
+
 	private static int listMobs(CommandContext<ServerCommandSource> context) {
 		String dimension = StringArgumentType.getString(context, "dimension");
-		context.getSource().sendFeedback(() -> 
+		context.getSource().sendFeedback(() ->
 				Text.literal("Listing mobs for " + dimension + "..."), false);
 
 		return 1;

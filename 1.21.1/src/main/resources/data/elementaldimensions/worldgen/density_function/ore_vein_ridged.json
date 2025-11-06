@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:ridged",
-  "argument": {
-    "type": "minecraft:noise",
-    "noise": "minecraft:ore_veininess",
-    "xz_scale": 1.0,
-    "y_scale": 1.0
-  }
-}

@@ -19,7 +19,7 @@ public class CoralGuardianEntity extends HostileEntity implements GeoAnimatable 
 		this.setAir(300);
 	}
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-	
+
 	@Override
 	protected void initGoals() {
 		this.goalSelector.add(1, new SwimGoal(this));
@@ -27,21 +27,21 @@ public class CoralGuardianEntity extends HostileEntity implements GeoAnimatable 
 		this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.9));
 		this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
 		this.goalSelector.add(5, new LookAroundGoal(this));
-		
+
 		this.targetSelector.add(1, new RevengeGoal(this));
 		this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
 	}
-	
+
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-				.add(EntityAttributes.MAX_HEALTH, 22.0)
-				.add(EntityAttributes.MOVEMENT_SPEED, 0.25)
-				.add(EntityAttributes.ATTACK_DAMAGE, 6.0)
-				.add(EntityAttributes.FOLLOW_RANGE, 28.0)
-				.add(EntityAttributes.ARMOR, 4.0);
+				.add(EntityAttributes.GENERIC_MAX_HEALTH, 22.0)
+				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
+				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 6.0)
+				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 28.0)
+				.add(EntityAttributes.GENERIC_ARMOR, 4.0);
 	}
 
-	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
+	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 controllers.add(new AnimationController<>(this, "controller", 0, state -> {
 return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 }));
@@ -57,4 +57,3 @@ return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		return cache;
 	}
 }
-

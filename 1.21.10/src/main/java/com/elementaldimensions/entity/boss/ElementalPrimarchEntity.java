@@ -39,11 +39,11 @@ public class ElementalPrimarchEntity extends HostileEntity implements GeoAnimata
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.MAX_HEALTH, 1200.0)
-                .add(EntityAttributes.ATTACK_DAMAGE, 25.0)
-                .add(EntityAttributes.ARMOR, 25.0)
-                .add(EntityAttributes.KNOCKBACK_RESISTANCE, 1.0)
-                .add(EntityAttributes.FOLLOW_RANGE, 80.0);
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 1200.0)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 25.0)
+                .add(EntityAttributes.GENERIC_ARMOR, 25.0)
+                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 80.0);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class ElementalPrimarchEntity extends HostileEntity implements GeoAnimata
         super.tick();
         if (!this.getEntityWorld().isClient()) {
             this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
-            
+
             float healthPercent = this.getHealth() / this.getMaxHealth();
             if (healthPercent < 0.2f && phase < 4) {
                 phase = 4;
@@ -68,7 +68,7 @@ public class ElementalPrimarchEntity extends HostileEntity implements GeoAnimata
                         .filter(player -> player.squaredDistanceTo(this) < 4096)
                         .count();
                 if (nearbyPlayers > 1) {
-                    this.getAttributeInstance(EntityAttributes.MAX_HEALTH)
+                    this.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH)
                             .setBaseValue(1200.0 + nearbyPlayers * 200);
                 }
             }
@@ -87,7 +87,7 @@ public class ElementalPrimarchEntity extends HostileEntity implements GeoAnimata
         this.bossBar.removePlayer(player);
     }
 
-	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
+	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 controllers.add(new AnimationController<>(this, "controller", 0, state -> {
 return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 }));
@@ -103,4 +103,3 @@ return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		return cache;
 	}
 }
-

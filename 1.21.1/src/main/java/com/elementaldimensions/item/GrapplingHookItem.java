@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 
 /**
  * Grappling Hook - Advanced mobility item
- * 
+ *
  * Features:
  * - Hooks to blocks within 32 block range
  * - Pulls player with momentum-based physics
@@ -28,28 +28,28 @@ import net.minecraft.world.World;
  * - Cooldown system
  */
 public class GrapplingHookItem extends Item {
-	
+
 	private static final double MAX_RANGE = 32.0;
 	private static final double PULL_SPEED = 1.5;
 	private static final int COOLDOWN_TICKS = 20; // 1 second
-	
+
 	public GrapplingHookItem(Settings settings) {
 		super(settings);
 	}
-	
+
 	@Override
 	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 		ItemStack stack = user.getStackInHand(hand);
-		
+
 		if (user.getItemCooldownManager().isCoolingDown(this)) {
 			return TypedActionResult.fail(stack);
 		}
-		
+
 		// Raycast to find hook point
 		Vec3d start = user.getEyePos();
 		Vec3d direction = user.getRotationVector();
 		Vec3d end = start.add(direction.multiply(MAX_RANGE));
-		
+
 		BlockHitResult hitResult = world.raycast(new RaycastContext(
 			start,
 			end,
@@ -57,20 +57,20 @@ public class GrapplingHookItem extends Item {
 			RaycastContext.FluidHandling.NONE,
 			user
 		));
-		
+
 		if (hitResult.getType() == HitResult.Type.BLOCK) {
 			BlockPos hitPos = hitResult.getBlockPos();
 			Vec3d hookPoint = Vec3d.ofCenter(hitPos);
-			
+
 			// Calculate pull vector
 			Vec3d playerPos = user.getPos();
 			Vec3d pullVector = hookPoint.subtract(playerPos).normalize().multiply(PULL_SPEED);
-			
+
 			// Apply momentum with upward boost for swing effect
 			Vec3d velocity = pullVector.add(0, 0.3, 0);
 			user.setVelocity(velocity);
 			user.velocityModified = true;
-			
+
 			// Play sound
 			world.playSound(
 				null,
@@ -82,21 +82,21 @@ public class GrapplingHookItem extends Item {
 				1.0f,
 				1.2f
 			);
-			
+
 			// Apply cooldown
 			user.getItemCooldownManager().set(this, COOLDOWN_TICKS);
-			
+
 			// Damage item
 			if (!world.isClient()) {
 				stack.damage(1, user, LivingEntity.getSlotForHand(hand));
 			}
-			
+
 			// Statistics
 			user.incrementStat(Stats.USED.getOrCreateStat(this));
-			
+
 			return TypedActionResult.success(stack, world.isClient());
 		}
-		
+
 		// No valid hook point
 		world.playSound(
 			null,
@@ -108,7 +108,7 @@ public class GrapplingHookItem extends Item {
 			0.5f,
 			1.0f
 		);
-		
+
 		return TypedActionResult.fail(stack);
 	}
 }

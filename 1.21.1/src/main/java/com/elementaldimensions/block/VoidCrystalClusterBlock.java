@@ -13,7 +13,7 @@ import net.minecraft.world.World;
  * Dark, mysterious with portal particles
  */
 public class VoidCrystalClusterBlock extends Block {
-	
+
 	public VoidCrystalClusterBlock(Settings settings) {
 		super(settings
 			.luminance(state -> 14)
@@ -21,16 +21,16 @@ public class VoidCrystalClusterBlock extends Block {
 			.requiresTool()
 		);
 	}
-	
+
 	@Override
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
 		super.randomDisplayTick(state, world, pos, random);
-		
+
 		if (random.nextInt(6) == 0) {
 			double x = pos.getX() + random.nextDouble();
 			double y = pos.getY() + random.nextDouble();
 			double z = pos.getZ() + random.nextDouble();
-			
+
 			world.addParticle(
 				ParticleTypes.PORTAL,
 				x, y, z,
@@ -39,13 +39,13 @@ public class VoidCrystalClusterBlock extends Block {
 				(random.nextDouble() - 0.5) * 0.5
 			);
 		}
-		
+
 		// Rare sparkle effect
 		if (random.nextInt(15) == 0) {
 			double x = pos.getX() + random.nextDouble();
 			double y = pos.getY() + random.nextDouble();
 			double z = pos.getZ() + random.nextDouble();
-			
+
 			world.addParticle(
 				ParticleTypes.END_ROD,
 				x, y, z,

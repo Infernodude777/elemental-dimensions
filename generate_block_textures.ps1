@@ -1,13 +1,10 @@
 # Script to generate missing block textures for Elemental Dimensions mod
 Add-Type -AssemblyName System.Drawing
-
 $outputPath = "src\main\resources\assets\elementaldimensions\textures\block"
-
 # Create output directory if it doesn't exist
 if (-not (Test-Path $outputPath)) {
     New-Item -ItemType Directory -Path $outputPath -Force
 }
-
 # Helper function to create block texture with pattern
 function New-BlockTexture {
     param(
@@ -16,13 +13,10 @@ function New-BlockTexture {
         [System.Drawing.Color]$accentColor,
         [string]$pattern = "stone"
     )
-    
     $bitmap = New-Object System.Drawing.Bitmap(16, 16)
     $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
     $graphics.Clear($baseColor)
-    
     $random = New-Object System.Random($fileName.GetHashCode())
-    
     if ($pattern -eq "stone") {
         # Stone texture with noise
         for ($x = 0; $x -lt 16; $x++) {
@@ -147,17 +141,13 @@ function New-BlockTexture {
             $graphics.FillRectangle((New-Object System.Drawing.SolidBrush($accentColor)), $x, $y - 2, 2, 2)
         }
     }
-    
     $graphics.Dispose()
-    
     $fullPath = Join-Path $outputPath $fileName
     $bitmap.Save($fullPath, [System.Drawing.Imaging.ImageFormat]::Png)
     $bitmap.Dispose()
-    
-    Write-Host "Created: $fileName"
+    Write-Output "Created: $fileName"
 }
-
-Write-Host "Generating Firelands block textures..."
+Write-Output "Generating Firelands block textures..."
 New-BlockTexture "ember_sand.png" ([System.Drawing.Color]::FromArgb(180, 80, 40)) ([System.Drawing.Color]::FromArgb(255, 120, 60)) "sand"
 New-BlockTexture "charcoal_rock.png" ([System.Drawing.Color]::FromArgb(40, 40, 45)) ([System.Drawing.Color]::FromArgb(60, 60, 70)) "stone"
 New-BlockTexture "obsidian_grass.png" ([System.Drawing.Color]::FromArgb(60, 50, 80)) ([System.Drawing.Color]::FromArgb(100, 80, 120)) "grass"
@@ -169,8 +159,7 @@ New-BlockTexture "lava_glass_tile.png" ([System.Drawing.Color]::FromArgb(255, 10
 New-BlockTexture "fire_furnace_core.png" ([System.Drawing.Color]::FromArgb(200, 80, 40)) ([System.Drawing.Color]::FromArgb(255, 150, 80)) "stone"
 New-BlockTexture "smoldering_coal_block.png" ([System.Drawing.Color]::FromArgb(50, 50, 55)) ([System.Drawing.Color]::FromArgb(255, 120, 60)) "stone"
 New-BlockTexture "lava_crystal_ore.png" ([System.Drawing.Color]::FromArgb(120, 60, 50)) ([System.Drawing.Color]::FromArgb(255, 150, 80)) "ore"
-
-Write-Host "`nGenerating Aquatica block textures..."
+Write-Output "`nGenerating Aquatica block textures..."
 New-BlockTexture "abyssal_glass.png" ([System.Drawing.Color]::FromArgb(40, 80, 120)) ([System.Drawing.Color]::FromArgb(80, 140, 200)) "glass"
 New-BlockTexture "pearlstone.png" ([System.Drawing.Color]::FromArgb(180, 200, 220)) ([System.Drawing.Color]::FromArgb(220, 230, 240)) "stone"
 New-BlockTexture "luminescent_kelp.png" ([System.Drawing.Color]::FromArgb(60, 150, 100)) ([System.Drawing.Color]::FromArgb(100, 255, 180)) "grass"
@@ -181,8 +170,7 @@ New-BlockTexture "brine_rock.png" ([System.Drawing.Color]::FromArgb(100, 120, 13
 New-BlockTexture "oceanic_crystal_ore.png" ([System.Drawing.Color]::FromArgb(80, 100, 120)) ([System.Drawing.Color]::FromArgb(100, 200, 255)) "ore"
 New-BlockTexture "tidewood_log.png" ([System.Drawing.Color]::FromArgb(80, 120, 140)) ([System.Drawing.Color]::FromArgb(100, 150, 170)) "log"
 New-BlockTexture "salt_stone.png" ([System.Drawing.Color]::FromArgb(220, 220, 230)) ([System.Drawing.Color]::FromArgb(240, 240, 245)) "stone"
-
-Write-Host "`nGenerating Terra Depths block textures..."
+Write-Output "`nGenerating Terra Depths block textures..."
 New-BlockTexture "rooted_earth.png" ([System.Drawing.Color]::FromArgb(100, 80, 60)) ([System.Drawing.Color]::FromArgb(80, 60, 40)) "grass"
 New-BlockTexture "crystal_cluster.png" ([System.Drawing.Color]::FromArgb(180, 120, 220)) ([System.Drawing.Color]::FromArgb(220, 160, 255)) "crystal_cluster"
 New-BlockTexture "moss_tile.png" ([System.Drawing.Color]::FromArgb(80, 120, 70)) ([System.Drawing.Color]::FromArgb(100, 150, 90)) "grass"
@@ -191,16 +179,14 @@ New-BlockTexture "fungal_fiber.png" ([System.Drawing.Color]::FromArgb(140, 100, 
 New-BlockTexture "mycelium_log.png" ([System.Drawing.Color]::FromArgb(100, 80, 90)) ([System.Drawing.Color]::FromArgb(130, 110, 120)) "log"
 New-BlockTexture "terra_ore.png" ([System.Drawing.Color]::FromArgb(100, 90, 80)) ([System.Drawing.Color]::FromArgb(120, 200, 100)) "ore"
 New-BlockTexture "stone_lattice.png" ([System.Drawing.Color]::FromArgb(140, 130, 120)) ([System.Drawing.Color]::FromArgb(180, 170, 160)) "brick"
-
-Write-Host "`nGenerating Skyreach Peaks block textures..."
+Write-Output "`nGenerating Skyreach Peaks block textures..."
 New-BlockTexture "wind_crystal.png" ([System.Drawing.Color]::FromArgb(200, 230, 255)) ([System.Drawing.Color]::FromArgb(240, 250, 255)) "crystal_cluster"
 New-BlockTexture "cloud_soil.png" ([System.Drawing.Color]::FromArgb(240, 240, 250)) ([System.Drawing.Color]::FromArgb(255, 255, 255)) "sand"
 New-BlockTexture "petal_tile.png" ([System.Drawing.Color]::FromArgb(255, 200, 220)) ([System.Drawing.Color]::FromArgb(255, 230, 240)) "grass"
 New-BlockTexture "air_lattice.png" ([System.Drawing.Color]::FromArgb(210, 230, 250)) ([System.Drawing.Color]::FromArgb(230, 245, 255)) "brick"
 New-BlockTexture "stratus_shard.png" ([System.Drawing.Color]::FromArgb(180, 200, 230)) ([System.Drawing.Color]::FromArgb(220, 235, 255)) "crystal_cluster"
 New-BlockTexture "gust_rock.png" ([System.Drawing.Color]::FromArgb(180, 190, 210)) ([System.Drawing.Color]::FromArgb(200, 210, 230)) "stone"
-
-Write-Host "`nGenerating Celestial block textures..."
+Write-Output "`nGenerating Celestial block textures..."
 New-BlockTexture "void_crystal_ore.png" ([System.Drawing.Color]::FromArgb(100, 80, 120)) ([System.Drawing.Color]::FromArgb(180, 150, 220)) "ore"
 New-BlockTexture "starlight_moss.png" ([System.Drawing.Color]::FromArgb(80, 100, 140)) ([System.Drawing.Color]::FromArgb(150, 200, 255)) "grass"
 New-BlockTexture "nebula_sand.png" ([System.Drawing.Color]::FromArgb(120, 100, 160)) ([System.Drawing.Color]::FromArgb(160, 140, 200)) "sand"
@@ -208,6 +194,5 @@ New-BlockTexture "rift_block.png" ([System.Drawing.Color]::FromArgb(60, 40, 80))
 New-BlockTexture "astral_tile.png" ([System.Drawing.Color]::FromArgb(140, 120, 180)) ([System.Drawing.Color]::FromArgb(180, 160, 220)) "brick"
 New-BlockTexture "cosmic_shard.png" ([System.Drawing.Color]::FromArgb(200, 180, 255)) ([System.Drawing.Color]::FromArgb(240, 220, 255)) "crystal_cluster"
 New-BlockTexture "lumen_cap.png" ([System.Drawing.Color]::FromArgb(255, 240, 200)) ([System.Drawing.Color]::FromArgb(255, 255, 230)) "grass"
-
-Write-Host "`nAll block textures generated!"
-Write-Host "Total textures created in: $outputPath"
+Write-Output "`nAll block textures generated!"
+Write-Output "Total textures created in: $outputPath"

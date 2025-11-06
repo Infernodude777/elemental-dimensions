@@ -33,10 +33,10 @@ public class WindSeraphEntity extends HostileEntity implements GeoAnimatable {
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.MAX_HEALTH, 650.0)
-                .add(EntityAttributes.ATTACK_DAMAGE, 16.0)
-                .add(EntityAttributes.ARMOR, 10.0)
-                .add(EntityAttributes.KNOCKBACK_RESISTANCE, 0.8)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 650.0)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 16.0)
+                .add(EntityAttributes.GENERIC_ARMOR, 10.0)
+                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.8)
                 ;
     }
 
@@ -60,7 +60,7 @@ public class WindSeraphEntity extends HostileEntity implements GeoAnimatable {
         this.bossBar.removePlayer(player);
     }
 
-	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
+	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 controllers.add(new AnimationController<>(this, "controller", 0, state -> {
 return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 }));
@@ -76,4 +76,3 @@ return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		return cache;
 	}
 }
-

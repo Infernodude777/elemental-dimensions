@@ -13,9 +13,9 @@ import java.io.IOException;
 public class ModConfig {
 	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 	private static final File CONFIG_FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), "elementaldimensions.json");
-	
+
 	private static ConfigData config = new ConfigData();
-	
+
 	public static void init() {
 		if (CONFIG_FILE.exists()) {
 			try (FileReader reader = new FileReader(CONFIG_FILE)) {
@@ -28,7 +28,7 @@ public class ModConfig {
 			save();
 		}
 	}
-	
+
 	public static void save() {
 		try (FileWriter writer = new FileWriter(CONFIG_FILE)) {
 			GSON.toJson(config, writer);
@@ -37,30 +37,30 @@ public class ModConfig {
 			ElementalDimensions.LOGGER.error("Failed to save config", e);
 		}
 	}
-	
+
 	public static ConfigData get() {
 		return config;
 	}
-	
+
 	public static class ConfigData {
 		// Performance settings
 		public int particleMaxPerSource = 10;
 		public int armorCheckInterval = 100;
 		public boolean asyncAssetLoading = true;
-		
+
 		// Multiplayer settings
 		public boolean bossScalesWithPlayers = true;
 		public boolean pvpEnabled = false;
 		public boolean sharedCelestialDimension = true;
-		
+
 		// Audio settings
 		public float musicVolume = 0.5f;
 		public float ambientVolume = 0.7f;
-		
+
 		// Debug settings
 		public boolean debugMode = false;
 		public boolean showParticleDebug = false;
-		
+
 		// Progression settings
 		public boolean requireBossKillsForProgression = true;
 		public boolean enableDimensionalCompass = true;

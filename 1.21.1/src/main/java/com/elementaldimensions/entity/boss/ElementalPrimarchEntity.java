@@ -51,7 +51,7 @@ public class ElementalPrimarchEntity extends HostileEntity implements GeoAnimata
         super.tick();
         if (!this.getEntityWorld().isClient()) {
             this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
-            
+
             float healthPercent = this.getHealth() / this.getMaxHealth();
             if (healthPercent < 0.2f && phase < 4) {
                 phase = 4;
@@ -87,7 +87,7 @@ public class ElementalPrimarchEntity extends HostileEntity implements GeoAnimata
         this.bossBar.removePlayer(player);
     }
 
-	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
+	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 controllers.add(new AnimationController<>(this, "controller", 0, state -> {
 return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 }));
@@ -103,4 +103,3 @@ return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		return cache;
 	}
 }
-

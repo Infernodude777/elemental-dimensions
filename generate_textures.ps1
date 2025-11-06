@@ -1,8 +1,6 @@
 Add-Type -AssemblyName System.Drawing
-
 $blockPath = "c:\Users\Nikhil\Desktop\elemental_dimensions\src\main\resources\assets\elementaldimensions\textures\block"
 $itemPath = "c:\Users\Nikhil\Desktop\elemental_dimensions\src\main\resources\assets\elementaldimensions\textures\item"
-
 # Create voidstone texture (dark gray stone)
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
@@ -13,8 +11,7 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$blockPath\voidstone.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-Write-Host "Created voidstone.png"
-
+Write-Output "Created voidstone.png"
 # Create void_crystal texture (purple/blue glowing)
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
@@ -26,8 +23,7 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$blockPath\void_crystal.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-Write-Host "Created void_crystal.png"
-
+Write-Output "Created void_crystal.png"
 # Create nullrock texture (very dark stone)
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
@@ -38,8 +34,7 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$blockPath\nullrock.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-Write-Host "Created nullrock.png"
-
+Write-Output "Created nullrock.png"
 # Create dark_matter_block texture (almost black with blue tint)
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
@@ -52,8 +47,7 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$blockPath\dark_matter_block.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-Write-Host "Created dark_matter_block.png"
-
+Write-Output "Created dark_matter_block.png"
 # Create void_glass texture (translucent dark glass)
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
@@ -67,8 +61,7 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$blockPath\void_glass.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-Write-Host "Created void_glass.png"
-
+Write-Output "Created void_glass.png"
 # Create ethereal_grass texture (purple grass top with dark bottom)
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
@@ -86,8 +79,7 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$blockPath\ethereal_grass.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-Write-Host "Created ethereal_grass.png"
-
+Write-Output "Created ethereal_grass.png"
 # Create void_essence item texture (purple orb)
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
@@ -104,8 +96,7 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$itemPath\void_essence.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-Write-Host "Created void_essence.png"
-
+Write-Output "Created void_essence.png"
 # Create dark_matter item texture (very dark orb)
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
@@ -122,8 +113,7 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$itemPath\dark_matter.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-Write-Host "Created dark_matter.png"
-
+Write-Output "Created dark_matter.png"
 # Create remaining void items
 $items = @('void_crystal_shard', 'nullstone_ingot', 'ethereal_thread', 'void_lord_heart', 'void_altar_rune')
 foreach ($item in $items) {
@@ -142,7 +132,6 @@ foreach ($item in $items) {
     }
     $bmp.Save("$itemPath\$item.png", [System.Drawing.Imaging.ImageFormat]::Png)
     $bmp.Dispose()
-    Write-Host "Created $item.png"
+    Write-Output "Created $item.png"
 }
-
-Write-Host "`nAll void textures created successfully!"
+Write-Output "`nAll void textures created successfully!"

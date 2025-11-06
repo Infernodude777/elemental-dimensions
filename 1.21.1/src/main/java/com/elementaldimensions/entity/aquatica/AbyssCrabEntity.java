@@ -14,25 +14,25 @@ import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class AbyssCrabEntity extends HostileEntity implements GeoAnimatable {
-	
+
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-	
+
 	public AbyssCrabEntity(EntityType<? extends HostileEntity> t, World w) {
 		super(t, w);
 	}
-	
+
 	@Override
 	protected void initGoals() {
 		this.goalSelector.add(1, new SwimGoal(this));
 		this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
 	}
-	
+
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
 			.add(EntityAttributes.GENERIC_MAX_HEALTH, 14.0)
 			.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0);
 	}
-	
+
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 		controllers.add(new AnimationController<>(this, "controller", 0, state -> {
@@ -50,5 +50,3 @@ public class AbyssCrabEntity extends HostileEntity implements GeoAnimatable {
 		return cache;
 	}
 }
-
-

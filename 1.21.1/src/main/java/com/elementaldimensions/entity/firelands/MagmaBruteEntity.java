@@ -19,11 +19,11 @@ public class MagmaBruteEntity extends HostileEntity implements GeoAnimatable {
 	public MagmaBruteEntity(EntityType<? extends HostileEntity> entityType, World world) {
 		super(entityType, world);
 	}
-	
+
 	public boolean isFireImmune() {
 		return true;
 	}
-	
+
 	@Override
 	protected void initGoals() {
 		this.goalSelector.add(1, new SwimGoal(this));
@@ -31,11 +31,11 @@ public class MagmaBruteEntity extends HostileEntity implements GeoAnimatable {
 		this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.6));
 		this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
 		this.goalSelector.add(5, new LookAroundGoal(this));
-		
+
 		this.targetSelector.add(1, new RevengeGoal(this));
 		this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
 	}
-	
+
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
 				.add(EntityAttributes.GENERIC_MAX_HEALTH, 40.0)
@@ -45,13 +45,13 @@ public class MagmaBruteEntity extends HostileEntity implements GeoAnimatable {
 				.add(EntityAttributes.GENERIC_ARMOR, 8.0)
 				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 20.0);
 	}
-	
-	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
+
+	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 controllers.add(new AnimationController<>(this, "controller", 0, state -> {
 return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 }));
 }
-	
+
 		@Override
 	public double getTick(Object object) {
 		return this.age;

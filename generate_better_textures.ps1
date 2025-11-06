@@ -1,11 +1,8 @@
 # Advanced Texture Generator for Elemental Dimensions
 # Creates more detailed, Minecraft-style textures with patterns
-
 Add-Type -AssemblyName System.Drawing
-
 $blockPath = "c:\Users\Nikhil\Desktop\elemental_dimensions\src\main\resources\assets\elementaldimensions\textures\block"
 $itemPath = "c:\Users\Nikhil\Desktop\elemental_dimensions\src\main\resources\assets\elementaldimensions\textures\item"
-
 # Helper function to add noise
 function Add-Noise {
     param($color, $variance)
@@ -14,9 +11,8 @@ function Add-Noise {
     $b = [Math]::Max(0, [Math]::Min(255, $color.B + (Get-Random -Minimum (-$variance) -Maximum $variance)))
     return [System.Drawing.Color]::FromArgb(255, $r, $g, $b)
 }
-
 # Create improved Voidstone texture with cracks
-Write-Host "Creating Voidstone texture..."
+Write-Output "Creating Voidstone texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 $baseColor = [System.Drawing.Color]::FromArgb(255, 40, 40, 45)
 for ($y = 0; $y -lt 16; $y++) {
@@ -31,15 +27,13 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$blockPath\voidstone.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
 # Create Void Crystal with glow effect
-Write-Host "Creating Void Crystal texture..."
+Write-Output "Creating Void Crystal texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
     for ($x = 0; $x -lt 16; $x++) {
         $centerX = 8; $centerY = 8
         $dist = [Math]::Sqrt(($x - $centerX) * ($x - $centerX) + ($y - $centerY) * ($y - $centerY))
-        
         if ($dist -lt 4) {
             # Bright core
             $brightness = 200 - ($dist * 30)
@@ -56,9 +50,8 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$blockPath\void_crystal.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
 # Create Nullrock with subtle pattern
-Write-Host "Creating Nullrock texture..."
+Write-Output "Creating Nullrock texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
     for ($x = 0; $x -lt 16; $x++) {
@@ -74,27 +67,23 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$blockPath\nullrock.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
 # Create Dark Matter Block with swirl pattern
-Write-Host "Creating Dark Matter Block texture..."
+Write-Output "Creating Dark Matter Block texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
     for ($x = 0; $x -lt 16; $x++) {
         $angle = [Math]::Atan2($y - 8, $x - 8)
         $swirl = [Math]::Sin($angle * 3) * 10
-        
         $r = 15 + $swirl
         $g = 10 + $swirl/2
         $b = 35 + $swirl
-        
         $bmp.SetPixel($x, $y, [System.Drawing.Color]::FromArgb(255, [Math]::Max(0, $r), [Math]::Max(0, $g), [Math]::Max(0, $b)))
     }
 }
 $bmp.Save("$blockPath\dark_matter_block.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
 # Create Void Glass with grid pattern
-Write-Host "Creating Void Glass texture..."
+Write-Output "Creating Void Glass texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
     for ($x = 0; $x -lt 16; $x++) {
@@ -110,9 +99,8 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$blockPath\void_glass.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
 # Create Ethereal Grass with detailed grass blades
-Write-Host "Creating Ethereal Grass texture..."
+Write-Output "Creating Ethereal Grass texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
     for ($x = 0; $x -lt 16; $x++) {
@@ -134,17 +122,14 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$blockPath\ethereal_grass.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
-Write-Host "`n=== Creating Item Textures ===`n"
-
+Write-Output "`n=== Creating Item Textures ===`n"
 # Create Void Essence with energy effect
-Write-Host "Creating Void Essence texture..."
+Write-Output "Creating Void Essence texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
     for ($x = 0; $x -lt 16; $x++) {
         $centerX = 8; $centerY = 8
         $dist = [Math]::Sqrt(($x - $centerX) * ($x - $centerX) + ($y - $centerY) * ($y - $centerY))
-        
         if ($dist -lt 5 -and $dist -gt 2) {
             # Energy ring
             $pulse = [Math]::Sin($dist * 1.5) * 30
@@ -159,15 +144,13 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$itemPath\void_essence.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
 # Create Dark Matter with singularity effect
-Write-Host "Creating Dark Matter texture..."
+Write-Output "Creating Dark Matter texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
     for ($x = 0; $x -lt 16; $x++) {
         $centerX = 8; $centerY = 8
         $dist = [Math]::Sqrt(($x - $centerX) * ($x - $centerX) + ($y - $centerY) * ($y - $centerY))
-        
         if ($dist -lt 6) {
             $intensity = 50 - ($dist * 8)
             $bmp.SetPixel($x, $y, [System.Drawing.Color]::FromArgb(255, $intensity/3, $intensity/5, $intensity))
@@ -178,37 +161,31 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$itemPath\dark_matter.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
 # Create Void Crystal Shard with facets
-Write-Host "Creating Void Crystal Shard texture..."
+Write-Output "Creating Void Crystal Shard texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 $graphics = [System.Drawing.Graphics]::FromImage($bmp)
 $graphics.Clear([System.Drawing.Color]::Transparent)
-
 # Draw crystal facets
 $pen1 = New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(255, 80, 60, 130), 2)
 $pen2 = New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(255, 100, 80, 150), 1)
-
 $points = @(
     (New-Object System.Drawing.Point(8, 2)),
     (New-Object System.Drawing.Point(12, 8)),
     (New-Object System.Drawing.Point(8, 14)),
     (New-Object System.Drawing.Point(4, 8))
 )
-
 $graphics.FillPolygon((New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(255, 70, 50, 110))), $points)
 $graphics.DrawPolygon($pen1, $points)
 $graphics.DrawLine($pen2, 8, 2, 8, 14)
 $graphics.DrawLine($pen2, 4, 8, 12, 8)
-
 $graphics.Dispose()
 $pen1.Dispose()
 $pen2.Dispose()
 $bmp.Save("$itemPath\void_crystal_shard.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
 # Create Nullstone Ingot
-Write-Host "Creating Nullstone Ingot texture..."
+Write-Output "Creating Nullstone Ingot texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
     for ($x = 0; $x -lt 16; $x++) {
@@ -227,13 +204,11 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$itemPath\nullstone_ingot.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
 # Create Ethereal Thread with weave pattern
-Write-Host "Creating Ethereal Thread texture..."
+Write-Output "Creating Ethereal Thread texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 $graphics = [System.Drawing.Graphics]::FromImage($bmp)
 $graphics.Clear([System.Drawing.Color]::Transparent)
-
 $pen = New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(255, 90, 70, 110), 2)
 # Draw wavy thread
 for ($i = 0; $i -lt 12; $i++) {
@@ -241,14 +216,12 @@ for ($i = 0; $i -lt 12; $i++) {
     $x = 8 + [Math]::Sin($i / 2.0) * 3
     $graphics.FillEllipse((New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(200, 85, 65, 105))), $x, $y, 2, 2)
 }
-
 $pen.Dispose()
 $graphics.Dispose()
 $bmp.Save("$itemPath\ethereal_thread.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
 # Create Void Lord Heart with pulsing effect
-Write-Host "Creating Void Lord Heart texture..."
+Write-Output "Creating Void Lord Heart texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 for ($y = 0; $y -lt 16; $y++) {
     for ($x = 0; $x -lt 16; $x++) {
@@ -257,7 +230,6 @@ for ($y = 0; $y -lt 16; $y++) {
         $dx2 = $x - 11; $dy2 = $y - 6
         $dist1 = [Math]::Sqrt($dx1 * $dx1 + $dy1 * $dy1)
         $dist2 = [Math]::Sqrt($dx2 * $dx2 + $dy2 * $dy2)
-        
         if (($dist1 -lt 4 -or $dist2 -lt 4 -or ($y -gt 8 -and $y -lt 14 -and $x -gt 6 -and $x -lt 10))) {
             if ($dist1 -lt 2 -or $dist2 -lt 2) {
                 # Bright core
@@ -273,30 +245,25 @@ for ($y = 0; $y -lt 16; $y++) {
 }
 $bmp.Save("$itemPath\void_lord_heart.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
 # Create Void Altar Rune with mystical symbols
-Write-Host "Creating Void Altar Rune texture..."
+Write-Output "Creating Void Altar Rune texture..."
 $bmp = New-Object System.Drawing.Bitmap(16, 16)
 $graphics = [System.Drawing.Graphics]::FromImage($bmp)
 $graphics.Clear([System.Drawing.Color]::Transparent)
-
 # Background circle
 $brush = New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(255, 50, 40, 70))
 $graphics.FillEllipse($brush, 3, 3, 10, 10)
-
 # Rune symbols (simple lines)
 $pen = New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(255, 120, 90, 150), 1)
 $graphics.DrawLine($pen, 8, 5, 8, 11)
 $graphics.DrawLine($pen, 5, 8, 11, 8)
 $graphics.DrawLine($pen, 6, 6, 10, 10)
 $graphics.DrawLine($pen, 10, 6, 6, 10)
-
 $brush.Dispose()
 $pen.Dispose()
 $graphics.Dispose()
 $bmp.Save("$itemPath\void_altar_rune.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
-
-Write-Host "`n=== All improved textures created! ===`n"
-Write-Host "Block textures: 6 files in $blockPath"
-Write-Host "Item textures: 7 files in $itemPath"
+Write-Output "`n=== All improved textures created! ===`n"
+Write-Output "Block textures: 6 files in $blockPath"
+Write-Output "Item textures: 7 files in $itemPath"

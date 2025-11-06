@@ -20,7 +20,7 @@ import net.minecraft.world.World;
  * Admin commands for teleporting to dimensions
  */
 public class DimensionTeleportCommands {
-    
+
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         // /celestial - Teleport to Celestial Realm
         dispatcher.register(
@@ -30,7 +30,7 @@ public class DimensionTeleportCommands {
                         .then(CommandManager.argument("player", EntityArgumentType.player())
                                 .executes(ctx -> teleportPlayerToDimension(ctx, "celestial_realm")))
         );
-        
+
         // /fire - Teleport to Inferno Realm
         dispatcher.register(
                 CommandManager.literal("fire")
@@ -39,7 +39,7 @@ public class DimensionTeleportCommands {
                         .then(CommandManager.argument("player", EntityArgumentType.player())
                                 .executes(ctx -> teleportPlayerToDimension(ctx, "inferno_realm")))
         );
-        
+
         // /water - Teleport to Aquatic Realm
         dispatcher.register(
                 CommandManager.literal("water")
@@ -48,7 +48,7 @@ public class DimensionTeleportCommands {
                         .then(CommandManager.argument("player", EntityArgumentType.player())
                                 .executes(ctx -> teleportPlayerToDimension(ctx, "aquatic_realm")))
         );
-        
+
         // /earth - Teleport to Terran Realm
         dispatcher.register(
                 CommandManager.literal("earth")
@@ -57,7 +57,7 @@ public class DimensionTeleportCommands {
                         .then(CommandManager.argument("player", EntityArgumentType.player())
                                 .executes(ctx -> teleportPlayerToDimension(ctx, "terran_realm")))
         );
-        
+
         // /air - Teleport to Skybound Realm
         dispatcher.register(
                 CommandManager.literal("air")
@@ -67,10 +67,10 @@ public class DimensionTeleportCommands {
                                 .executes(ctx -> teleportPlayerToDimension(ctx, "skybound_realm")))
         );
     }
-    
+
     private static int teleportToDimension(CommandContext<ServerCommandSource> context, String dimensionName) {
         ServerCommandSource source = context.getSource();
-        
+
         try {
             ServerPlayerEntity player = source.getPlayer();
             return performTeleport(source, player, dimensionName);
@@ -80,10 +80,10 @@ public class DimensionTeleportCommands {
             return 0;
         }
     }
-    
+
     private static int teleportPlayerToDimension(CommandContext<ServerCommandSource> context, String dimensionName) {
         ServerCommandSource source = context.getSource();
-        
+
         try {
             ServerPlayerEntity targetPlayer = EntityArgumentType.getPlayer(context, "player");
             return performTeleport(source, targetPlayer, dimensionName);
@@ -93,30 +93,30 @@ public class DimensionTeleportCommands {
             return 0;
         }
     }
-    
+
     private static int performTeleport(ServerCommandSource source, ServerPlayerEntity player, String dimensionName) {
         // Get dimension registry key
         RegistryKey<World> dimensionKey = RegistryKey.of(
                 RegistryKeys.WORLD,
                 Identifier.of("elementaldimensions", dimensionName)
         );
-        
+
         // Get target world
         ServerWorld targetWorld = source.getServer().getWorld(dimensionKey);
-        
+
         if (targetWorld == null) {
             source.sendFeedback(() -> Text.literal("Error: Dimension not found! Make sure dimension files are configured.")
                     .formatted(Formatting.RED), false);
             return 0;
         }
-        
+
         // Teleport to spawn point (0, 100, 0)
         BlockPos spawnPos = new BlockPos(0, 100, 0);
         Vec3d spawnVec = Vec3d.ofCenter(spawnPos);
-        
-        player.teleport(targetWorld, spawnVec.x, spawnVec.y, spawnVec.z, 
+
+        player.teleport(targetWorld, spawnVec.x, spawnVec.y, spawnVec.z,
                 player.getYaw(), player.getPitch());
-        
+
         String dimensionDisplayName = switch(dimensionName) {
             case "celestial_realm" -> "Celestial Realm";
             case "inferno_realm" -> "Inferno Realm";
@@ -125,7 +125,7 @@ public class DimensionTeleportCommands {
             case "skybound_realm" -> "Skybound Realm";
             default -> dimensionName;
         };
-        
+
         Formatting color = switch(dimensionName) {
             case "celestial_realm" -> Formatting.LIGHT_PURPLE;
             case "inferno_realm" -> Formatting.RED;
@@ -134,10 +134,10 @@ public class DimensionTeleportCommands {
             case "skybound_realm" -> Formatting.WHITE;
             default -> Formatting.GRAY;
         };
-        
-        source.sendFeedback(() -> Text.literal("✦ Teleported to " + dimensionDisplayName + "!")
+
+        source.sendFeedback(() -> Text.literal("âœ¦ Teleported to " + dimensionDisplayName + "!")
                 .formatted(color), true);
-        
+
         return 1;
     }
 }

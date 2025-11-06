@@ -19,25 +19,25 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 public class FireTitanEntity extends HostileEntity implements GeoAnimatable {
 	private final ServerBossBar bossBar;
 	private int phase = 0;
-	
+
 	public FireTitanEntity(EntityType<? extends HostileEntity> entityType, World world) {
 		super(entityType, world);
 		this.bossBar = new ServerBossBar(Text.literal("Fire Titan"), BossBar.Color.RED, BossBar.Style.NOTCHED_10);
 		this.experiencePoints = 500;
 	}
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-	
+
 	public boolean isFireImmune() {
 		return true;
 	}
-	
+
 	@Override
 	protected void initGoals() {
 		this.goalSelector.add(1, new MeleeAttackGoal(this, 0.8, false));
 		this.goalSelector.add(2, new LookAtEntityGoal(this, PlayerEntity.class, 32.0f));
 		this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
 	}
-	
+
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
 				.add(EntityAttributes.GENERIC_MAX_HEALTH, 600.0)
@@ -47,7 +47,7 @@ public class FireTitanEntity extends HostileEntity implements GeoAnimatable {
 				.add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0)
 				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 64.0);
 	}
-	
+
 	@Override
 	public void tick() {
 		super.tick();
@@ -56,7 +56,7 @@ public class FireTitanEntity extends HostileEntity implements GeoAnimatable {
 			updatePhase();
 		}
 	}
-	
+
 	private void updatePhase() {
 		float healthPercent = this.getHealth() / this.getMaxHealth();
 		if (healthPercent < 0.33f && phase < 2) {
@@ -71,14 +71,14 @@ public class FireTitanEntity extends HostileEntity implements GeoAnimatable {
 		super.onStartedTrackingBy(player);
 		this.bossBar.addPlayer(player);
 	}
-	
+
 	@Override
 	public void onStoppedTrackingBy(ServerPlayerEntity player) {
 		super.onStoppedTrackingBy(player);
 		this.bossBar.removePlayer(player);
 	}
 
-	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) { 
+	@Override public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 controllers.add(new AnimationController<>(this, "controller", 0, state -> {
 return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 }));
@@ -94,4 +94,3 @@ return state.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		return cache;
 	}
 }
-

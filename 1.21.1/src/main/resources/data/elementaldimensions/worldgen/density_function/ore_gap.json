@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:interpolated",
-  "argument": {
-    "type": "minecraft:constant",
-    "argument": 0.0
-  }
-}
