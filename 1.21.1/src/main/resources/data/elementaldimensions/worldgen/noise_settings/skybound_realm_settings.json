@@ -47,7 +47,7 @@
             "argument1": 0.234375,
             "argument2": {
               "type": "minecraft:noise",
-              "noise": "minecraft:end/sloped_cheese",
+              "noise": "minecraft:jagged",
               "xz_scale": 2.0,
               "y_scale": 1.0
             }
@@ -81,7 +81,7 @@
                   "type": "minecraft:cache_once",
                   "argument": {
                     "type": "minecraft:noise",
-                    "noise": "minecraft:end/sloped_cheese",
+                    "noise": "minecraft:jagged",
                     "xz_scale": 2.0,
                     "y_scale": 1.0
                   }
