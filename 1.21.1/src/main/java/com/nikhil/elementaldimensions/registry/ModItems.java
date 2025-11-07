@@ -115,6 +115,19 @@ public class ModItems {
     public static Item GLOOM_STALKER_SPAWN_EGG;
     public static Item WITHERED_SKELETON_SPAWN_EGG;
 
+    // Boss spawn eggs
+    public static Item PYROS_SPAWN_EGG;
+    public static Item LEVIATHAN_SPAWN_EGG;
+    public static Item GOLIATH_SPAWN_EGG;
+    public static Item ZEPHYROS_SPAWN_EGG;
+    public static Item PRIMARCH_SPAWN_EGG;
+    public static Item THE_DREAMER_SPAWN_EGG;
+    public static Item THE_RADIANT_MONARCH_SPAWN_EGG;
+    public static Item THE_OVERMIND_SPAWN_EGG;
+    public static Item THE_LIBRARIAN_SPAWN_EGG;
+    public static Item THE_VOID_ARCHON_SPAWN_EGG;
+    public static Item THE_ECHO_KING_SPAWN_EGG;
+
     public static final RegistryKey<ItemGroup> ELEMENTAL_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(ElementalDimensions.MOD_ID, "elemental_group"));
 
     private static Item registerItem(String name, Item item) {
@@ -229,6 +242,19 @@ public class ModItems {
         GLOOM_STALKER_SPAWN_EGG = registerItem("gloom_stalker_spawn_egg", new SpawnEggItem(ModEntities.GLOOM_STALKER, 0x2F4F4F, 0x000000, new Item.Settings()));
         WITHERED_SKELETON_SPAWN_EGG = registerItem("withered_skeleton_spawn_egg", new SpawnEggItem(ModEntities.WITHERED_SKELETON, 0x696969, 0x2F4F4F, new Item.Settings()));
 
+        // Boss spawn eggs
+        PYROS_SPAWN_EGG = registerItem("pyros_spawn_egg", new SpawnEggItem(ModEntities.PYROS, 0xFF4500, 0xB22222, new Item.Settings()));
+        LEVIATHAN_SPAWN_EGG = registerItem("leviathan_spawn_egg", new SpawnEggItem(ModEntities.LEVIATHAN, 0x1E90FF, 0x000080, new Item.Settings()));
+        GOLIATH_SPAWN_EGG = registerItem("goliath_spawn_egg", new SpawnEggItem(ModEntities.GOLIATH, 0x8B4513, 0x654321, new Item.Settings()));
+        ZEPHYROS_SPAWN_EGG = registerItem("zephyros_spawn_egg", new SpawnEggItem(ModEntities.ZEPHYROS, 0xF0F8FF, 0xB0C4DE, new Item.Settings()));
+        PRIMARCH_SPAWN_EGG = registerItem("primarch_spawn_egg", new SpawnEggItem(ModEntities.PRIMARCH, 0x4B0082, 0x8B008B, new Item.Settings()));
+        THE_DREAMER_SPAWN_EGG = registerItem("the_dreamer_spawn_egg", new SpawnEggItem(ModEntities.THE_DREAMER, 0x9370DB, 0xDA70D6, new Item.Settings()));
+        THE_RADIANT_MONARCH_SPAWN_EGG = registerItem("the_radiant_monarch_spawn_egg", new SpawnEggItem(ModEntities.THE_RADIANT_MONARCH, 0xFFD700, 0xFFA500, new Item.Settings()));
+        THE_OVERMIND_SPAWN_EGG = registerItem("the_overmind_spawn_egg", new SpawnEggItem(ModEntities.THE_OVERMIND, 0x2E8B57, 0x006400, new Item.Settings()));
+        THE_LIBRARIAN_SPAWN_EGG = registerItem("the_librarian_spawn_egg", new SpawnEggItem(ModEntities.THE_LIBRARIAN, 0xDEB887, 0x8B4513, new Item.Settings()));
+        THE_VOID_ARCHON_SPAWN_EGG = registerItem("the_void_archon_spawn_egg", new SpawnEggItem(ModEntities.THE_VOID_ARCHON, 0x000000, 0x483D8B, new Item.Settings()));
+        THE_ECHO_KING_SPAWN_EGG = registerItem("the_echo_king_spawn_egg", new SpawnEggItem(ModEntities.THE_ECHO_KING, 0x696969, 0x2F4F4F, new Item.Settings()));
+
         // Register item group
         Registry.register(Registries.ITEM_GROUP, ELEMENTAL_GROUP,
             FabricItemGroup.builder()
@@ -334,6 +360,19 @@ public class ModItems {
                     entries.add(CAVE_SNAIL_SPAWN_EGG);
                     entries.add(GLOOM_STALKER_SPAWN_EGG);
                     entries.add(WITHERED_SKELETON_SPAWN_EGG);
+
+                    // Boss spawn eggs
+                    entries.add(PYROS_SPAWN_EGG);
+                    entries.add(LEVIATHAN_SPAWN_EGG);
+                    entries.add(GOLIATH_SPAWN_EGG);
+                    entries.add(ZEPHYROS_SPAWN_EGG);
+                    entries.add(PRIMARCH_SPAWN_EGG);
+                    entries.add(THE_DREAMER_SPAWN_EGG);
+                    entries.add(THE_RADIANT_MONARCH_SPAWN_EGG);
+                    entries.add(THE_OVERMIND_SPAWN_EGG);
+                    entries.add(THE_LIBRARIAN_SPAWN_EGG);
+                    entries.add(THE_VOID_ARCHON_SPAWN_EGG);
+                    entries.add(THE_ECHO_KING_SPAWN_EGG);
                 })
                 .build()
         );

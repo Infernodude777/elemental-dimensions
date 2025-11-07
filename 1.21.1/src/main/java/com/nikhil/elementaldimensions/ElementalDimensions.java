@@ -22,10 +22,12 @@ public class ElementalDimensions implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("Initializing Elemental Dimensions");
 
-        // Register items, blocks, and entities
-        ModItems.initialize();
-        ModBlocks.initialize();
+        // Register entities FIRST (before items that reference them)
         ModEntities.initialize();
+
+        // Then register blocks and items
+        ModBlocks.initialize();
+        ModItems.initialize();
 
         // Register commands
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {

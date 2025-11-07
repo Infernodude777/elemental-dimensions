@@ -66,6 +66,69 @@ public class DimensionTeleportCommands {
                         .then(CommandManager.argument("player", EntityArgumentType.player())
                                 .executes(ctx -> teleportPlayerToDimension(ctx, "skybound_realm")))
         );
+
+        // /void - Teleport to Void Realm
+        dispatcher.register(
+                CommandManager.literal("void")
+                        .requires(source -> source.hasPermissionLevel(2))
+                        .executes(ctx -> teleportToDimension(ctx, "void_realm"))
+                        .then(CommandManager.argument("player", EntityArgumentType.player())
+                                .executes(ctx -> teleportPlayerToDimension(ctx, "void_realm")))
+        );
+
+        // /dream - Teleport to Dreaming Depths
+        dispatcher.register(
+                CommandManager.literal("dream")
+                        .requires(source -> source.hasPermissionLevel(2))
+                        .executes(ctx -> teleportToDimension(ctx, "dreaming_depths"))
+                        .then(CommandManager.argument("player", EntityArgumentType.player())
+                                .executes(ctx -> teleportPlayerToDimension(ctx, "dreaming_depths")))
+        );
+
+        // /celestine - Teleport to Celestine Expanse
+        dispatcher.register(
+                CommandManager.literal("celestine")
+                        .requires(source -> source.hasPermissionLevel(2))
+                        .executes(ctx -> teleportToDimension(ctx, "celestine_expanse"))
+                        .then(CommandManager.argument("player", EntityArgumentType.player())
+                                .executes(ctx -> teleportPlayerToDimension(ctx, "celestine_expanse")))
+        );
+
+        // /fungal - Teleport to Fungal Dominion
+        dispatcher.register(
+                CommandManager.literal("fungal")
+                        .requires(source -> source.hasPermissionLevel(2))
+                        .executes(ctx -> teleportToDimension(ctx, "fungal_dominion"))
+                        .then(CommandManager.argument("player", EntityArgumentType.player())
+                                .executes(ctx -> teleportPlayerToDimension(ctx, "fungal_dominion")))
+        );
+
+        // /archive - Teleport to Forgotten Archive
+        dispatcher.register(
+                CommandManager.literal("archive")
+                        .requires(source -> source.hasPermissionLevel(2))
+                        .executes(ctx -> teleportToDimension(ctx, "forgotten_archive"))
+                        .then(CommandManager.argument("player", EntityArgumentType.player())
+                                .executes(ctx -> teleportPlayerToDimension(ctx, "forgotten_archive")))
+        );
+
+        // /astral - Teleport to Astral Frontier
+        dispatcher.register(
+                CommandManager.literal("astral")
+                        .requires(source -> source.hasPermissionLevel(2))
+                        .executes(ctx -> teleportToDimension(ctx, "astral_frontier"))
+                        .then(CommandManager.argument("player", EntityArgumentType.player())
+                                .executes(ctx -> teleportPlayerToDimension(ctx, "astral_frontier")))
+        );
+
+        // /gloom - Teleport to Gloomy Caverns
+        dispatcher.register(
+                CommandManager.literal("gloom")
+                        .requires(source -> source.hasPermissionLevel(2))
+                        .executes(ctx -> teleportToDimension(ctx, "gloomy_caverns"))
+                        .then(CommandManager.argument("player", EntityArgumentType.player())
+                                .executes(ctx -> teleportPlayerToDimension(ctx, "gloomy_caverns")))
+        );
     }
 
     private static int teleportToDimension(CommandContext<ServerCommandSource> context, String dimensionName) {
