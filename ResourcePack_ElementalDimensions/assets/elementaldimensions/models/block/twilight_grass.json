@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "elementaldimensions:block/twilight_grass"
+  }
+}

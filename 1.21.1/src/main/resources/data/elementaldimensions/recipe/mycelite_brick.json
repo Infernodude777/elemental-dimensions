@@ -1,0 +1,16 @@
+{
+  "type": "shaped",
+  "pattern": [
+    "MM",
+    "MM"
+  ],
+  "key": {
+    "M": {
+      "item": "elementaldimensions:mycelite_stone"
+    }
+  },
+  "result": {
+    "item": "elementaldimensions:mycelite_brick",
+    "count": 4
+  }
+}

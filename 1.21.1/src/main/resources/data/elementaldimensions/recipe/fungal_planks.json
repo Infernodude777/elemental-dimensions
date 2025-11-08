@@ -1,0 +1,10 @@
+{
+  "type": "shapeless",
+  "ingredients": [
+    "elementaldimensions:fungal_bark"
+  ],
+  "result": {
+    "item": "elementaldimensions:fungal_planks",
+    "count": 4
+  }
+}

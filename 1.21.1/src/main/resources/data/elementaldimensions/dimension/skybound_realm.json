@@ -1,0 +1,11 @@
+{
+  "type": "elementaldimensions:skybound_realm",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "elementaldimensions:skyreach_peaks_biome"
+    },
+    "settings": "elementaldimensions:skybound_realm_settings"
+  }
+}

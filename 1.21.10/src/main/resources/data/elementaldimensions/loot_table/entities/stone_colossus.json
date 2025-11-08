@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": {
+        "min": 3,
+        "max": 6
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:earth_essence",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:gaia_shard",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:crystal_frag",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:earth_ingot",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:earth_altar_rune",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

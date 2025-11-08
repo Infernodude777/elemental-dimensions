@@ -1,0 +1,16 @@
+{
+  "type": "shaped",
+  "pattern": [
+    "BB",
+    "BB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:bone_block"
+    }
+  },
+  "result": {
+    "item": "elementaldimensions:bone_brick",
+    "count": 4
+  }
+}

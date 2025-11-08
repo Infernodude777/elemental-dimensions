@@ -1,0 +1,35 @@
+{{
+
+  "type": "elementaldimensions:dreaming_depths_type",    "generator":  {
+
+  "generator": {                      "biome_source":  {
+
+    "type": "minecraft:noise",                                           "biomes":  [
+
+    "biome_source": {                                                          {
+
+      "type": "minecraft:fixed",                                                              "parameters":  {
+
+      "biome": "elementaldimensions:somnia_fields"                                                                                 "weirdness":  0,
+
+    },                                                                                 "depth":  0,
+
+    "settings": "elementaldimensions:dreaming_depths_settings"                                                                                 "temperature":  0,
+
+  }                                                                                 "humidity":  0,
+
+}                                                                                 "continentalness":  0,
+
+                                                                                 "erosion":  0,
+                                                                                 "offset":  0
+                                                                             },
+                                                              "biome":  "elementaldimensions:dreaming_depths_plains"
+                                                          }
+                                                      ],
+                                           "type":  "minecraft:multi_noise"
+                                       },
+                      "type":  "minecraft:noise",
+                      "settings":  "elementaldimensions:dreaming_depths_settings"
+                  },
+    "type":  "elementaldimensions:dreaming_depths"
+}

@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "elementaldimensions:celestial_stone"
+    },
+    "title": {
+      "translate": "advancement.elementaldimensions.root.title"
+    },
+    "description": {
+      "translate": "advancement.elementaldimensions.root.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/block/end_stone.png"
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

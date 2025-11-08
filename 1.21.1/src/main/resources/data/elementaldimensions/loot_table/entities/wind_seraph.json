@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": {
+        "min": 3,
+        "max": 6
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:air_essence",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:zephyr_shard",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:zephyr_feather",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:air_ingot",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "elementaldimensions:air_altar_rune",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

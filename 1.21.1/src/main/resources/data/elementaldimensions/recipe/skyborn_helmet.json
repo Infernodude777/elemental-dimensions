@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MMM",
+    "M M"
+  ],
+  "key": {
+    "M": {
+      "item": "elementaldimensions:lumicore_block"
+    }
+  },
+  "result": {
+    "item": "elementaldimensions:skyborn_helmet",
+    "count": 1
+  }
+}

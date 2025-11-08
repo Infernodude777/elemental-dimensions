@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "RRR",
+    "RER",
+    "RRR"
+  ],
+  "key": {
+    "R": {
+      "item": "elementaldimensions:reverie_block"
+    },
+    "E": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "result": {
+    "id": "elementaldimensions:ancient_groves_igniter",
+    "count": 1
+  }
+}

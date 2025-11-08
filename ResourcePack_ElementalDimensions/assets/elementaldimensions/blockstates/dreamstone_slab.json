@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elementaldimensions:block/dreamstone_slab"
+    },
+    "type=top": {
+      "model": "elementaldimensions:block/dreamstone_slab_top"
+    },
+    "type=double": {
+      "model": "elementaldimensions:block/dreamstone"
+    }
+  }
+}

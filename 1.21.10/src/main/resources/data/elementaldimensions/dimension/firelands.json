@@ -1,0 +1,11 @@
+{
+  "type": "elementaldimensions:firelands_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "elementaldimensions:firelands_biome"
+    },
+    "settings": "elementaldimensions:firelands_settings"
+  }
+}

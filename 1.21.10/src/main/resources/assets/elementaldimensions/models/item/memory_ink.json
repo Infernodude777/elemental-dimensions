@@ -1,0 +1,6 @@
+{
+    "textures":  {
+                     "layer0":  "elementaldimensions:item/memory_ink"
+                 },
+    "parent":  "minecraft:item/generated"
+}
