@@ -1,0 +1,16 @@
+{
+  "type": "shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "elementaldimensions:cosmic_stone"
+    }
+  },
+  "result": {
+    "item": "elementaldimensions:astral_brick",
+    "count": 4
+  }
+}

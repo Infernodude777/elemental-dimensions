@@ -1,0 +1,11 @@
+{
+  "type": "elementaldimensions:terran_realm",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "elementaldimensions:terra_depths_biome"
+    },
+    "settings": "elementaldimensions:terran_realm_settings"
+  }
+}

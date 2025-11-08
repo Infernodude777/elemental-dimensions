@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MMM",
+    "M M",
+    "M M"
+  ],
+  "key": {
+    "M": {
+      "item": "elementaldimensions:lumicore_block"
+    }
+  },
+  "result": {
+    "item": "elementaldimensions:skyborn_leggings",
+    "count": 1
+  }
+}

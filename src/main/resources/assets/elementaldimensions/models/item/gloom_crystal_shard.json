@@ -1,0 +1,6 @@
+{
+    "textures":  {
+                     "layer0":  "elementaldimensions:item/gloom_crystal_shard"
+                 },
+    "parent":  "minecraft:item/generated"
+}

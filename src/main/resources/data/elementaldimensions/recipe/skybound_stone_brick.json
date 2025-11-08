@@ -1,0 +1,16 @@
+{
+  "type": "shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "elementaldimensions:starlit_stone"
+    }
+  },
+  "result": {
+    "item": "elementaldimensions:skybound_stone_brick",
+    "count": 4
+  }
+}

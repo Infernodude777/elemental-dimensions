@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "entered_celestine_expanse": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "elementaldimensions:celestine_expanse"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "id": "elementaldimensions:starlit_stone"
+    },
+    "title": {
+      "translate": "advancements.elementaldimensions.enter_celestine_expanse.title"
+    },
+    "description": {
+      "translate": "advancements.elementaldimensions.enter_celestine_expanse.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "entered_celestine_expanse"
+    ]
+  ]
+}

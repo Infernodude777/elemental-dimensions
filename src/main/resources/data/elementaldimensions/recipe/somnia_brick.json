@@ -1,0 +1,16 @@
+{
+  "type": "shaped",
+  "pattern": [
+    "DD",
+    "DD"
+  ],
+  "key": {
+    "D": {
+      "item": "elementaldimensions:dreamstone"
+    }
+  },
+  "result": {
+    "item": "elementaldimensions:somnia_brick",
+    "count": 4
+  }
+}

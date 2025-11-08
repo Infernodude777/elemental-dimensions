@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "elementaldimensions:coral_palace",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 20,
+    "separation": 10,
+    "salt": 928374651
+  }
+}

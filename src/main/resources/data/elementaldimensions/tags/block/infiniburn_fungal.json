@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:netherrack",
+    "elementaldimensions:fungal_planks",
+    "elementaldimensions:spore_block",
+    "elementaldimensions:mycelite_stone",
+    "elementaldimensions:giant_mushroom_stem"
+  ]
+}

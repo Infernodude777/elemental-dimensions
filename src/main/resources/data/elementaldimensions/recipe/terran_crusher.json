@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "combat",
+  "pattern": [
+    "NNN",
+    " EN",
+    " D "
+  ],
+  "key": {
+    "E": {
+      "item": "elementaldimensions:earth_essence"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "id": "elementaldimensions:terran_crusher",
+    "count": 1
+  }
+}

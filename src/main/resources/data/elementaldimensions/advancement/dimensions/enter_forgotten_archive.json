@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "entered_forgotten_archive": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "elementaldimensions:forgotten_archive"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "id": "elementaldimensions:runestone"
+    },
+    "title": {
+      "translate": "advancements.elementaldimensions.enter_forgotten_archive.title"
+    },
+    "description": {
+      "translate": "advancements.elementaldimensions.enter_forgotten_archive.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "entered_forgotten_archive"
+    ]
+  ]
+}

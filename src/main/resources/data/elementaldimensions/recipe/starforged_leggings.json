@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MMM",
+    "M M",
+    "M M"
+  ],
+  "key": {
+    "M": {
+      "item": "elementaldimensions:celestite_block"
+    }
+  },
+  "result": {
+    "item": "elementaldimensions:starforged_leggings",
+    "count": 1
+  }
+}

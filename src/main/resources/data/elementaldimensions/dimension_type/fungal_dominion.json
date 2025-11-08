@@ -1,0 +1,19 @@
+{
+    "infiniburn":  "#minecraft:infiniburn_overworld",
+    "piglin_safe":  false,
+    "coordinate_scale":  1,
+    "natural":  true,
+    "min_y":  -64,
+    "has_raids":  false,
+    "has_skylight":  true,
+    "ultrawarm":  false,
+    "logical_height":  384,
+    "monster_spawn_light_level":  0,
+    "height":  384,
+    "ambient_light":  0,
+    "respawn_anchor_works":  false,
+    "effects":  "elementaldimensions:fungal_dominion",
+    "bed_works":  false,
+    "monster_spawn_block_light_limit":  0,
+    "has_ceiling":  false
+}

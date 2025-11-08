@@ -1,0 +1,425 @@
+    public static final Block  = register("dreamstone",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("lullglass",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("softsoil",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("dreamgrass",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("nightbloom_vine",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("echo_crystal",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("lucid_water",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("phantasm_dust",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("etherstone",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("mirage_leaf",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("dreamwood_log",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("lucid_flower",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("glowsand",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("glowglass",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("memory_stone",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("levistone",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("dreamroot",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("reverie_crystal",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("whisper_wool",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("dreamlight_lantern",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("celestine_grass",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("starlit_stone",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("lumicore_block",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("aurora_root",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("astral_glass",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("nimbus_dust",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("aether_stone",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("void_coral",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("radiant_crystal",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("feather_reed",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("starfall_ore",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("luminite_lantern",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("aural_moss",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("celestine_brick",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("celestine_tile",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("starlight_pane",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("aether_sand",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("lumicore_lamp",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("crystal_vine",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("celestine_ore",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("mycelite_soil",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("root_flesh",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("biolume_cap",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("spore_pod",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("spore_sludge",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("fungal_vein",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("decay_clay",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("calcimoss_block",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("lumispore_cluster",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("fungal_bark",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("mycelite_brick",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("fungal_glass",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("symbiont_root",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("fungal_vine",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("mold_cap_carpet",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("root_heart_block",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("fossil_bark",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("sporelight",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("fungal_moss",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("spore_web",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("runestone",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("runestone_brick",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("archive_sandstone",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("mirror_tile",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("ink_marble",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("memory_ink_block",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("ink_pool",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("glyph_glass",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("runic_pedestal",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("ink_carpet",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("engraved_gold",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("archive_plank",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("knowledge_crystal",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("dust_sand",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("runic_lantern",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("inscribed_bookcase",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("runestone_slab",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("runic_gate",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("fossil_tablet",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("script_light",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("starlit_grass",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("stardust_stone",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("celestite_block",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("celestite_crystal",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("stardust_ore",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("nebular_dust",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("aether_core",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("singularity_rock",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("astral_glass",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("starlight_vine",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("voidroot",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("astral_lantern",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("stardust_sand",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("astral_ice",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("celestial_alloy_block",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("astral_conduit",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("withered_basalt",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("echo_stone",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("drip_moss",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("decay_soil",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("ash_sludge",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("gloom_crystal",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("fungal_bark_gloomy",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("bone_brick",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("echo_lantern",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));    public static final Block  = register("mourn_vine",
+        new Block(AbstractBlock.Settings.create()
+            .strength(1.5f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.STONE)));
