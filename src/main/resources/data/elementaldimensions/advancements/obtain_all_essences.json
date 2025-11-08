@@ -1,0 +1,62 @@
+{
+  "parent": "elementaldimensions:obtain_essence",
+  "display": {
+    "icon": {
+      "item": "elementaldimensions:fire_essence"
+    },
+    "title": {
+      "translate": "advancement.elementaldimensions.obtain_all_essences.title"
+    },
+    "description": {
+      "translate": "advancement.elementaldimensions.obtain_all_essences.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "has_fire": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["elementaldimensions:fire_essence"]
+          }
+        ]
+      }
+    },
+    "has_water": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["elementaldimensions:water_essence"]
+          }
+        ]
+      }
+    },
+    "has_earth": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["elementaldimensions:earth_essence"]
+          }
+        ]
+      }
+    },
+    "has_air": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["elementaldimensions:air_essence"]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

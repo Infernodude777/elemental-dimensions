@@ -1,0 +1,10 @@
+{
+  "type": "shapeless",
+  "ingredients": [
+    "elementaldimensions:dreamwood_log"
+  ],
+  "result": {
+    "item": "elementaldimensions:dreamwood_planks",
+    "count": 4
+  }
+}

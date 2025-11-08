@@ -1,0 +1,6 @@
+{
+    "textures":  {
+                     "layer0":  "elementaldimensions:item/radiant_essence"
+                 },
+    "parent":  "minecraft:item/generated"
+}

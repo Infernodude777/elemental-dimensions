@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "elementaldimensions:biolume_fungus"
+    },
+    "title": {
+      "translate": "advancement.elementaldimensions.defeat_the_overmind.title"
+    },
+    "description": {
+      "translate": "advancement.elementaldimensions.defeat_the_overmind.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "elementaldimensions:dimensions/enter_fungal_dominion",
+  "criteria": {
+    "killed_boss": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "elementaldimensions:the_overmind"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 550
+  }
+}

@@ -1,0 +1,30 @@
+﻿{
+  "parent": "elementaldimensions:enter_forgotten_archive",
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_sword"
+    },
+    "title": {
+      "translate": "advancement.elementaldimensions.defeat_the_librarian.title"
+    },
+    "description": {
+      "translate": "advancement.elementaldimensions.defeat_the_librarian.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "killed_boss": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "elementaldimensions:the_librarian"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

@@ -1,0 +1,30 @@
+﻿{
+  "parent": "elementaldimensions:enter_terran_realm",
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_sword"
+    },
+    "title": {
+      "translate": "advancement.elementaldimensions.defeat_goliath.title"
+    },
+    "description": {
+      "translate": "advancement.elementaldimensions.defeat_goliath.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "killed_boss": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "elementaldimensions:goliath"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

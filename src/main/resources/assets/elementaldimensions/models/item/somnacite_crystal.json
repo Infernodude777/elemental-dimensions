@@ -1,0 +1,6 @@
+{
+    "textures":  {
+                     "layer0":  "elementaldimensions:item/somnacite_crystal"
+                 },
+    "parent":  "minecraft:item/generated"
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:netherrack",
+    "elementaldimensions:dreamwood_planks",
+    "elementaldimensions:starlit_grass",
+    "elementaldimensions:somnia_brick",
+    "elementaldimensions:dream_sand"
+  ]
+}
