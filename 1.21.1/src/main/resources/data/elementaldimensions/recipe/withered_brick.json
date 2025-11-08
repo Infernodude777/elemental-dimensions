@@ -1,0 +1,16 @@
+{
+  "type": "shaped",
+  "pattern": [
+    "WW",
+    "WW"
+  ],
+  "key": {
+    "W": {
+      "item": "elementaldimensions:withered_basalt"
+    }
+  },
+  "result": {
+    "item": "elementaldimensions:withered_brick",
+    "count": 4
+  }
+}

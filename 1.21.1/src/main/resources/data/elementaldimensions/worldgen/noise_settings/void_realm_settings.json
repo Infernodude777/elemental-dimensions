@@ -5,7 +5,7 @@
   "ore_veins_enabled": false,
   "legacy_random_source": false,
   "default_block": {
-    "Name": "minecraft:air"
+    "Name": "elementaldimensions:void_rift_block"
   },
   "default_fluid": {
     "Name": "minecraft:air"
@@ -95,7 +95,7 @@
               "then_run": {
                 "type": "minecraft:block",
                 "result_state": {
-                  "Name": "minecraft:smooth_basalt"
+                  "Name": "elementaldimensions:void_rift_block"
                 }
               }
             },
@@ -111,7 +111,7 @@
               "then_run": {
                 "type": "minecraft:block",
                 "result_state": {
-                  "Name": "minecraft:basalt"
+                  "Name": "elementaldimensions:void_rift_block"
                 }
               }
             },

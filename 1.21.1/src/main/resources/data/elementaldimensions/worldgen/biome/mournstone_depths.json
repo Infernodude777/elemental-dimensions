@@ -15,8 +15,34 @@
     }
   },
   "spawners": {
-    "monster": [],
-    "creature": [],
+    "monster": [
+      {
+        "type": "elementaldimensions:echo_wisp",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:gloom_stalker",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:withered_skeleton",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "creature": [
+      {
+        "type": "elementaldimensions:cave_snail",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
     "ambient": [],
     "water_creature": [],
     "water_ambient": [],

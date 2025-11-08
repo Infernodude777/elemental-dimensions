@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MMM",
+    "M M"
+  ],
+  "key": {
+    "M": {
+      "item": "elementaldimensions:mycelite_block"
+    }
+  },
+  "result": {
+    "item": "elementaldimensions:sporebound_helmet",
+    "count": 1
+  }
+}

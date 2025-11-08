@@ -15,9 +15,35 @@
     }
   },
   "spawners": {
-    "monster": [],
+    "monster": [
+      {
+        "type": "elementaldimensions:mycelium_walker",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:mycelite_creeper",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:fungal_zombie",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
     "creature": [],
-    "ambient": [],
+    "ambient": [
+      {
+        "type": "elementaldimensions:spore_bat",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
     "water_creature": [],
     "water_ambient": [],
     "misc": []

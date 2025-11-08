@@ -128,6 +128,19 @@ public class ModItems {
     public static Item THE_VOID_ARCHON_SPAWN_EGG;
     public static Item THE_ECHO_KING_SPAWN_EGG;
 
+    // Portal Igniters
+    public static Item DREAMING_DEPTHS_IGNITER;
+    public static Item INFERNO_REALM_IGNITER;
+    public static Item RADIANT_PLATEAU_IGNITER;
+    public static Item MYCELIAL_NEXUS_IGNITER;
+    public static Item GOLDEN_CITADEL_IGNITER;
+    public static Item ANCIENT_GROVES_IGNITER;
+    public static Item COSMIC_VOID_IGNITER;
+    public static Item CELESTIAL_SANCTUM_IGNITER;
+    public static Item GLYPHIC_ARCHIVES_IGNITER;
+    public static Item ECHOING_EXPANSE_IGNITER;
+    public static Item UMBRAL_WASTELAND_IGNITER;
+
     public static final RegistryKey<ItemGroup> ELEMENTAL_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(ElementalDimensions.MOD_ID, "elemental_group"));
 
     private static Item registerItem(String name, Item item) {
@@ -255,6 +268,30 @@ public class ModItems {
         THE_VOID_ARCHON_SPAWN_EGG = registerItem("the_void_archon_spawn_egg", new SpawnEggItem(ModEntities.THE_VOID_ARCHON, 0x000000, 0x483D8B, new Item.Settings()));
         THE_ECHO_KING_SPAWN_EGG = registerItem("the_echo_king_spawn_egg", new SpawnEggItem(ModEntities.THE_ECHO_KING, 0x696969, 0x2F4F4F, new Item.Settings()));
 
+        // Portal Igniters
+        DREAMING_DEPTHS_IGNITER = registerItem("dreaming_depths_igniter",
+            new com.nikhil.elementaldimensions.item.PortalIgniterItem(ModBlocks.DREAMING_DEPTHS_PORTAL, ModBlocks.DREAMSTONE, new Item.Settings().maxCount(1)));
+        INFERNO_REALM_IGNITER = registerItem("inferno_realm_igniter",
+            new com.nikhil.elementaldimensions.item.PortalIgniterItem(ModBlocks.INFERNO_REALM_PORTAL, ModBlocks.INFERNO_STONE, new Item.Settings().maxCount(1)));
+        RADIANT_PLATEAU_IGNITER = registerItem("radiant_plateau_igniter",
+            new com.nikhil.elementaldimensions.item.PortalIgniterItem(ModBlocks.RADIANT_PLATEAU_PORTAL, ModBlocks.RADIANT_BLOCK, new Item.Settings().maxCount(1)));
+        MYCELIAL_NEXUS_IGNITER = registerItem("mycelial_nexus_igniter",
+            new com.nikhil.elementaldimensions.item.PortalIgniterItem(ModBlocks.MYCELIAL_NEXUS_PORTAL, ModBlocks.FUNGAL_BARK, new Item.Settings().maxCount(1)));
+        GOLDEN_CITADEL_IGNITER = registerItem("golden_citadel_igniter",
+            new com.nikhil.elementaldimensions.item.PortalIgniterItem(ModBlocks.GOLDEN_CITADEL_PORTAL, ModBlocks.GOLDEN_PILLAR, new Item.Settings().maxCount(1)));
+        ANCIENT_GROVES_IGNITER = registerItem("ancient_groves_igniter",
+            new com.nikhil.elementaldimensions.item.PortalIgniterItem(ModBlocks.ANCIENT_GROVES_PORTAL, ModBlocks.REVERIE_BLOCK, new Item.Settings().maxCount(1)));
+        COSMIC_VOID_IGNITER = registerItem("cosmic_void_igniter",
+            new com.nikhil.elementaldimensions.item.PortalIgniterItem(ModBlocks.COSMIC_VOID_PORTAL, ModBlocks.VOID_STONE, new Item.Settings().maxCount(1)));
+        CELESTIAL_SANCTUM_IGNITER = registerItem("celestial_sanctum_igniter",
+            new com.nikhil.elementaldimensions.item.PortalIgniterItem(ModBlocks.CELESTIAL_SANCTUM_PORTAL, ModBlocks.CELESTIAL_STONE, new Item.Settings().maxCount(1)));
+        GLYPHIC_ARCHIVES_IGNITER = registerItem("glyphic_archives_igniter",
+            new com.nikhil.elementaldimensions.item.PortalIgniterItem(ModBlocks.GLYPHIC_ARCHIVES_PORTAL, ModBlocks.GLYPH_BLOCK, new Item.Settings().maxCount(1)));
+        ECHOING_EXPANSE_IGNITER = registerItem("echoing_expanse_igniter",
+            new com.nikhil.elementaldimensions.item.PortalIgniterItem(ModBlocks.ECHOING_EXPANSE_PORTAL, ModBlocks.ECHO_STONE, new Item.Settings().maxCount(1)));
+        UMBRAL_WASTELAND_IGNITER = registerItem("umbral_wasteland_igniter",
+            new com.nikhil.elementaldimensions.item.PortalIgniterItem(ModBlocks.UMBRAL_WASTELAND_PORTAL, ModBlocks.SHADESTONE, new Item.Settings().maxCount(1)));
+
         // Register item group
         Registry.register(Registries.ITEM_GROUP, ELEMENTAL_GROUP,
             FabricItemGroup.builder()
@@ -373,6 +410,19 @@ public class ModItems {
                     entries.add(THE_LIBRARIAN_SPAWN_EGG);
                     entries.add(THE_VOID_ARCHON_SPAWN_EGG);
                     entries.add(THE_ECHO_KING_SPAWN_EGG);
+
+                    // Portal Igniters
+                    entries.add(DREAMING_DEPTHS_IGNITER);
+                    entries.add(INFERNO_REALM_IGNITER);
+                    entries.add(RADIANT_PLATEAU_IGNITER);
+                    entries.add(MYCELIAL_NEXUS_IGNITER);
+                    entries.add(GOLDEN_CITADEL_IGNITER);
+                    entries.add(ANCIENT_GROVES_IGNITER);
+                    entries.add(COSMIC_VOID_IGNITER);
+                    entries.add(CELESTIAL_SANCTUM_IGNITER);
+                    entries.add(GLYPHIC_ARCHIVES_IGNITER);
+                    entries.add(ECHOING_EXPANSE_IGNITER);
+                    entries.add(UMBRAL_WASTELAND_IGNITER);
                 })
                 .build()
         );

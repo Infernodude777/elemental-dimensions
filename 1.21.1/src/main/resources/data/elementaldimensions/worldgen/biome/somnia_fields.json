@@ -15,8 +15,34 @@
     }
   },
   "spawners": {
-    "monster": [],
-    "creature": [],
+    "monster": [
+      {
+        "type": "elementaldimensions:phantasm",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:nightmare_shade",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "creature": [
+      {
+        "type": "elementaldimensions:luller",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:somnian_butterfly",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
     "ambient": [],
     "water_creature": [],
     "water_ambient": [],

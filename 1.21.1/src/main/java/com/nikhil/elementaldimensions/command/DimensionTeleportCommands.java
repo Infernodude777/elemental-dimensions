@@ -85,15 +85,6 @@ public class DimensionTeleportCommands {
                                 .executes(ctx -> teleportPlayerToDimension(ctx, "dreaming_depths")))
         );
 
-        // /celestine - Teleport to Celestine Expanse
-        dispatcher.register(
-                CommandManager.literal("celestine")
-                        .requires(source -> source.hasPermissionLevel(2))
-                        .executes(ctx -> teleportToDimension(ctx, "celestine_expanse"))
-                        .then(CommandManager.argument("player", EntityArgumentType.player())
-                                .executes(ctx -> teleportPlayerToDimension(ctx, "celestine_expanse")))
-        );
-
         // /fungal - Teleport to Fungal Dominion
         dispatcher.register(
                 CommandManager.literal("fungal")
@@ -188,7 +179,6 @@ public class DimensionTeleportCommands {
             case "skybound_realm" -> "Skybound Realm";
             case "void_realm" -> "Void Realm";
             case "dreaming_depths" -> "Dreaming Depths";
-            case "celestine_expanse" -> "Celestine Expanse";
             case "fungal_dominion" -> "Fungal Dominion";
             case "forgotten_archive" -> "Forgotten Archive";
             case "astral_frontier" -> "Astral Frontier";
@@ -204,7 +194,6 @@ public class DimensionTeleportCommands {
             case "skybound_realm" -> Formatting.WHITE;
             case "void_realm" -> Formatting.DARK_GRAY;
             case "dreaming_depths" -> Formatting.AQUA;
-            case "celestine_expanse" -> Formatting.YELLOW;
             case "fungal_dominion" -> Formatting.DARK_GREEN;
             case "forgotten_archive" -> Formatting.GOLD;
             case "astral_frontier" -> Formatting.DARK_PURPLE;

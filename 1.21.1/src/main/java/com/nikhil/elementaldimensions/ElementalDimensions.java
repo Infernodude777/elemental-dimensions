@@ -1,8 +1,6 @@
 package com.nikhil.elementaldimensions;
 
-import com.nikhil.elementaldimensions.command.DimensionTeleportCommands;
-import com.nikhil.elementaldimensions.command.GuideCommand;
-import com.nikhil.elementaldimensions.command.ItemSpawnCommands;
+import com.nikhil.elementaldimensions.command.*;
 import com.nikhil.elementaldimensions.config.ModConfig;
 import com.nikhil.elementaldimensions.registry.*;
 import net.fabricmc.api.ModInitializer;
@@ -32,6 +30,8 @@ public class ElementalDimensions implements ModInitializer {
         // Register commands
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             GuideCommand.register(dispatcher);
+            GetAllCommand.register(dispatcher);
+            SpawnAllMobsCommand.register(dispatcher);
             DimensionTeleportCommands.register(dispatcher);
             ItemSpawnCommands.register(dispatcher);
         });

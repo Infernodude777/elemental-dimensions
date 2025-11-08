@@ -5,7 +5,7 @@
   "ore_veins_enabled": true,
   "legacy_random_source": false,
   "default_block": {
-    "Name": "elementaldimensions:dreamwood_planks"
+    "Name": "elementaldimensions:dreamstone"
   },
   "default_fluid": {
     "Name": "elementaldimensions:lucid_water",

@@ -3,8 +3,8 @@
   "temperature": 0.5,
   "downfall": 0.0,
   "effects": {
-    "sky_color": 8962303,
-    "fog_color": 11851007,
+    "sky_color": 2236962,
+    "fog_color": 5250055,
     "water_color": 4159204,
     "water_fog_color": 329011,
     "mood_sound": {
@@ -12,10 +12,41 @@
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2.0
+    },
+    "music": {
+      "sound": "minecraft:music.overworld.meadow",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {
-    "monster": [],
+    "monster": [
+      {
+        "type": "elementaldimensions:star_elemental",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:nebula_wisp",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:voidling",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:cosmic_horror",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
     "creature": [],
     "ambient": [],
     "water_creature": [],

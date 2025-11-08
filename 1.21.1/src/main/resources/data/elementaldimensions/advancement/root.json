@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "id": "elementaldimensions:dimensional_compass"
+      "item": "elementaldimensions:celestial_stone"
     },
     "title": {
       "translate": "advancement.elementaldimensions.root.title"
@@ -9,21 +9,15 @@
     "description": {
       "translate": "advancement.elementaldimensions.root.description"
     },
-    "background": "minecraft:textures/block/obsidian.png",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/block/end_stone.png"
   },
   "criteria": {
-    "dimensional_compass": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": ["elementaldimensions:dimensional_compass"]
-          }
-        ]
-      }
+    "tick": {
+      "trigger": "minecraft:tick"
     }
   }
 }

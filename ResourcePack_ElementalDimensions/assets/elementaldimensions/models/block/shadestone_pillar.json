@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "elementaldimensions:block/shadestone_pillar_top",
+    "side": "elementaldimensions:block/shadestone_pillar"
+  }
+}

@@ -1,9 +1,7 @@
 package com.nikhil.elementaldimensions.registry;
 
 import com.nikhil.elementaldimensions.ElementalDimensions;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.MapColor;
+import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -159,7 +157,7 @@ public class ModBlocks {
                     .nonOpaque()));
 
     public static final Block DREAMWOOD_LOG = registerBlock("dreamwood_log",
-            new Block(AbstractBlock.Settings.create()
+            new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.MAGENTA)
                     .strength(2.2f)
                     .sounds(BlockSoundGroup.WOOD)));
@@ -226,7 +224,7 @@ public class ModBlocks {
                     .luminance(state -> 10)));
 
     public static final Block FUNGAL_BARK = registerBlock("fungal_bark",
-            new Block(AbstractBlock.Settings.create()
+            new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.BROWN)
                     .strength(1.2f, 4.0f)
                     .sounds(BlockSoundGroup.WOOD)));
@@ -412,14 +410,14 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
 
     public static final Block DREAMSTONE_STAIRS = registerBlock("dreamstone_stairs",
-            new Block(AbstractBlock.Settings.create()
+            new StairsBlock(DREAMSTONE.getDefaultState(), AbstractBlock.Settings.create()
                     .mapColor(MapColor.PURPLE)
                     .strength(1.8f, 4.0f)
                     .requiresTool()
                     .sounds(BlockSoundGroup.STONE)));
 
     public static final Block DREAMSTONE_SLAB = registerBlock("dreamstone_slab",
-            new Block(AbstractBlock.Settings.create()
+            new SlabBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.PURPLE)
                     .strength(1.8f, 4.0f)
                     .requiresTool()
@@ -479,7 +477,7 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.GRAVEL)));
 
     public static final Block RADIANT_PILLAR = registerBlock("radiant_pillar",
-            new Block(AbstractBlock.Settings.create()
+            new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.GOLD)
                     .strength(2.0f, 6.0f)
                     .requiresTool()
@@ -540,7 +538,7 @@ public class ModBlocks {
                     .nonOpaque()));
 
     public static final Block LUMICORE_PILLAR = registerBlock("lumicore_pillar",
-            new Block(AbstractBlock.Settings.create()
+            new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.YELLOW)
                     .strength(3.0f, 8.0f)
                     .requiresTool()
@@ -714,7 +712,7 @@ public class ModBlocks {
                     .luminance(state -> 5)));
 
     public static final Block GOLDEN_PILLAR = registerBlock("golden_pillar",
-            new Block(AbstractBlock.Settings.create()
+            new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.GOLD)
                     .strength(3.0f, 8.0f)
                     .requiresTool()
@@ -814,7 +812,7 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.DEEPSLATE)));
 
     public static final Block COSMIC_PILLAR = registerBlock("cosmic_pillar",
-            new Block(AbstractBlock.Settings.create()
+            new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.PURPLE)
                     .strength(3.0f, 8.0f)
                     .requiresTool()
@@ -837,7 +835,7 @@ public class ModBlocks {
                     .nonOpaque()));
 
     public static final Block CELESTITE_PILLAR = registerBlock("celestite_pillar",
-            new Block(AbstractBlock.Settings.create()
+            new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.PURPLE)
                     .strength(3.0f, 8.0f)
                     .requiresTool()
@@ -916,7 +914,7 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
 
     public static final Block ECHO_PILLAR = registerBlock("echo_pillar",
-            new Block(AbstractBlock.Settings.create()
+            new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.GRAY)
                     .strength(2.0f, 6.0f)
                     .requiresTool()
@@ -984,7 +982,7 @@ public class ModBlocks {
                     .nonOpaque()));
 
     public static final Block SHADESTONE_PILLAR = registerBlock("shadestone_pillar",
-            new Block(AbstractBlock.Settings.create()
+            new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.BLACK)
                     .strength(2.0f, 6.0f)
                     .requiresTool()
@@ -998,6 +996,95 @@ public class ModBlocks {
                     .requiresTool()
                     .sounds(BlockSoundGroup.STONE)
                     .pistonBehavior(PistonBehavior.BLOCK)));
+
+    // Portal Blocks - Import the portal package at top of file
+    public static final Block DREAMING_DEPTHS_PORTAL = registerBlockNoItem("dreaming_depths_portal",
+            new com.nikhil.elementaldimensions.block.portal.DreamingDepthsPortalBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.PURPLE)
+                    .strength(-1.0f)
+                    .noCollision()
+                    .luminance(state -> 11)
+                    .sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block INFERNO_REALM_PORTAL = registerBlockNoItem("inferno_realm_portal",
+            new com.nikhil.elementaldimensions.block.portal.InfernoRealmPortalBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.ORANGE)
+                    .strength(-1.0f)
+                    .noCollision()
+                    .luminance(state -> 15)
+                    .sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block RADIANT_PLATEAU_PORTAL = registerBlockNoItem("radiant_plateau_portal",
+            new com.nikhil.elementaldimensions.block.portal.RadiantPlateauPortalBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.GOLD)
+                    .strength(-1.0f)
+                    .noCollision()
+                    .luminance(state -> 14)
+                    .sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block MYCELIAL_NEXUS_PORTAL = registerBlockNoItem("mycelial_nexus_portal",
+            new com.nikhil.elementaldimensions.block.portal.MycelialNexusPortalBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.PURPLE)
+                    .strength(-1.0f)
+                    .noCollision()
+                    .luminance(state -> 8)
+                    .sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block GOLDEN_CITADEL_PORTAL = registerBlockNoItem("golden_citadel_portal",
+            new com.nikhil.elementaldimensions.block.portal.GoldenCitadelPortalBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.GOLD)
+                    .strength(-1.0f)
+                    .noCollision()
+                    .luminance(state -> 13)
+                    .sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block ANCIENT_GROVES_PORTAL = registerBlockNoItem("ancient_groves_portal",
+            new com.nikhil.elementaldimensions.block.portal.AncientGrovesPortalBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.GREEN)
+                    .strength(-1.0f)
+                    .noCollision()
+                    .luminance(state -> 9)
+                    .sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block COSMIC_VOID_PORTAL = registerBlockNoItem("cosmic_void_portal",
+            new com.nikhil.elementaldimensions.block.portal.CosmicVoidPortalBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.BLACK)
+                    .strength(-1.0f)
+                    .noCollision()
+                    .luminance(state -> 6)
+                    .sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block CELESTIAL_SANCTUM_PORTAL = registerBlockNoItem("celestial_sanctum_portal",
+            new com.nikhil.elementaldimensions.block.portal.CelestialSanctumPortalBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.CYAN)
+                    .strength(-1.0f)
+                    .noCollision()
+                    .luminance(state -> 12)
+                    .sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block GLYPHIC_ARCHIVES_PORTAL = registerBlockNoItem("glyphic_archives_portal",
+            new com.nikhil.elementaldimensions.block.portal.GlyphicArchivesPortalBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.BLUE)
+                    .strength(-1.0f)
+                    .noCollision()
+                    .luminance(state -> 10)
+                    .sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block ECHOING_EXPANSE_PORTAL = registerBlockNoItem("echoing_expanse_portal",
+            new com.nikhil.elementaldimensions.block.portal.EchoingExpansePortalBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.CYAN)
+                    .strength(-1.0f)
+                    .noCollision()
+                    .luminance(state -> 9)
+                    .sounds(BlockSoundGroup.GLASS)));
+
+    public static final Block UMBRAL_WASTELAND_PORTAL = registerBlockNoItem("umbral_wasteland_portal",
+            new com.nikhil.elementaldimensions.block.portal.UmbralWastelandPortalBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.BLACK)
+                    .strength(-1.0f)
+                    .noCollision()
+                    .luminance(state -> 4)
+                    .sounds(BlockSoundGroup.GLASS)));
 
     /**
      * Register a block with automatic BlockItem registration
@@ -1013,6 +1100,14 @@ public class ModBlocks {
                 new BlockItem(registeredBlock, new Item.Settings()));
 
         return registeredBlock;
+    }
+
+    /**
+     * Register a block without a BlockItem (e.g., for portal blocks)
+     */
+    private static Block registerBlockNoItem(String name, Block block) {
+        Identifier id = Identifier.of(ElementalDimensions.MOD_ID, name);
+        return Registry.register(Registries.BLOCK, id, block);
     }
 
     /**

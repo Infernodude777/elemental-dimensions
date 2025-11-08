@@ -15,7 +15,32 @@
     }
   },
   "spawners": {
-    "monster": [],
+    "monster": [
+      {
+        "type": "elementaldimensions:scribe_spirit",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:living_tome",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:sentinel",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "elementaldimensions:page_horror",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
     "creature": [],
     "ambient": [],
     "water_creature": [],

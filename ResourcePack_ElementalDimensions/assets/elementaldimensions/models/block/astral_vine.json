@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "elementaldimensions:block/astral_vine"
+  }
+}
