@@ -1,7 +1,7 @@
 # Elemental Dimensions - v1.0.0 Release Notes
-**Release Date**: November 7, 2025  
-**Minecraft Version**: 1.21.1 (Fabric)  
-**Overall Completion**: 97%  
+**Release Date**: November 7, 2025
+**Minecraft Version**: 1.21.1 (Fabric)
+**Overall Completion**: 97%
 **Status**: ✅ **FULLY PLAYABLE**
 
 ---

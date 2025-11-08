@@ -1,6 +1,6 @@
 # Elemental Dimensions - Feature Completion Status
-**Last Updated**: November 7, 2025  
-**Mod Version**: v1.0.0-beta  
+**Last Updated**: November 7, 2025
+**Mod Version**: v1.0.0-beta
 **Overall Completion**: ~97%
 
 ---

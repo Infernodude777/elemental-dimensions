@@ -257,6 +257,6 @@ Each feature is independent and can be added without breaking existing functiona
 
 ---
 
-**Mod Status**: ✅ READY TO PLAY  
-**Completion**: 97%  
+**Mod Status**: ✅ READY TO PLAY
+**Completion**: 97%
 **Missing**: Optional enhancements only
