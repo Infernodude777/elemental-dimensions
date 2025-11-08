@@ -352,11 +352,16 @@ public class ModBlocks {
 
     // Additional Dreaming Depths Blocks
     public static final Block LUCID_WATER = registerBlock("lucid_water",
-            new Block(AbstractBlock.Settings.create()
+            new com.nikhil.elementaldimensions.block.custom.EnhancedLucidWaterBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.WATER_BLUE)
                     .strength(100.0f)
-                    .sounds(BlockSoundGroup.STONE)
-                    .luminance(state -> 8)));
+                    .sounds(BlockSoundGroup.GLASS)
+                    .luminance(state -> 8)
+                    .nonOpaque()
+                    .allowsSpawning((state, world, pos, type) -> false)
+                    .solidBlock((state, world, pos) -> false)
+                    .suffocates((state, world, pos) -> false)
+                    .blockVision((state, world, pos) -> false)));
 
     public static final Block PHANTASM_DUST = registerBlock("phantasm_dust",
             new Block(AbstractBlock.Settings.create()

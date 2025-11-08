@@ -1,6 +1,7 @@
 package com.elementaldimensions.world.gen.feature;
 
-import com.elementaldimensions.block.ModBlocks;
+import com.nikhil.elementaldimensions.registry.ModBlocks;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
@@ -8,7 +9,7 @@ import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 
 /**
- * Generates a coral palace structure in Aquatica dimension
+ * Generates a simple coral palace structure in Aquatic dimension
  */
 public class CoralPalaceFeature extends Feature<DefaultFeatureConfig> {
 
@@ -21,49 +22,36 @@ public class CoralPalaceFeature extends Feature<DefaultFeatureConfig> {
 		StructureWorldAccess world = context.getWorld();
 		BlockPos pos = context.getOrigin();
 
-		// Build underwater palace with coral blocks
-		int width = 15;
-		int height = 10;
-		int depth = 15;
-
-		// Main structure
-		for (int y = 0; y < height; y++) {
-			for (int x = -width/2; x <= width/2; x++) {
-				for (int z = -depth/2; z <= depth/2; z++) {
-					BlockPos buildPos = pos.add(x, y, z);
-
-					// Outer walls
-					if (Math.abs(x) == width/2 || Math.abs(z) == depth/2) {
-						if (y == 0 || y == height - 1) {
-							world.setBlockState(buildPos, ModBlocks.CORALITE.getDefaultState(), 3);
-						} else if (y % 2 == 0) {
-							world.setBlockState(buildPos, ModBlocks.PEARLSTONE.getDefaultState(), 3);
-						} else {
-							world.setBlockState(buildPos, ModBlocks.ABYSSAL_GLASS.getDefaultState(), 3);
+		int size = 3;
+		
+		// Build floor
+		for (int x = -size; x <= size; x++) {
+			for (int z = -size; z <= size; z++) {
+				world.setBlockState(pos.add(x, 0, z), ModBlocks.AQUA_STONE.getDefaultState(), 3);
+			}
+		}
+		
+		// Build hollow walls
+		for (int y = 1; y <= size + 2; y++) {
+			for (int x = -size; x <= size; x++) {
+				for (int z = -size; z <= size; z++) {
+					if (x == -size || x == size || z == -size || z == size) {
+						if (y < size + 2 || (x % 2 == 0 && z % 2 == 0)) {
+							world.setBlockState(pos.add(x, y, z), ModBlocks.AQUA_STONE.getDefaultState(), 3);
 						}
 					}
-					// Floor and ceiling
-					else if (y == 0 || y == height - 1) {
-						world.setBlockState(buildPos, ModBlocks.CORALITE.getDefaultState(), 3);
-					}
 				}
 			}
 		}
-
-		// Add towers at corners
-		int[] cornerOffsets = {-width/2, width/2};
-		for (int xOff : cornerOffsets) {
-			for (int zOff : cornerOffsets) {
-				for (int y = 0; y < height + 5; y++) {
-					BlockPos towerPos = pos.add(xOff, y, zOff);
-					if (y < height + 4) {
-						world.setBlockState(towerPos, ModBlocks.PEARLSTONE.getDefaultState(), 3);
-					} else {
-						world.setBlockState(towerPos, ModBlocks.OCEANIC_CRYSTAL_ORE.getDefaultState(), 3);
-					}
-				}
-			}
-		}
+		
+		// Add chest
+		world.setBlockState(pos.add(0, 1, 0), Blocks.CHEST.getDefaultState(), 3);
+		
+		// Add crystal accents
+		world.setBlockState(pos.add(-size, 2, 0), ModBlocks.TIDAL_CRYSTAL.getDefaultState(), 3);
+		world.setBlockState(pos.add(size, 2, 0), ModBlocks.TIDAL_CRYSTAL.getDefaultState(), 3);
+		world.setBlockState(pos.add(0, 2, -size), ModBlocks.TIDAL_CRYSTAL.getDefaultState(), 3);
+		world.setBlockState(pos.add(0, 2, size), ModBlocks.TIDAL_CRYSTAL.getDefaultState(), 3);
 
 		return true;
 	}
