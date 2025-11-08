@@ -1,0 +1,11 @@
+﻿{
+  "type": "minecraft:lake",
+  "config": {
+    "fluid": {
+      "type": "elementaldimensions:still_radiant_fluid"
+    },
+    "barrier": {
+      "type": "minecraft:stone"
+    }
+  }
+}

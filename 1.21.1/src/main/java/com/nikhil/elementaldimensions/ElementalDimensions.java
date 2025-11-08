@@ -16,16 +16,23 @@ public class ElementalDimensions implements ModInitializer {
     public static final String MOD_ID = "elementaldimensions";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-        @Override
+    @Override
     public void onInitialize() {
         LOGGER.info("Initializing Elemental Dimensions");
 
         // Register entities FIRST (before items that reference them)
         ModEntities.initialize();
 
+        // Register fluids BEFORE blocks (blocks reference fluids)
+        com.nikhil.elementaldimensions.fluid.ModFluids.initialize();
+
         // Then register blocks and items
         ModBlocks.initialize();
         ModItems.initialize();
+
+        // Register sounds and particles
+        ModSounds.initialize();
+        ModParticles.initialize();
 
         // Register commands
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {

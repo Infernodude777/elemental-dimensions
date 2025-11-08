@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "elementaldimensions:block/celestine_grass"
-  }
-}

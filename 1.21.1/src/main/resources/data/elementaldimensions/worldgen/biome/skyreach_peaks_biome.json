@@ -59,5 +59,10 @@
   "carvers": {
     "air": []
   },
-  "features": []
+  "features": [
+    [],
+    [
+      "elementaldimensions:radiant_fluid_lake"
+    ]
+  ]
 }

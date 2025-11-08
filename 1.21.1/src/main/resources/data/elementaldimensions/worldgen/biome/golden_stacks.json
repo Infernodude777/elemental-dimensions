@@ -51,5 +51,10 @@
   "carvers": {
     "air": []
   },
-  "features": []
+  "features": [
+    [],
+    [
+      "elementaldimensions:ink_fluid_pool"
+    ]
+  ]
 }

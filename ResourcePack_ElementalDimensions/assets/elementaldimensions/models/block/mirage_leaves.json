@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "elementaldimensions:block/mirage_leaves"
-  }
-}

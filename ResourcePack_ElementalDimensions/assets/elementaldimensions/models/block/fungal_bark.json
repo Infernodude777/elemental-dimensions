@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "elementaldimensions:block/fungal_bark_top",
-    "side": "elementaldimensions:block/fungal_bark"
-  }
-}

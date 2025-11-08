@@ -339,5 +339,10 @@
   "item.elementaldimensions.withered_leggings": "Withered Leggings",
   "item.elementaldimensions.withered_skeleton_spawn_egg": "Withered Skeleton Spawn Egg",
   "item.elementaldimensions.zephyros_spawn_egg": "Zephyros Spawn Egg",
-  "itemGroup.elementaldimensions": "Elemental Dimensions"
+  "item.elementaldimensions.lucid_water_bucket": "Lucid Water Bucket",
+  "item.elementaldimensions.radiant_fluid_bucket": "Radiant Fluid Bucket",
+  "item.elementaldimensions.mycelial_ooze_bucket": "Mycelial Ooze Bucket",
+  "item.elementaldimensions.void_essence_bucket": "Void Essence Bucket",
+  "item.elementaldimensions.ink_fluid_bucket": "Ink Fluid Bucket",
+  "itemGroup.elementaldimensions.main": "Elemental Dimensions"
 }

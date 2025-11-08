@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "elementaldimensions:block/lumicore_pillar_top",
-    "side": "elementaldimensions:block/lumicore_pillar"
-  }
-}

@@ -115,6 +115,13 @@ public class ModItems {
     public static Item GLOOM_STALKER_SPAWN_EGG;
     public static Item WITHERED_SKELETON_SPAWN_EGG;
 
+    // Fluid bucket items
+    public static Item LUCID_WATER_BUCKET;
+    public static Item RADIANT_FLUID_BUCKET;
+    public static Item MYCELIAL_OOZE_BUCKET;
+    public static Item VOID_ESSENCE_BUCKET;
+    public static Item INK_FLUID_BUCKET;
+
     // Boss spawn eggs
     public static Item PYROS_SPAWN_EGG;
     public static Item LEVIATHAN_SPAWN_EGG;
@@ -148,7 +155,30 @@ public class ModItems {
     }
 
     public static void initialize() {
-        ElementalDimensions.LOGGER.info("Registering items");
+        ElementalDimensions.LOGGER.info("Registering items for Elemental Dimensions");
+
+        // Register bucket items
+        LUCID_WATER_BUCKET = registerItem("lucid_water_bucket",
+            new BucketItem(com.nikhil.elementaldimensions.fluid.ModFluids.STILL_LUCID_WATER,
+                new Item.Settings().maxCount(1).recipeRemainder(Items.BUCKET)));
+
+        RADIANT_FLUID_BUCKET = registerItem("radiant_fluid_bucket",
+            new BucketItem(com.nikhil.elementaldimensions.fluid.ModFluids.STILL_RADIANT_FLUID,
+                new Item.Settings().maxCount(1).recipeRemainder(Items.BUCKET)));
+
+        MYCELIAL_OOZE_BUCKET = registerItem("mycelial_ooze_bucket",
+            new BucketItem(com.nikhil.elementaldimensions.fluid.ModFluids.STILL_MYCELIAL_OOZE,
+                new Item.Settings().maxCount(1).recipeRemainder(Items.BUCKET)));
+
+        VOID_ESSENCE_BUCKET = registerItem("void_essence_bucket",
+            new BucketItem(com.nikhil.elementaldimensions.fluid.ModFluids.STILL_VOID_ESSENCE,
+                new Item.Settings().maxCount(1).recipeRemainder(Items.BUCKET)));
+
+        INK_FLUID_BUCKET = registerItem("ink_fluid_bucket",
+            new BucketItem(com.nikhil.elementaldimensions.fluid.ModFluids.STILL_INK_FLUID,
+                new Item.Settings().maxCount(1).recipeRemainder(Items.BUCKET)));
+
+        // Original item initialization continues...
 
         // Initialize armor materials
         ModArmorMaterials.initialize();

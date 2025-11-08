@@ -351,7 +351,8 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.BONE)));
 
     // Additional Dreaming Depths Blocks
-    public static final Block LUCID_WATER = registerBlock("lucid_water",
+    // OLD: Static lucid water block (kept for compatibility)
+    public static final Block LUCID_WATER_OLD = registerBlock("lucid_water_old",
             new com.nikhil.elementaldimensions.block.custom.EnhancedLucidWaterBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.WATER_BLUE)
                     .strength(100.0f)
@@ -362,6 +363,13 @@ public class ModBlocks {
                     .solidBlock((state, world, pos) -> false)
                     .suffocates((state, world, pos) -> false)
                     .blockVision((state, world, pos) -> false)));
+
+    // NEW: Flowing fluid blocks
+    public static Block LUCID_WATER;
+    public static Block RADIANT_FLUID;
+    public static Block MYCELIAL_OOZE;
+    public static Block VOID_ESSENCE;
+    public static Block INK_FLUID;
 
     public static final Block PHANTASM_DUST = registerBlock("phantasm_dust",
             new Block(AbstractBlock.Settings.create()
@@ -1120,5 +1128,90 @@ public class ModBlocks {
      */
     public static void initialize() {
         ElementalDimensions.LOGGER.info("Registering blocks for " + ElementalDimensions.MOD_ID);
+
+        // Register fluid blocks (after fluids are initialized)
+        registerFluidBlocks();
+    }
+
+    /**
+     * Register fluid blocks - must be called after ModFluids.initialize()
+     */
+    private static void registerFluidBlocks() {
+        LUCID_WATER = registerBlockNoItem("lucid_water",
+            new com.nikhil.elementaldimensions.block.DimensionalFluidBlock(
+                (net.minecraft.fluid.FlowableFluid) com.nikhil.elementaldimensions.fluid.ModFluids.STILL_LUCID_WATER,
+                AbstractBlock.Settings.create()
+                    .mapColor(MapColor.WATER_BLUE)
+                    .noCollision()
+                    .strength(100.0f)
+                    .dropsNothing()
+                    .liquid()
+                    .replaceable(),
+                net.minecraft.particle.ParticleTypes.GLOW,
+                new net.minecraft.entity.effect.StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.NIGHT_VISION, 100, 0),
+                new net.minecraft.entity.effect.StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.SLOW_FALLING, 40, 0)
+            ));
+
+        RADIANT_FLUID = registerBlockNoItem("radiant_fluid",
+            new com.nikhil.elementaldimensions.block.DimensionalFluidBlock(
+                (net.minecraft.fluid.FlowableFluid) com.nikhil.elementaldimensions.fluid.ModFluids.STILL_RADIANT_FLUID,
+                AbstractBlock.Settings.create()
+                    .mapColor(MapColor.GOLD)
+                    .noCollision()
+                    .strength(100.0f)
+                    .dropsNothing()
+                    .liquid()
+                    .luminance(state -> 15)
+                    .replaceable(),
+                net.minecraft.particle.ParticleTypes.END_ROD,
+                new net.minecraft.entity.effect.StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.GLOWING, 100, 0),
+                new net.minecraft.entity.effect.StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.REGENERATION, 40, 0)
+            ));
+
+        MYCELIAL_OOZE = registerBlockNoItem("mycelial_ooze",
+            new com.nikhil.elementaldimensions.block.DimensionalFluidBlock(
+                (net.minecraft.fluid.FlowableFluid) com.nikhil.elementaldimensions.fluid.ModFluids.STILL_MYCELIAL_OOZE,
+                AbstractBlock.Settings.create()
+                    .mapColor(MapColor.DARK_GREEN)
+                    .noCollision()
+                    .strength(100.0f)
+                    .dropsNothing()
+                    .liquid()
+                    .replaceable(),
+                net.minecraft.particle.ParticleTypes.SPORE_BLOSSOM_AIR,
+                new net.minecraft.entity.effect.StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.POISON, 60, 0),
+                new net.minecraft.entity.effect.StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.SLOWNESS, 60, 0)
+            ));
+
+        VOID_ESSENCE = registerBlockNoItem("void_essence",
+            new com.nikhil.elementaldimensions.block.DimensionalFluidBlock(
+                (net.minecraft.fluid.FlowableFluid) com.nikhil.elementaldimensions.fluid.ModFluids.STILL_VOID_ESSENCE,
+                AbstractBlock.Settings.create()
+                    .mapColor(MapColor.BLACK)
+                    .noCollision()
+                    .strength(100.0f)
+                    .dropsNothing()
+                    .liquid()
+                    .luminance(state -> 2)
+                    .replaceable(),
+                net.minecraft.particle.ParticleTypes.PORTAL,
+                new net.minecraft.entity.effect.StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.LEVITATION, 40, 0),
+                new net.minecraft.entity.effect.StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.DARKNESS, 100, 0)
+            ));
+
+        INK_FLUID = registerBlockNoItem("ink_fluid",
+            new com.nikhil.elementaldimensions.block.DimensionalFluidBlock(
+                (net.minecraft.fluid.FlowableFluid) com.nikhil.elementaldimensions.fluid.ModFluids.STILL_INK_FLUID,
+                AbstractBlock.Settings.create()
+                    .mapColor(MapColor.BLACK)
+                    .noCollision()
+                    .strength(100.0f)
+                    .dropsNothing()
+                    .liquid()
+                    .replaceable(),
+                net.minecraft.particle.ParticleTypes.SQUID_INK,
+                new net.minecraft.entity.effect.StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.BLINDNESS, 100, 0),
+                new net.minecraft.entity.effect.StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.WEAKNESS, 60, 0)
+            ));
     }
 }
