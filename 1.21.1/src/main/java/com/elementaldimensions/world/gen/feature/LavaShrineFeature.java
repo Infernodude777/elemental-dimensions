@@ -24,14 +24,14 @@ public class LavaShrineFeature extends Feature<DefaultFeatureConfig> {
 
 		// Generate a simple 7x7x7 shrine
 		int size = 3;
-		
+
 		// Build floor
 		for (int x = -size; x <= size; x++) {
 			for (int z = -size; z <= size; z++) {
 				world.setBlockState(pos.add(x, 0, z), ModBlocks.INFERNO_STONE.getDefaultState(), 3);
 			}
 		}
-		
+
 		// Build hollow walls
 		for (int y = 1; y <= size + 2; y++) {
 			for (int x = -size; x <= size; x++) {
@@ -45,13 +45,13 @@ public class LavaShrineFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Add lava pool in center
 		world.setBlockState(pos.add(0, 1, 0), Blocks.LAVA.getDefaultState(), 3);
-		
+
 		// Add chest in center
 		world.setBlockState(pos.add(0, 2, 0), Blocks.CHEST.getDefaultState(), 3);
-		
+
 		// Add glowing ore accents
 		world.setBlockState(pos.add(-size, 2, 0), ModBlocks.BLAZING_ORE.getDefaultState(), 3);
 		world.setBlockState(pos.add(size, 2, 0), ModBlocks.BLAZING_ORE.getDefaultState(), 3);

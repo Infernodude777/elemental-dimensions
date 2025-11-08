@@ -40,7 +40,7 @@ public class EnhancedLucidWaterBlock extends Block {
             double x = pos.getX() + random.nextDouble();
             double y = pos.getY() + 0.3 + random.nextDouble() * 0.5;
             double z = pos.getZ() + random.nextDouble();
-            
+
             // Mix of glow and end rod particles for dreamy effect
             if (random.nextBoolean()) {
                 world.addParticle(

@@ -23,14 +23,14 @@ public class SkyCastleFeature extends Feature<DefaultFeatureConfig> {
 		BlockPos pos = context.getOrigin();
 
 		int size = 3;
-		
+
 		// Build floor
 		for (int x = -size; x <= size; x++) {
 			for (int z = -size; z <= size; z++) {
 				world.setBlockState(pos.add(x, 0, z), ModBlocks.CLOUD_STONE.getDefaultState(), 3);
 			}
 		}
-		
+
 		// Build hollow walls
 		for (int y = 1; y <= size + 2; y++) {
 			for (int x = -size; x <= size; x++) {
@@ -43,10 +43,10 @@ public class SkyCastleFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Add chest
 		world.setBlockState(pos.add(0, 1, 0), Blocks.CHEST.getDefaultState(), 3);
-		
+
 		// Add crystal accents
 		world.setBlockState(pos.add(-size, 2, 0), ModBlocks.WIND_CRYSTAL.getDefaultState(), 3);
 		world.setBlockState(pos.add(size, 2, 0), ModBlocks.WIND_CRYSTAL.getDefaultState(), 3);

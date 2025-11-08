@@ -23,14 +23,14 @@ public class CrystalCavernFeature extends Feature<DefaultFeatureConfig> {
 		BlockPos pos = context.getOrigin();
 
 		int size = 3;
-		
+
 		// Build floor
 		for (int x = -size; x <= size; x++) {
 			for (int z = -size; z <= size; z++) {
 				world.setBlockState(pos.add(x, 0, z), ModBlocks.TERRAN_BEDROCK.getDefaultState(), 3);
 			}
 		}
-		
+
 		// Build hollow walls
 		for (int y = 1; y <= size + 2; y++) {
 			for (int x = -size; x <= size; x++) {
@@ -43,10 +43,10 @@ public class CrystalCavernFeature extends Feature<DefaultFeatureConfig> {
 				}
 			}
 		}
-		
+
 		// Add chest
 		world.setBlockState(pos.add(0, 1, 0), Blocks.CHEST.getDefaultState(), 3);
-		
+
 		// Add emerald cluster accents
 		world.setBlockState(pos.add(-size, 2, 0), ModBlocks.EMERALD_CLUSTER.getDefaultState(), 3);
 		world.setBlockState(pos.add(size, 2, 0), ModBlocks.EMERALD_CLUSTER.getDefaultState(), 3);
