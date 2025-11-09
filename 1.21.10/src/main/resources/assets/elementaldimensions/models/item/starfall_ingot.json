@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "layer0":  "elementaldimensions:item/starfall_ingot"
-                 },
-    "parent":  "minecraft:item/generated"
-}

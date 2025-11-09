@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "layer0":  "elementaldimensions:item/echo_essence"
-                 },
-    "parent":  "minecraft:item/generated"
-}

@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "layer0":  "elementaldimensions:item/sky_paper"
-                 },
-    "parent":  "minecraft:item/generated"
-}

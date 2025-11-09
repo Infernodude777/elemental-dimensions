@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "layer0":  "elementaldimensions:item/mirror_of_rest"
-                 },
-    "parent":  "minecraft:item/generated"
-}
