@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "layer0":  "elementaldimensions:item/symbiont_sample"
-                 },
-    "parent":  "minecraft:item/generated"
-}

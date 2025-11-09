@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "layer0":  "elementaldimensions:item/tear_of_despair"
-                 },
-    "parent":  "minecraft:item/generated"
-}

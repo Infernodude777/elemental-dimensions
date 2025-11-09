@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "layer0":  "elementaldimensions:item/celestine_shard"
-                 },
-    "parent":  "minecraft:item/generated"
-}

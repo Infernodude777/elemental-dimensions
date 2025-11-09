@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "layer0":  "elementaldimensions:item/dreamweave_fabric"
-                 },
-    "parent":  "minecraft:item/generated"
-}

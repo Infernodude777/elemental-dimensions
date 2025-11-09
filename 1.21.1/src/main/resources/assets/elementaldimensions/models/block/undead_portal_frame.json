@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "elementaldimensions:block/undead_portal_frame"
-  }
-}

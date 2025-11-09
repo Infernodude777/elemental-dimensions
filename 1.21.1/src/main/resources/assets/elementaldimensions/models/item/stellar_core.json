@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "layer0":  "elementaldimensions:item/stellar_core"
-                 },
-    "parent":  "minecraft:item/generated"
-}
